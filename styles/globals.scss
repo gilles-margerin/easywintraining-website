@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import './variables';
+@import './mixins.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:"Mukta", sans-serif;
+  background-color: $light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  @include flex-center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  @include flex-center;
+  padding: 5rem 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.grid {
+  @include flex-center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.logo {
+  height: 1em;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+
+

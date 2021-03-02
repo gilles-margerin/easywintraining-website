@@ -2,15 +2,38 @@
 @import '../styles/mixins.scss';
 
 .navbar {
-  height: 150px;
+  background-color: $dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
   width: 100vw;
+  border-bottom: 2px double $grey;
+}
+
+.navbar h2 {
+  margin: 0;
+  padding-left: 2rem;
+  color: $light;
+
+  &:hover {
+    cursor: default;
+  }
 }
 
 .navbar ul {
   display: flex;
-  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2rem;
 }
 
 .navbar li {
-  padding: 0 0.5rem;
+  padding: 0 0.6rem;
 }
+
+.navbar a {
+  @include flex-center;
+}
+
+

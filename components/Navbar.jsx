@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Header.module.scss";
+import styles from "./Navbar.module.scss";
 
-const Header = () => {
+const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Link href="/">
@@ -76,4 +76,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

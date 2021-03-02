@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 
 export default function Contact() {
   return (
@@ -9,7 +9,7 @@ export default function Contact() {
         <title>Easywintraining games</title>
       </Head>
 
-      <Header/>
+      <Navbar/>
       <main className="main">
         <div className="grid">
           

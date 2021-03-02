@@ -1,0 +1,28 @@
+@import '../styles/variables';
+@import '../styles/mixins.scss'; 
+
+.card {
+  border-radius: 10px;
+  box-shadow: 2px 0 2px 1px $grey;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: hidden;
+  margin: 0.5rem;
+  min-width: 300px;
+  width: 400px;
+}
+
+.card header {
+  @include flex-center;
+}
+
+.card h3 {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.card p {
+  margin-top: 0;
+  padding: 2rem;
+}

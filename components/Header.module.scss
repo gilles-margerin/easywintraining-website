@@ -3,37 +3,37 @@
 
 .navbar {
   background-color: $dark;
+  color: $light;
   display: flex;
-  justify-content: space-between;
+  font-size: 1.7rem;
+  justify-content: space-around;
   align-items: center;
   height: 70px;
   width: 100vw;
   border-bottom: 2px double $grey;
-}
-
-.navbar h2 {
-  margin: 0;
-  padding-left: 2rem;
-  color: $light;
-
-  &:hover {
-    cursor: default;
-  }
+  box-shadow: 5px 0 5px 1px $lavish-blue;
 }
 
 .navbar ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 2rem;
+  margin-left: 35vw;
 }
 
 .navbar li {
-  padding: 0 0.6rem;
+  color: $light;
+  letter-spacing: 0.5px;
+  padding: 0 1.5rem 0 0;
 }
 
 .navbar a {
   @include flex-center;
 }
+
+.navbar span {
+  margin-left: 10px;
+}
+
 
 

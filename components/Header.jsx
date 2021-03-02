@@ -5,20 +5,21 @@ import styles from "./Header.module.scss";
 const Header = () => {
   return (
     <nav className={styles.navbar}>
-      <h2>Easywintraining Games</h2>
+      <Link href="/">
+          <a id="homelink">
+            <Image
+              src="/home.svg"
+              alt="homepage icon"
+              width={30}
+              height={30}
+              layout="fixed"
+            />
+            <span>
+              Easywintraining Games
+            </span>
+          </a>
+      </Link>
       <ul>
-        <li>
-          <Link href="/">
-            <a>
-              <Image
-                src="/home.svg"
-                alt="homepage icon"
-                width={30}
-                height={30}
-              />
-            </a>
-          </Link>
-        </li>
         <li>
           <a
             href="https://www.facebook.com/Easywintraining-Games-1929362253988650/?ref=page_internal"
@@ -29,9 +30,13 @@ const Header = () => {
             <Image
               src="/facebook.svg"
               alt="facebook icon"
-              width={30}
-              height={30}
+              width={32}
+              height={32}
+              layout="fixed"
             />
+            <span>
+              Facebook
+            </span>
           </a>
         </li>
         <li>
@@ -42,7 +47,11 @@ const Header = () => {
                 alt="contact icon"
                 width={30}
                 height={30}
+                layout="fixed"
               />
+              <span>
+                Contact
+              </span>
             </a>
           </Link>
         </li>
@@ -54,7 +63,11 @@ const Header = () => {
                 alt="calendar icon"
                 width={30}
                 height={30}
+                layout="fixed"
               />
+              <span>
+                Calendrier
+              </span>
             </a>
           </Link>
         </li>

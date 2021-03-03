@@ -1,28 +1,18 @@
-import Image from 'next/image'
-import styles from './GameSection.module.scss'
+import Image from "next/image";
+import styles from "./GameSection.module.scss";
 
-const GameSection = (props) => {
+const GameSection = ({ id, src, title, text }) => {
   return (
-    <section 
-      className={styles.card}
-      >
+    <section className={styles.card} id={id}>
       <header>
-        <Image
-          src={props.src}
-          width={365}
-          height={345}
-        />
+        <Image src={src} width={365} height={345} />
       </header>
       <div>
-        <h3>
-            {props.title}
-          </h3>
-        <p>
-          {props.text}
-        </p>
+        <h3>{title}</h3>
+        <p>{text}</p>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default GameSection
+export default GameSection;

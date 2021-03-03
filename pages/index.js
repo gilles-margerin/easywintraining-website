@@ -1,42 +1,36 @@
-import Head from 'next/head'
-import Footer from '../components/Footer'
-import GameSection from '../components/GameSection'
-import Navbar from '../components/Navbar'
-import gamesData from '../gamesData'
+import Head from "next/head";
+import Footer from "../components/Footer";
+import GameSection from "../components/GameSection";
+import Navbar from "../components/Navbar";
+import gamesData from "../gamesData";
 
 export default function Home() {
-  const Sections = []
-  
-  for (let game of gamesData) {
-    Sections.push(
-      <GameSection
-        title={game.title}
-        text={game.text}
-        src={game.src}
-       />
-    )
-  }
-
   return (
     <div className="container">
       <Head>
         <title>Easywintraining games</title>
       </Head>
 
-      <Navbar/>
+      <Navbar />
 
-      <h2>
-        Nos activités !
-      </h2>
+      <h2>Nos activités !</h2>
 
       <main className="main">
         <div className="grid">
           <>
-          {Sections}
+            {gamesData.map((game) => (
+              <GameSection
+                title={game.title}
+                text={game.text}
+                src={game.src}
+                key={game.key}
+                id={game.key}
+              />
+            ))}
           </>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }

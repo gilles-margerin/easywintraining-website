@@ -6,18 +6,16 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <Link href="/">
-          <a id="homelink">
-            <Image
-              src="/home.svg"
-              alt="homepage icon"
-              width={30}
-              height={30}
-              layout="fixed"
-            />
-            <span>
-              Easywintraining Games
-            </span>
-          </a>
+        <a id="homelink">
+          <Image
+            src="/home.svg"
+            alt="homepage icon"
+            width={30}
+            height={30}
+            layout="fixed"
+          />
+          <span>Easywintraining Games</span>
+        </a>
       </Link>
       <ul>
         <li>
@@ -34,9 +32,7 @@ const Navbar = () => {
               height={32}
               layout="fixed"
             />
-            <span>
-              Facebook
-            </span>
+            <span>Facebook</span>
           </a>
         </li>
         <li>
@@ -49,9 +45,7 @@ const Navbar = () => {
                 height={30}
                 layout="fixed"
               />
-              <span>
-                Contact
-              </span>
+              <span>Contact</span>
             </a>
           </Link>
         </li>
@@ -65,9 +59,7 @@ const Navbar = () => {
                 height={30}
                 layout="fixed"
               />
-              <span>
-                Calendrier
-              </span>
+              <span>Calendrier</span>
             </a>
           </Link>
         </li>

@@ -3,7 +3,9 @@ import styles from './GameSection.module.scss'
 
 const GameSection = (props) => {
   return (
-    <section className={styles.card}>
+    <section 
+      className={styles.card}
+      >
       <header>
         <Image
           src={props.src}

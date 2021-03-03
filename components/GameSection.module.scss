@@ -3,7 +3,7 @@
 
 .card {
   border-radius: 10px;
-  box-shadow: 1px 0 1px 1px $tertiary-2-2;
+  box-shadow: 2px 3px 15px 0 $primary-2;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -19,10 +19,12 @@
 
 .card h3 {
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
+  text-align: right;
 }
 
 .card p {
   margin-top: 0;
   padding: 30px;
 }
+

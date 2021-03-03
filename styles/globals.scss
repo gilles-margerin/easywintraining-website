@@ -24,7 +24,24 @@ h2 {
   color: $primary-4;
   font-family: "Staatliches", cursive;
   font-size: 2rem;
-  margin: 3rem 0 0;
+  margin: 3rem 0;
+  position: relative;
+}
+
+h2::before,
+h2::after {
+  background-color: $tertiary-2-2;
+  content: '';
+  height: 1px;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 400px;
+  transform: translateX(-25%);
+}
+
+h2::after {
+  top: 55px;
 }
 
 ul {
@@ -45,9 +62,15 @@ ul {
 
 .grid {
   @include flex-center;
+  background-color: $primary-1-blurred;
+  border-radius: 10px;
   flex-wrap: wrap;
-  max-width: 80vw;
-  margin-top: 1.5rem;
+  max-width: 70vw;
+  padding-top: 20px;
+}
+
+.reveal {
+  height: 50px
 }
 
 .logo {

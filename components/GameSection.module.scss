@@ -17,6 +17,22 @@
   }
 }
 
+.active {
+  border-radius: 10px;
+  box-shadow: 2px 3px 15px 0 $primary-2;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow: scroll;
+  margin: 0.7rem 0.8rem 2rem;
+  min-width: 300px;
+  width: 365px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .card h3 {
   margin: 0;
   padding: 0.5rem 2rem;

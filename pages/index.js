@@ -3,8 +3,23 @@ import Footer from "../components/Footer";
 import GameSection from "../components/GameSection";
 import Navbar from "../components/Navbar";
 import gamesData from "../gamesData";
+import {useState, useRef, useEffect} from 'react';
 
 export default function Home() {
+  const [active, setActive] = useState('')
+  const prevClassRef = useRef('')
+
+  useEffect(() => {
+    prevClassRef.current = active
+  });
+
+  const toggleActive = (e) => {
+    const target = e.target.closest('section')
+
+    prevClassRef.current === target.id ?
+    setActive('') : setActive(target.id)
+  }
+
   return (
     <div className="container">
       <Head>
@@ -25,6 +40,8 @@ export default function Home() {
                 src={game.src}
                 key={game.key}
                 id={game.key}
+                active={active}
+                toggleActive={toggleActive}
               />
             ))}
           </>

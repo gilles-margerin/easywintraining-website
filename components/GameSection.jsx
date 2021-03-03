@@ -1,9 +1,13 @@
 import Image from "next/image";
 import styles from "./GameSection.module.scss";
 
-const GameSection = ({ id, src, title, text }) => {
+const GameSection = ({ id, src, title, text, active, toggleActive }) => {
+
   return (
-    <section className={styles.card} id={id}>
+    <section 
+      className={active === id ? styles.active : styles.card} id={id}
+      onClick={(e) => toggleActive(e)}  
+    >
       <header>
         <Image src={src} width={365} height={345} />
       </header>
@@ -16,3 +20,4 @@ const GameSection = ({ id, src, title, text }) => {
 };
 
 export default GameSection;
+

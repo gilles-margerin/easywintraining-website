@@ -12,6 +12,7 @@ export default function Home() {
       <GameSection
         title={game.title}
         text={game.text}
+        src={game.src}
        />
     )
   }
@@ -23,6 +24,11 @@ export default function Home() {
       </Head>
 
       <Navbar/>
+
+      <h2>
+        Nos activités !
+      </h2>
+
       <main className="main">
         <div className="grid">
           <>

@@ -5,18 +5,20 @@ const GameSection = (props) => {
   return (
     <section className={styles.card}>
       <header>
-        <h3>
-          {props.title}
-        </h3>
         <Image
-          src="/easywin-poster.jpg"
-          width={20}
-          height={20}
+          src={props.src}
+          width={365}
+          height={345}
         />
       </header>
-      <p>
-        {props.text}
-      </p>
+      <div>
+        <h3>
+            {props.title}
+          </h3>
+        <p>
+          {props.text}
+        </p>
+      </div>
     </section>
   )
 }

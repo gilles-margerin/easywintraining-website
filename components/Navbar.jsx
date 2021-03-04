@@ -14,7 +14,8 @@ const Navbar = () => {
             height={30}
             layout="fixed"
           />
-          <span>Easywintraining Games</span>
+          <span>Easywintraining</span>
+          <span>Games</span>
         </a>
       </Link>
       <ul>

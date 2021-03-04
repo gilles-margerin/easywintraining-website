@@ -7,7 +7,7 @@
   display: flex;
   font-family: "Staatliches", cursive;
   font-size: 1.7rem;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   width: 100vw;
@@ -19,20 +19,21 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-left: 35vw;
+  padding: 0 1.5rem;
 }
 
 .navbar li {
   color: inherit;
   letter-spacing: 0.5px;
-  padding: 0 1.5rem 0 0;
 }
 
 .navbar a {
   @include flex-center;
+  margin-left: 25px;
 }
 
 .navbar span {
+  font-family: "Philosopher", sans-serif;
   margin-left: 10px;
 }
 

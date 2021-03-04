@@ -44,13 +44,21 @@ h2::after {
   top: 55px;
 }
 
+p {
+  max-width: 55vw;
+  color: $primary-3;
+  align-self: flex-start;
+  margin-left: 15vw;
+}
+
 ul {
   list-style: none;
 }
 
+
 .container {
   @include flex-center;
-  background: linear-gradient(90deg,  $primary-4 75vw, $primary-2 25vw);
+  background: linear-gradient(90deg,  $primary-4 77vw, $primary-2 23vw);
   min-height: 100vh;
   flex-direction: column;
 }

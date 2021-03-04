@@ -7,7 +7,6 @@ body {
   padding: 0;
   margin: 0;
   font-family:"Mulish", sans-serif;
-  background-color: #fff;
   overflow-x: hidden;
 }
 
@@ -21,7 +20,7 @@ a {
 }
 
 h2 {
-  color: $primary-4;
+  color: $primary-1;
   font-family: "Philosopher", sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -31,14 +30,14 @@ h2 {
 
 h2::before,
 h2::after {
-  background-color: $tertiary-2-2;
+  background-color: $primary-2;
   content: '';
   height: 1px;
   position: absolute;
   top: -15px;
   left: 0;
-  width: 400px;
-  transform: translateX(-25%);
+  width: 150%;
+  transform: translateX(-17%);
 }
 
 h2::after {
@@ -51,6 +50,7 @@ ul {
 
 .container {
   @include flex-center;
+  background: linear-gradient(90deg,  $primary-4 75vw, $primary-2 25vw);
   min-height: 100vh;
   flex-direction: column;
 }
@@ -63,11 +63,11 @@ ul {
 
 .grid {
   @include flex-center;
-  background-color: $primary-1-blurred;
   border-radius: 10px;
   flex-wrap: wrap;
   max-width: 70vw;
   padding-top: 20px;
+  margin-bottom: 45px;
 }
 
 @media (max-width: 600px) {

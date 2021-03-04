@@ -28,7 +28,9 @@ export default function Home() {
 
       <Navbar />
 
-      <h2>Nos activités !</h2>
+      <h2>Bienvenue</h2>
+
+      <h2>Nos activités</h2>
 
       <main className="main">
         <div className="grid">

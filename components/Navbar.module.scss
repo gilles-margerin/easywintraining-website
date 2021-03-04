@@ -2,8 +2,8 @@
 @import '../styles/mixins.scss';
 
 .navbar {
-  background-color: $primary-4;
-  color: #fff;
+  background-color: $primary-1;
+  color: $primary-4;
   display: flex;
   font-family: "Staatliches", cursive;
   font-size: 1.7rem;
@@ -11,8 +11,8 @@
   align-items: center;
   height: 70px;
   width: 100vw;
-  border-bottom: 2px double $primary-3;
-  box-shadow: 5px 0 5px 1px $secondary-1-2;
+  border-bottom: 1px solid $primary-4;
+  box-shadow: 5px 0 5px 1px $primary-3;
 }
 
 .navbar ul {

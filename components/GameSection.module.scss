@@ -3,7 +3,9 @@
 
 .card {
   border-radius: 10px;
-  box-shadow: 2px 3px 15px 0 $primary-2;
+  background: $primary-4;
+  color: $primary-1;
+  box-shadow: 2px 1px 3px 2px $primary-0;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -19,7 +21,7 @@
 
 .active {
   border-radius: 10px;
-  box-shadow: 2px 3px 15px 0 $primary-2;
+  // box-shadow: 2px 3px 15px 0 $primary-2;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -33,7 +35,13 @@
   }
 }
 
+.card header {
+  background: $primary-4;
+}
+
 .card h3 {
+  background: $primary-4;
+  height: 100%;
   margin: 0;
   padding: 0.5rem 2rem;
   text-align: right;

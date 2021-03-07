@@ -27,7 +27,6 @@
   display: flex;
   flex-direction: column;
   height: 400px;
-  overflow: scroll;
   margin: 0.7rem 0.8rem 2rem;
   min-width: 300px;
   width: 365px;
@@ -35,6 +34,19 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.active header > div {
+  height: 0;
+}
+
+.active h3 {
+  margin: 0 1rem;
+}
+
+.active p {
+  margin: 0.3rem 1rem;
+  padding: 1.5rem;
 }
 
 .card header {

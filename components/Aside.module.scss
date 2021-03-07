@@ -1,0 +1,41 @@
+@import "../styles/variables";
+@import "../styles/mixins.scss";
+
+.aside {
+  @include flex-center;
+  flex-direction: column;
+  position: absolute;
+  top: 205px;
+  right: 5px;
+  width: 20vw;
+  text-align: center;
+  padding: 1rem;
+}
+
+.aside h3 {
+  margin: 0.5rem 0;
+}
+
+.aside p {
+  color: $primary-4;
+  padding: 0 3rem;
+  text-align: inherit;
+  transform: unset;
+}
+
+.aside address {
+  padding: inherit;
+  position: relative;
+  padding: 0;
+  margin-bottom: 30px;
+
+  /* &::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    right: 3rem;
+    width: 120px;
+    height: 1px;
+    background-color: $primary-3;
+  } */
+}

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "../components/Footer";
 import GameSection from "../components/GameSection";
 import Navbar from "../components/Navbar";
+import Aside from "../components/Aside"
 import gamesData from "../gamesData";
 import {useState, useRef, useEffect} from 'react';
 
@@ -35,6 +36,9 @@ export default function Home() {
       <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in vehicula ante, non aliquam sem. Nullam ipsum velit, accumsan non nibh at, facilisis pretium justo. Donec condimentum at ligula vitae porta. Nullam semper malesuada metus quis consectetur. Aenean facilisis libero et felis semper gravida quis at libero. Duis faucibus ut. 
       </p>
+
+      <Aside />
+
       <h2>Nos activités</h2>
 
       <main className="main">

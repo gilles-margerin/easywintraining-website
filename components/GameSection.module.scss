@@ -21,7 +21,9 @@
 
 .active {
   border-radius: 10px;
-  // box-shadow: 2px 3px 15px 0 $primary-2;
+  box-shadow: 2px 1px 3px 2px $primary-0;
+  color: $primary-1;
+  background: $primary-4;
   display: flex;
   flex-direction: column;
   height: 400px;

@@ -9,7 +9,7 @@ const GameSection = ({ id, src, title, text, active, toggleActive }) => {
       onClick={(e) => toggleActive(e)}  
     >
       <header>
-        <Image src={src} width={365} height={345} />
+        <Image src={src} width={365} height={345} objectFit="cover"/>
       </header>
       <div>
         <h3>{title}</h3>

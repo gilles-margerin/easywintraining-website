@@ -47,8 +47,8 @@ h2::after {
 p {
   max-width: 55vw;
   color: $primary-3;
-  align-self: flex-start;
-  margin-left: 15vw;
+  padding: 1rem 2.5rem;
+  text-align: right;
 }
 
 ul {

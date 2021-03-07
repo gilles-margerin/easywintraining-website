@@ -1,12 +1,12 @@
-@import '../styles/variables';
-@import '../styles/mixins.scss';
+@import "../styles/variables";
+@import "../styles/mixins.scss";
 
 .navbar {
   background-color: $primary-1;
   color: $primary-4;
   display: flex;
   font-family: "Staatliches", cursive;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   justify-content: space-between;
   align-items: center;
   height: 80px;
@@ -30,12 +30,15 @@
 .navbar a {
   @include flex-center;
   margin-left: 25px;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
 }
 
 .navbar span {
   font-family: "Philosopher", sans-serif;
   margin-left: 10px;
 }
-
-
-

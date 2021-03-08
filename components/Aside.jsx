@@ -7,15 +7,16 @@ const Aside = () => {
         Easywintraining Games
       </h3>
       <address>
+        06.63.96.36.63
+        <br/>
+        easywintraining@gmail.com 
+        <br/>
         25 rue de la lanterne 
         <br/>
         66000 Perpignan
       </address>
       <p>
         Association de jeux de société et d'activités ludiques
-      </p>
-      <p>
-        Jeux de plateaux, jeux de stratégie, jeux de rôles, jeux traditionnels
       </p>
     </aside>
   )

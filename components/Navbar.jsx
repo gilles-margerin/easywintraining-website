@@ -8,14 +8,13 @@ const Navbar = () => {
       <Link href="/">
         <a id="homelink">
           <Image
-            src="/home.svg"
+            src="/icons/ewt-logo.jpg"
             alt="homepage icon"
-            width={30}
-            height={30}
+            width={28}
+            height={28}
             layout="fixed"
           />
-          <span>Easywintraining</span>
-          <span>Games</span>
+          <span>Easywintraining Games</span>
         </a>
       </Link>
       <ul>
@@ -27,40 +26,40 @@ const Navbar = () => {
             noreferrer"
           >
             <Image
-              src="/facebook.svg"
+              src="/icons/facebook.svg"
               alt="facebook icon"
-              width={32}
-              height={32}
+              width={30}
+              height={30}
               layout="fixed"
             />
             <span>Facebook</span>
           </a>
         </li>
         <li>
-          <Link href="/contact">
+          <Link href="/timetable">
             <a>
               <Image
-                src="/contact.svg"
-                alt="contact icon"
-                width={30}
-                height={30}
+                src="/icons/calendar.svg"
+                alt="calendar icon"
+                width={28}
+                height={28}
                 layout="fixed"
               />
-              <span>Contact</span>
+              <span>Calendrier</span>
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/timetable">
+        <Link href="/partners">
             <a>
               <Image
-                src="/calendar.svg"
+                src="/icons/partner-3.svg"
                 alt="calendar icon"
-                width={30}
-                height={30}
+                width={36}
+                height={36}
                 layout="fixed"
               />
-              <span>Calendrier</span>
+              <span>Partenaires</span>
             </a>
           </Link>
         </li>

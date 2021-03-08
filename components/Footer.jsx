@@ -5,13 +5,13 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div>
         Icons made by
+        {" "}
         <a
           href="https://www.freepik.com"
           title="Freepik"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Freepik
+        >Freepik
         </a>{" "}
         from{" "}
         <a

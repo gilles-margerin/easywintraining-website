@@ -24,40 +24,36 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Easywintraining games</title>
+        <title>Easywintraining Games</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap" 
+          rel="stylesheet"
+        /> 
       </Head>
 
       <Navbar />
-
-      <h2>Bienvenue</h2>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ante tortor, elementum nec metus ac, feugiat tristique ex. Sed odio mauris, viverra lobortis arcu quis, rhoncus pharetra felis. Donec id consequat metus, ut laoreet neque. Donec sed fringilla dui, sed vestibulum risus. Mauris congue nunc at vestibulum rhoncus. Phasellus fermentum. 
-      </p>
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in vehicula ante, non aliquam sem. Nullam ipsum velit, accumsan non nibh at, facilisis pretium justo. Donec condimentum at ligula vitae porta. Nullam semper malesuada metus quis consectetur. Aenean facilisis libero et felis semper gravida quis at libero. Duis faucibus ut. 
-      </p>
-
-      <Aside />
-
-      <h2>Nos activités</h2>
-
       <main className="main">
         <div className="grid">
           <>
+            <h2>
+              Nos activités
+            </h2>
             {gamesData.map((game) => (
               <GameSection
-                title={game.title}
-                text={game.text}
-                src={game.src}
-                key={game.key}
-                id={game.key}
-                active={active}
-                toggleActive={toggleActive}
+              title={game.title}
+              text={game.text}
+              src={game.src}
+              key={game.key}
+              id={game.key}
+              active={active}
+              toggleActive={toggleActive}
               />
             ))}
           </>
         </div>
       </main>
+      <Aside />
       <Footer />
     </div>
   );

@@ -2,67 +2,74 @@
 @import '../styles/mixins.scss'; 
 
 .card {
+  background: $primary-3;
   border-radius: 10px;
-  background: $primary-4;
+  box-shadow: 2px 1px 2px 2px $primary-1-light;
   color: $primary-1;
-  box-shadow: 2px 1px 3px 2px $primary-0;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 304px;
+  width: 265px;
+  margin: 0.5rem;
   overflow: hidden;
-  margin: 0.7rem 0.8rem 2rem;
-  min-width: 300px;
-  width: 365px;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+
+
+.card header {
+  transition: all 0.7s ease-in-out;
+}
+
+.card div {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.cardText {
+  font-size: 0.9rem;
+  transition: all 0.7s ease-in-out;
+  display: flex;
+}
+
+.cardText h3 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  max-width: 14ch;
+  min-height: 45px;
+}
+
+.cardText p {
+  margin-top: 5px;
+  min-height: 180px;
+  padding: 0.4rem 1.6rem;
+  text-align: center;
+  white-space: pre-wrap;
+  text-justify: auto;
+  font-size: 0.85rem;
 }
 
 .active {
-  border-radius: 10px;
-  box-shadow: 2px 1px 3px 2px $primary-0;
-  color: $primary-1;
-  background: $primary-4;
-  display: flex;
-  flex-direction: column;
-  height: 400px;
-  margin: 0.7rem 0.8rem 2rem;
-  min-width: 300px;
-  width: 365px;
+  box-shadow: 2px 1px 2px 2px $primary-2-light;
 
-  &:hover {
-    cursor: pointer;
-  }
 }
 
-.active header > div {
-  height: 0;
+.active header,
+.active .cardText {
+  transform: translateY(-100%);
 }
 
-.active h3 {
-  margin: 0 1rem;
+.active .cardText {
+  transform: translateY(-85%);
 }
 
-.active p {
-  margin: 0.3rem 1rem;
-  padding: 1.5rem;
+.active .cardText h3 {
+  color: $primary-2;
 }
 
-.card header {
-  background: $primary-4;
-}
-
-.card h3 {
-  background: $primary-4;
-  height: 100%;
-  margin: 0;
-  padding: 0.5rem 2rem;
-  text-align: right;
-}
-
-.card p {
-  margin-top: 0;
-  padding: 30px;
-}
 

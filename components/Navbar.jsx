@@ -10,8 +10,8 @@ const Navbar = () => {
           <Image
             src="/icons/ewt-logo.jpg"
             alt="homepage icon"
-            width={28}
-            height={28}
+            width={30}
+            height={30}
             layout="fixed"
           />
           <span>Easywintraining Games</span>
@@ -53,10 +53,10 @@ const Navbar = () => {
         <Link href="/partners">
             <a>
               <Image
-                src="/icons/partner-3.svg"
+                src="/icons/partner-4.svg"
                 alt="calendar icon"
-                width={36}
-                height={36}
+                width={32}
+                height={32}
                 layout="fixed"
               />
               <span>Partenaires</span>

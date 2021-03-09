@@ -1,0 +1,10 @@
+@import '../styles/mixins.scss';
+@import '../styles/variables.scss';
+
+.marker {
+  @include flex-center;
+  background: $primary-1;
+  border-radius: 30%;
+  width: 47px;
+  height: 47px;
+}

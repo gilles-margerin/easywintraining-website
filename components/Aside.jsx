@@ -1,4 +1,5 @@
 import styles from './Aside.module.scss'
+import GoogleMap from './GoogleMap'
 
 const Aside = () => {
   return (
@@ -24,6 +25,8 @@ const Aside = () => {
       <p>
         Association de jeux de société et d'activités ludiques
       </p>
+
+      <GoogleMap />
 
     </aside>
   )

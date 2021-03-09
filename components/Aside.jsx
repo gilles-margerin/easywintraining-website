@@ -6,18 +6,25 @@ const Aside = () => {
       <h3>
         Easywintraining Games
       </h3>
+
       <address>
-        06.63.96.36.63
+        <a href="tel:+33-6-63-96-36-63">
+          06.63.96.36.63
+        </a>
         <br/>
-        easywintraining@gmail.com 
+        <a href="mailto:easywintraining@gmail.com">
+          easywintraining@gmail.com 
+        </a>
         <br/>
         25 rue de la lanterne 
         <br/>
         66000 Perpignan
       </address>
+
       <p>
         Association de jeux de société et d'activités ludiques
       </p>
+
     </aside>
   )
 }

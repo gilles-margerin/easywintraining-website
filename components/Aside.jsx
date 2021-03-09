@@ -1,7 +1,7 @@
 import styles from './Aside.module.scss'
 import GoogleMap from './GoogleMap'
 
-const Aside = () => {
+const Aside = ({ apiKey }) => {
   return (
     <aside className={styles.aside}>
       <h3>
@@ -26,7 +26,7 @@ const Aside = () => {
         Association de jeux de société et d'activités ludiques
       </p>
 
-      <GoogleMap />
+      <GoogleMap apiKey={apiKey} />
 
     </aside>
   )

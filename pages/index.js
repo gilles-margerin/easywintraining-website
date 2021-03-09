@@ -6,7 +6,17 @@ import Aside from "../components/Aside"
 import gamesData from "../gamesData";
 import {useState, useRef, useEffect} from 'react';
 
-export default function Home() {
+export async function getStaticProps() {
+  const apiKey = process.env.GOOGLEMAP_API_KEY
+
+  return {
+    props: {
+      apiKey
+    }
+  }
+}
+
+export default function Home({ apiKey }) {
   const [active, setActive] = useState('')
   const prevClassRef = useRef('')
 
@@ -53,7 +63,7 @@ export default function Home() {
           </>
         </div>
       </main>
-      <Aside />
+      <Aside apiKey={apiKey}/>
       <Footer />
     </div>
   );

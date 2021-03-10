@@ -69,7 +69,12 @@ ul {
   font-size: 0.82rem;
 }
 
-
-
+@media (max-width: 1070px) {
+  .container {
+    @include flex-center;
+    flex-direction: column;
+    height: 100%;
+  }
+}
 
 

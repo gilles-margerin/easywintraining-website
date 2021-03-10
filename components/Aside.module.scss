@@ -17,3 +17,29 @@
 .aside p {
   max-width: 24ch;
 }
+
+@media (max-width: 1070px) {
+  .aside {
+    flex-direction: row;
+    padding: 0 0 1.2rem;
+    width: 100%;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 50%;
+
+      & p {
+        margin: 1.2rem auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 725px) {
+  .aside {
+    flex-direction: column;
+  }
+}

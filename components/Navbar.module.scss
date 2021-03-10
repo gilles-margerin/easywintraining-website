@@ -38,7 +38,48 @@
   }
 }
 
+.navbar > a > span {
+  text-align: center;
+}
+
 .navbar span {
   font-family: "Philosopher", sans-serif;
   margin-left: 10px;
+}
+
+@media (max-width: 1070px) {
+  .navbar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 725px) {
+  .navbar  {
+    justify-content: center;
+  }
+
+  .navbar ul {
+    padding: initial 0;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    justify-content: space-between;
+    padding: initial 0.8rem;
+  }
+
+  .navbar li span {
+    display: none;
+  }
 }

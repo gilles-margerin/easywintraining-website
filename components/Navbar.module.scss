@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  box-shadow: 5px 0 10px 1px $primary-1-light;
+  box-shadow: 1px 0 5px 1px $primary-1;
   z-index: 1;
 }
 
@@ -33,6 +33,7 @@
 
   &:hover {
     text-decoration: underline;
+    text-decoration-color: $primary-2-light;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
   }

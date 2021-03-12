@@ -11,9 +11,10 @@ const GoogleMap = ({ apiKey }) => {
 
   return (
     <div style={{
-      height: '320px',
-      width: '320px',
-      marginTop: '35px'
+      height: '300px',
+      width: '300px',
+      marginTop: '35px',
+      boxShadow: '0 0 2px 1px rgb(70, 47, 10)'
     }}>
       <GoogleMapReact
         bootstrapURLKeys={{

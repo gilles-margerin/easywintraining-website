@@ -8,8 +8,16 @@ const Aside = ({ apiKey }) => {
         <h3>
           Easywintraining Games
         </h3>
+
+        <p>
+          Association de jeux de société et d'activités ludiques
+        </p>
         
         <address>
+          25 rue de la lanterne 
+          <br/>
+          66000 Perpignan
+          <br/>
           <a href="tel:+33-6-63-96-36-63">
             06.63.96.36.63
           </a>
@@ -17,15 +25,14 @@ const Aside = ({ apiKey }) => {
           <a href="mailto:easywintraining@gmail.com">
             easywintraining@gmail.com 
           </a>
-          <br/>
-          25 rue de la lanterne 
-          <br/>
-          66000 Perpignan
         </address>
-        
-        <p>
-          Association de jeux de société et d'activités ludiques
-        </p>
+
+        <time>
+          <span>Lundi 20h30-01h00</span>
+          <span>Vendredi 20h30-02h00</span>
+          <span>Samedi 20h00-01h00 (sur réservation)</span >
+          <span>Dimanche 14h00-19h00 (tous les 15 jours)</span>
+        </time>
         
       </div>
       <GoogleMap apiKey={apiKey} />

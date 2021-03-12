@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
 import GameSection from "../components/GameSection";
-import Navbar from "../components/Navbar";
 import Aside from "../components/Aside"
 import gamesData from "../gamesData";
 import {useState, useRef, useEffect} from 'react';
@@ -42,7 +40,6 @@ export default function Home({ apiKey }) {
         /> 
       </Head>
 
-      <Navbar />
       <main className="main">
         <div className="grid">
           <>
@@ -64,7 +61,6 @@ export default function Home({ apiKey }) {
         </div>
       </main>
       <Aside apiKey={apiKey}/>
-      <Footer />
     </div>
   );
 }

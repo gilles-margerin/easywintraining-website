@@ -37,7 +37,7 @@ ul {
   background-size: cover;
   display: grid;
   grid-template: auto / 1fr auto;
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
 }
 
 .main {

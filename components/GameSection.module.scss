@@ -49,13 +49,13 @@
 }
 
 .cardText p {
+  font-size: 0.85rem;
   margin-top: 5px;
   min-height: 180px;
+  line-height: 1.05;
   padding: 0.4rem 1.6rem;
-  text-align: center;
   white-space: pre-wrap;
-  text-justify: auto;
-  font-size: 0.85rem;
+  text-align: center;
 }
 
 .active {
@@ -77,10 +77,17 @@
   background: $primary-3;
   color: $primary-2;
   max-width: 16ch;
-  padding: 0.6rem 0.6rem;
   margin-top: 7px;
+  padding: 0.6rem 0.6rem;
 }
 
+.active:nth-of-type(5) .cardText p{
+  margin-bottom: 0;
+}
+
+.active:nth-of-type(6) .cardText {
+  margin-top: 30px;
+}
 
 
 

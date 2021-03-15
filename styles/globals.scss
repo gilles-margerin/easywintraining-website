@@ -40,43 +40,6 @@ ul {
   min-height: calc(100vh - 120px);
 }
 
-.main {
-  @include flex-center;
-  background: rgba(182, 153, 107, 0.6);
-  grid-column: 1/2;
-}
-
-.grid {
-  @include flex-center;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
-  max-width: 1120px;
-}
-
-.grid h2 {
-  color: $primary-3;
-  font-size: 1.9rem;
-  position: relative;
-  text-decoration: underline;
-  text-decoration-color: $primary-3;
-  text-shadow: 0px 1px 2px $primary-1;
-  text-underline-offset: 7px;
-  width: 100%;
-}
-
-#__animation p,
-#__ambiant p {
-  font-size: 0.77rem;
-}
-
-#__rpg p {
-  font-size: 0.8rem;
-}
-
-#__strategy p {
-  font-size: 0.82rem;
-}
-
 @media (max-width: 1070px) {
   .container {
     @include flex-center;

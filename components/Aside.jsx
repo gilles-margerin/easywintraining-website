@@ -33,6 +33,10 @@ const Aside = ({ apiKey }) => {
           <span>Samedi 20h00-01h00 (sur réservation)</span >
           <span>Dimanche 14h00-19h00 (tous les 15 jours)</span>
         </time>
+
+        <p>
+          Adhésion annuelle 20€ seulement, à régler sur place. Café/thé offert lors de votre première visite!
+        </p>
         
       </div>
       <GoogleMap apiKey={apiKey} />

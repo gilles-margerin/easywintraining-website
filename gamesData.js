@@ -13,22 +13,22 @@ const gamesData = [
     key: "__event"
   },
   {
-    title: "Jeux d'enquête",
-    text: "Si vous aimez tester vos connaissances et approfondir votre art de la réflexion, vous trouverez aussi à l’Association des jeux d’Enquêtes et de mystères, des Escape Games, des Quizz, qui mettront au défi votre imagination et votre intelligence. Des heures de jeux entre ami(e)s et des sourires en perspective.",
-    src:"/pictures/board-3.jpg",
-    key: "__quizz"
+    title: "Jeux d'ambiance",
+    text: "Si vous aimez tester vos connaissances et approfondir votre art de la réflexion, vous trouverez aussi à l’Association des jeux d’Enquêtes et de mystères, des Escape Games, des Quizz, qui mettront au défi votre imagination et votre intelligence. Des heures de jeux entre ami(e)s et des sourires en perspective",
+    src:"/pictures/ambiant.png",
+    key: "__ambiant"
   },
   {
     title: "Jeux de plateaux et de stratégie",
     text:
-      "Vous trouverez dans nos locaux plus d’une centaine de jeux de plateaux multigénérationnels, aux multiples univers. Des heures de jeux et de convivialité. Vous profiterez d’un espace de jeu agréable. Accessible à toutes et à tous.",
+      "Vous trouverez dans nos locaux plus d’une centaine de jeux de plateaux, de figurines et d'aventures multigénérationnels, aux multiples univers. Des heures de jeux et de convivialité. Vous profiterez d’un espace de jeu agréable. Accessible à toutes et à tous.",
     src: "/pictures/board-2.jpg",
     key: "__strategy",
   },
   {
     title: "Jeux de rôles",
     text:
-      "Vous aimeriez interpréter et faire évoluer un(e) personnage de film(s) ou de conte(s), un héros, en solo ou avec des ami(e)s ? Relevez les défis de nos Maîtres de Jeu ! Entrez dans des aventures palpitantes, héroïques. Enquêtez sur des mystères, à travers des scénarios originaux et ludiques.",
+      "Vous aimeriez interpréter et faire évoluer un(e) personnage de film(s) ou de conte(s), créer votre propre héros ou héroïne, en solo ou avec des ami(e)s ? Relevez les défis de nos Maîtres de Jeu ! Entrez dans des aventures palpitantes, héroïques. Enquêtez sur des mystères, à travers des scénarios originaux et ludiques.",
     src: "/pictures/rpg-2.jpg",
     key: "__rpg",
   },

@@ -24,6 +24,10 @@
   }
 }
 
+.card header  {
+  height: 247px;
+}
+
 .card div {
   @include flex-center;
   flex-direction: column;
@@ -40,7 +44,8 @@
   text-align: center;
   margin: 0;
   max-width: 14ch;
-  min-height: 45px;
+  min-height: 55px;
+  font-size: 1.2rem;
 }
 
 .cardText p {

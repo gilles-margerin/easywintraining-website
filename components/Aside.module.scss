@@ -11,6 +11,7 @@
   align-items: center;
   justify-content: space-evenly;
   grid-column: 2/3;
+  margin-top: 70px;
   text-align: center;
   padding: 1rem 2.8rem;
 }
@@ -50,6 +51,7 @@
     flex-direction: row;
     padding: 1.2rem;
     width: 100%;
+    margin-top: 0;
 
     & div {
       display: flex;

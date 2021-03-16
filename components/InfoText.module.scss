@@ -27,6 +27,10 @@
   }
 }
 
+.container section {
+  position: relative;
+}
+
 .show {
   opacity: 1;
 }
@@ -51,4 +55,16 @@
 .container p {
   padding-bottom: 25px;
   margin-top: 10px;
+}
+
+.imgWrapperLeft {
+ position: absolute;
+ top: 25%;
+ left: -25%;
+}
+
+.imgWrapperRight {
+  position: absolute;
+  top: 25%;
+  right: -25%; 
 }

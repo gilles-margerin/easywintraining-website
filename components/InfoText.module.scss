@@ -8,20 +8,33 @@
   max-width: 80vw;
   margin: 1rem auto;
   line-height: 23px;
+  opacity: 0;
+  position: relative;
+  transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
 
   & > * {
     max-width: 65ch;
+    transform: translateX(-60px);
   }
+
+  & > *:nth-child(2n) {
+    transform: translateX(60px);
+    text-align: right;
+  }
+
+  & > header {
+    transform: unset;
+  }
+}
+
+.show {
+  opacity: 1;
 }
 
 .container h2 {
   text-decoration: underline;
   text-decoration-color: $primary-1;
-  text-underline-offset: 7px;
   text-decoration-thickness: 2px;
-}
-
-.container h2 {
   font-size: 2.4rem;
   text-underline-offset: 12px;
   margin-bottom: 75px;

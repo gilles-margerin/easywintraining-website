@@ -1,8 +1,36 @@
+import { useEffect, useState } from 'react'
 import styles from './InfoText.module.scss'
+import Image from 'next/image'
 
 const InfoText = () => {
+  const [display, setDisplay] = useState(false)
+
+  const displayArticle = () => {
+    const article = document.querySelector('article')
+    const triggerPoint = window.innerHeight / 3 * 2
+    const articleTop = article.getBoundingClientRect().top
+    
+    if (articleTop < triggerPoint) {
+      article.classList.add('show')
+      setDisplay(true)
+    } else {
+      article.classList.remove('show')
+      setDisplay(false)
+    }
+  }
+
+  useEffect(() => {
+    function checkScroll() {
+      window.addEventListener('scroll', displayArticle)
+    }
+    checkScroll()
+  })
+
   return (
-    <article className={styles.container}>
+    <article className={
+      display ? `${styles.container} ${styles.show}`
+      : styles.container
+    }>
       <header>
         <h2>
           Nos engagements

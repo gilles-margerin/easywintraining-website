@@ -24,8 +24,14 @@
   margin: 0.2rem auto 0.9rem;
 }
 
+.aside address {
+  @include flex-center;
+  flex-direction: column;
+}
+
 .aside p:last-of-type {
   font-size: 0.9rem;
+  max-width: 26ch;
 }
 
 .aside time {

@@ -70,7 +70,7 @@
 }
 
 .active .cardText {
-  transform: translateY(-85%);
+  transform: translateY(-14rem);
 }
 
 .active .cardText h3 {
@@ -81,20 +81,28 @@
   padding: 0.6rem 0.6rem 0;
 }
 
-.active:nth-of-type(2) .cardText p {
-  margin-bottom: 23px;
+.active:nth-of-type(1) .cardText {
+  margin-top: 0.2rem;
 }
 
-.active:nth-of-type(3) .cardText p {
-  margin-bottom: 5px;
+.active:nth-of-type(2) .cardText  {
+  margin-top: 0.6rem;
 }
 
-.active:nth-of-type(4) .cardText p {
-  margin-bottom: 12px;
+.active:nth-of-type(3) .cardText h3 {
+  margin-top: 0;
 }
 
-.active:nth-of-type(5) .cardText p {
-  margin-bottom: 5px;
+.active:nth-of-type(4) .cardText  {
+  margin-top: 0.5rem;
+}
+
+.active:nth-of-type(5) .cardText h3  {
+  margin-top: 0;
+}
+
+.active:nth-of-type(6) .cardText  {
+  margin-top: 2.8rem;
 }
 
 

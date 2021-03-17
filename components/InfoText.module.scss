@@ -68,3 +68,20 @@
   top: 25%;
   right: -25%; 
 }
+
+@media (max-width: 725px) {
+  .imgWrapperLeft,
+  .imgWrapperRight {
+    display: none;
+  }
+
+  .container > *,
+  .container > *:nth-child(2n) {
+    transform: translateX(0);
+    text-align: left;
+  }
+
+  .container h2 {
+    line-height: 45px;
+  }
+}

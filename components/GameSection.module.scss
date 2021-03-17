@@ -34,7 +34,6 @@
 }
 
 .cardText {
-  font-size: 0.9rem;
   display: flex;
 }
 
@@ -49,10 +48,11 @@
 }
 
 .cardText p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-top: 5px;
   min-height: 180px;
   line-height: 1.05;
+  margin: 0;
   padding: 0.4rem 1.6rem;
   white-space: pre-wrap;
   text-align: center;
@@ -78,16 +78,25 @@
   color: $primary-2;
   max-width: 16ch;
   margin-top: 7px;
-  padding: 0.6rem 0.6rem;
+  padding: 0.6rem 0.6rem 0;
 }
 
-.active:nth-of-type(5) .cardText p{
-  margin-bottom: 0;
+.active:nth-of-type(2) .cardText p {
+  margin-bottom: 23px;
 }
 
-.active:nth-of-type(6) .cardText {
-  margin-top: 30px;
+.active:nth-of-type(3) .cardText p {
+  margin-bottom: 5px;
 }
+
+.active:nth-of-type(4) .cardText p {
+  margin-bottom: 12px;
+}
+
+.active:nth-of-type(5) .cardText p {
+  margin-bottom: 5px;
+}
+
 
 
 

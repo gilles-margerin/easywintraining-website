@@ -36,7 +36,7 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <Link href="/timetable">
+          <Link href="/calendar">
             <a>
               <Image
                 src="/icons/calendar.svg"

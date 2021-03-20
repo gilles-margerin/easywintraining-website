@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Calendar() {
+export default function CalendarWrapper() {
   return (
     <>
     <Head>
@@ -11,9 +11,7 @@ export default function Calendar() {
           rel="stylesheet"
         /> 
       </Head>
-      <div className="container">
-
-      </div>
+      
     </>
   );
 }

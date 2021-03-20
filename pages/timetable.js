@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-export default function Contact() {
+export default function Calendar() {
   return (
-    <div className="container">
-      <Head>
+    <>
+    <Head>
         <title>Easywintraining games</title>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link 
@@ -11,7 +11,9 @@ export default function Contact() {
           rel="stylesheet"
         /> 
       </Head>
+      <div className="container">
 
-    </div>
+      </div>
+    </>
   );
 }

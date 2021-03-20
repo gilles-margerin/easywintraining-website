@@ -1,6 +1,11 @@
 import Head from "next/head";
+import { useState } from "react";
+import Calendar from "react-calendar";
+import styles from "../components/Calendar.module.scss";
 
 export default function CalendarWrapper() {
+  const [value, setValue] = useState(new Date());
+
   return (
     <>
     <Head>
@@ -12,6 +17,22 @@ export default function CalendarWrapper() {
         /> 
       </Head>
       
+      <div className={styles.calendarWrapper}>
+        <Calendar
+          onClickDay={setValue}
+          value={value}
+          locale='fr-FR'
+        />
+        
+        <p>
+          {value.toLocaleDateString('fr', {
+            month: 'long',
+            year: 'numeric',
+            weekday: 'long',
+            day: 'numeric'
+          })}
+        </p>
+      </div>
     </>
   );
 }

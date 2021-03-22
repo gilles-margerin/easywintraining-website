@@ -8,7 +8,7 @@ const InfoText = () => {
 
   const displayArticle = () => {
     const article = document.querySelector('article')
-    const triggerPoint = window.innerHeight / 3 * 2
+    const triggerPoint = window.innerHeight / 3 * 2.7
     const articleTop = article.getBoundingClientRect().top
     
     if (articleTop < triggerPoint) {

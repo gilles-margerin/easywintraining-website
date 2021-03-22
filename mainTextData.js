@@ -8,7 +8,7 @@ const mainTextData = [
     alt: "people enjoying a board game"
   },
   { title: "Créer du lien social :",
-    content: "Le jeu est créateur de lien social, de lien familial, de lien amical. Il est un média intéressant pour discuter avec l’autre. C’est un vecteur d’intégration qui permet aussi à une personne en situation de handicap, ou d’exclusion, de se retrouver en situation d’égalité avec l’autre. Il permet de créer des rapports intergénérationnels et de réunir autour d’une partie de cartes, d'un jeu de plateau, de stratégie, d’une planche de palets des personnes d’âges différents.",
+    content: "Le jeu est créateur de lien social, de lien familial, de lien amical. Il est un média intéressant pour se faire des ami(e)s ou de nouvelles connaissances. C’est un vecteur d’intégration qui permet aussi à une personne en situation de handicap, ou d’exclusion, de se retrouver en situation d’égalité avec l’autre. Il permet de créer des rapports intergénérationnels et de réunir autour d’une partie de cartes, d'un jeu de plateau, de stratégie, d’une planche de palets des personnes d’âges différents.",
     width: 702,
     height: 239,
     objectFit: "cover",

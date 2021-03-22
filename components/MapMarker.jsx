@@ -1,4 +1,4 @@
-import styles from './MapMarker.module.scss'
+import styles from './modules/MapMarker.module.scss'
 import Image from 'next/image'
 
 const MapMarker = () => {

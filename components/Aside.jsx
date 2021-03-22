@@ -1,4 +1,4 @@
-import styles from './Aside.module.scss'
+import styles from './modules/Aside.module.scss'
 import GoogleMap from './GoogleMap'
 
 const Aside = ({ apiKey }) => {

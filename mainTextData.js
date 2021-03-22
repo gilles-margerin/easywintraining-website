@@ -1,8 +1,8 @@
 const mainTextData = [
-  { title: "Faire que nos adhérents et nos publics      s’amusent :",
+  { title: "Faire que nos adhérents et nos publics s’amusent :",
     content: "Le jeu, c’est d’abord fait pour se détendre, passer un moment convivial. Un moment où les seules choses que nous recherchons sont le bien-être, la détente, les sourires. Alors évidemment, nous n’irons pas tous vers les mêmes jeux, car nous sommes tous différents. Certain(e)s se tourneront vers des jeux de réflexion, d’autres d’imagination, d’adresse pour avant tout, faire une pause ludique.",
     width: 702,
-    height: 216,
+    height: 239,
     objectFit: "cover",
     src: "/pictures/people-fun.jpg",
     alt: "people enjoying a board game"

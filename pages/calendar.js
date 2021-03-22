@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Calendar from "react-calendar";
-import styles from "../components/Calendar.module.scss";
+import styles from "../components/modules/Calendar.module.scss";
 import 'react-calendar/dist/Calendar.css';
 
 export default function CalendarWrapper() {

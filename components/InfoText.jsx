@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styles from './InfoText.module.scss'
+import styles from './modules/InfoText.module.scss'
 import Image from 'next/image'
 import mainTextData from '../mainTextData'
 
@@ -54,6 +54,7 @@ const InfoText = () => {
           <p>
             {item.content}
           </p>
+          {i === 0 ? <br/> : null}
           <div className={i & 1 ? styles.imgWrapperLeft: styles.imgWrapperRight}>
             <Image
               width={item.width / 2}

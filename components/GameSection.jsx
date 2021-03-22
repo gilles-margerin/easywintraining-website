@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./GameSection.module.scss";
+import styles from "./modules/GameSection.module.scss";
 
 const GameSection = ({ id, src, title, text, active, toggleActive }) => {
 

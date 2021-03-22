@@ -3,13 +3,13 @@ const gamesData = [
     title: "Animations ludiques",
     text:
       "L’Association propose des découvertes de jeux en magasin, anime des espaces de jeux de société lors d’évènements publics, anime des jeux ou aventures pendant vos anniversaires. N’hésitez pas à nous contacter. Nous adaptons nos animations et nos tarifs en fonction de vos projets",
-    src: "/pictures/people-1.jpg",
+    src: "/pictures/anim-asso.jpg",
     key: "__animation",
   },
   {
     title: "Evènements",
     text: "Tout au long de l’année, nous organisons des soirées jeux à thèmes, des tournois ludiques conviviaux, des playtests de nouveaux jeux de société. Nos animateurs bénévoles proposent régulièrement des nouveautés pour un plaisir ludique toujours renouvelé",
-    src:"/pictures/event-1.png",
+    src:"/pictures/assa.jpg",
     key: "__event"
   },
   {

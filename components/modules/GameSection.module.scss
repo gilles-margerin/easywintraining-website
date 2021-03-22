@@ -105,6 +105,11 @@
   margin-top: 2.8rem;
 }
 
+@media (max-width: 563px) {
+  .active {
+    margin: 15px 0;
+  }
+}
 
 
 

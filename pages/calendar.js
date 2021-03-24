@@ -1,63 +1,14 @@
 import Head from "next/head";
+import dbConnect from "../utils/dbConnect"
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
+import EventDate from "../models/EventDate";
 
-export default function CalendarWrapper() {
+function CalendarWrapper(props) {
   const [value, setValue] = useState(new Date());
-  const [events, setEvents] = useState([
-    {
-      date: "lundi 8 mars 2021",
-      eventList: [
-        {
-          name: "event red",
-          description: "blablalbalblbalblaba",
-          type: "rpg",
-          color: "red",
-        },
-        {
-          name: "event gray",
-          description: "blablalbalblbalblaba",
-          type: "rpg",
-          color: "gray",
-        },
-      ],
-    },
-    {
-      date: "mercredi 10 mars 2021",
-      eventList: [
-        {
-          name: "event blue",
-          description: "blablalbalblbalblaba",
-          type: "rpg",
-          color: "blue",
-        },
-      ],
-    },
-    {
-      date: "jeudi 11 mars 2021",
-      eventList: [
-        {
-          name: "event green",
-          description: "blablalbalblbalblaba",
-          type: "rpg",
-          color: "green",
-        },
-      ],
-    },
-    {
-      date: "samedi 13 mars 2021",
-      eventList: [
-        {
-          name: "event black",
-          description: "blablalbalblbalblaba",
-          type: "rpg",
-          color: "black",
-        },
-      ],
-    },
-  ]);
+  const dbEvents = JSON.parse(props.events)
 
   const dateConversion = (date) => {
     return date.toLocaleDateString("fr", {
@@ -69,7 +20,7 @@ export default function CalendarWrapper() {
   };
 
   function tileContent(props) {
-    return events.map((event) => {
+    return dbEvents.map((event) => {
       if (
         event.eventList.length > 0 &&
         event.date === dateConversion(props.date)
@@ -111,7 +62,7 @@ export default function CalendarWrapper() {
         />
 
         <p>{dateConversion(value)}</p>
-        {events.map((event) => {
+        {dbEvents.map((event) => {
           if (event.date === dateConversion(value)) {
             return (
               <ul>
@@ -129,3 +80,17 @@ export default function CalendarWrapper() {
     </>
   );
 }
+
+export async function getStaticProps() {
+  await dbConnect()
+
+  const events = await EventDate.find({})
+ 
+  return { 
+    props: {
+      events: JSON.stringify(events),
+    }
+  }
+}
+
+export default CalendarWrapper

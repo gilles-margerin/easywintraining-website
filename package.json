@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "google-map-react": "^2.1.9",
+    "mongodb": "^3.6.5",
+    "mongoose": "^5.12.2",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-calendar": "^3.3.1",

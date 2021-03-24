@@ -5,6 +5,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
 import EventDate from "../models/EventDate";
+import EventList from "../components/EventList";
 
 function CalendarWrapper(props) {
   const [value, setValue] = useState(new Date());
@@ -62,20 +63,12 @@ function CalendarWrapper(props) {
         />
 
         <p>{dateConversion(value)}</p>
-        {dbEvents.map((event) => {
-          if (event.date === dateConversion(value)) {
-            return (
-              <ul>
-                {event.eventList.map((item) => (
-                  <li key={item.name}>
-                    <p>{item.name}</p>
-                    <p>{item.description}</p>
-                  </li>
-                ))}
-              </ul>
-            );
-          }
-        })}
+        
+        <EventList 
+          dbEvents={dbEvents}
+          dateConversion={dateConversion}
+          value={value}
+        />
       </div>
     </>
   );

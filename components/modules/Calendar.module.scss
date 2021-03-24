@@ -7,3 +7,27 @@
   justify-content: center;
   margin: 0 auto;
 }
+
+.reactCalendar__main {
+  width: 350px;
+}
+
+.reactCalendar__tile {
+  position: relative;
+}
+
+.ulReset {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: flex;
+}
+
+.liItem {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 1px;
+}

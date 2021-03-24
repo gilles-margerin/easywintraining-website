@@ -1,5 +1,6 @@
 import Head from "next/head";
-import dbConnect from "../utils/dbConnect"
+import dbConnect from "../utils/dbConnect";
+import dateConversion from "../utils/dateConversion";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -10,15 +11,6 @@ import EventList from "../components/EventList";
 function CalendarWrapper(props) {
   const [value, setValue] = useState(new Date());
   const dbEvents = JSON.parse(props.events)
-
-  const dateConversion = (date) => {
-    return date.toLocaleDateString("fr", {
-      month: "long",
-      year: "numeric",
-      weekday: "long",
-      day: "numeric",
-    });
-  };
 
   function tileContent(props) {
     return dbEvents.map((event) => {
@@ -63,7 +55,7 @@ function CalendarWrapper(props) {
         />
 
         <p>{dateConversion(value)}</p>
-        
+
         <EventList 
           dbEvents={dbEvents}
           dateConversion={dateConversion}

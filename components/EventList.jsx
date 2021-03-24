@@ -4,7 +4,7 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
     {dbEvents.map((event) => {
       if (event.date === dateConversion(value)) {
         return (
-          <ul>
+          <ul key={event.date}>
             {event.eventList.map((item) => (
               <li key={item.name}>
                 <p>{item.name}</p>

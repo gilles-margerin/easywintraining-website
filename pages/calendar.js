@@ -5,7 +5,8 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
-import EventDate from "../models/EventDate";
+import eventDate from "../models/EventDate";
+import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
 
 function CalendarWrapper(props) {
@@ -56,6 +57,8 @@ function CalendarWrapper(props) {
 
         <p>{dateConversion(value)}</p>
 
+        <AddEvent/>
+
         <EventList 
           dbEvents={dbEvents}
           dateConversion={dateConversion}
@@ -69,7 +72,7 @@ function CalendarWrapper(props) {
 export async function getStaticProps() {
   await dbConnect()
 
-  const events = await EventDate.find({})
+  const events = await eventDate.find({})
  
   return { 
     props: {

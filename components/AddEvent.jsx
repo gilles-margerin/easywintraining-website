@@ -1,6 +1,8 @@
+import styles from "./modules/AddEvent.module.scss"
+
 const AddEvent = () => {
   return (
-    <form>
+    <form className={styles.form} action="/api/addevent" method="POST">
       <div>
         <label htmlFor="eventDate">Date</label>
         <input type="date" id="eventDate" name="eventDate"/>
@@ -11,22 +13,20 @@ const AddEvent = () => {
       </div>
       <div>
         <label htmlFor="eventDescription">Description</label>
-        <input type="text" id="eventDescription" name="eventDescription"/>
+        <textarea id="eventDescription" name="eventDescription"></textarea>
       </div>
       <div>
-        <label htmlFor="eventTypeAnimation">Animations ludiques</label>
-        <input type="radio" id="eventTypeAnimation" name="eventTypeAnimation" value="Animations ludiques" checked/>
-        <label htmlFor="eventTypeEvent">Evènements</label>
-        <input type="radio" id="eventTypeEvent" name="eventTypeEvent" value="Evènements"/>
-        <label htmlFor="eventTypeAmbiant">Jeux d'ambiance</label>
-        <input type="radio" id="eventTypeAmbiant" name="eventTypeAmbiant" value="Jeux d'ambiance"/>
-        <label htmlFor="eventTypeBoard">Jeux de plateau / stratégie</label>
-        <input type="radio" id="eventTypeBoard" name="eventTypeBoard" value="Jeux de plateau / stratégie"/>
-        <label htmlFor="eventTypeJdr">Jeu de rôles</label>
-        <input type="radio" id="eventTypeJdr" name="eventTypeJdr" value="Jeu de rôles"/>
-        <label htmlFor="eventTypeTradi">Jeux traditionnels</label>
-        <input type="radio" id="eventTypeTradi" name="eventTypeTradi" value="Jeux traditionnels"/>
+        <label htmlFor="eventType">Type d'évènement</label>
+        <select name="eventType" id="eventType">
+          <option>Animations ludiques</option>
+          <option>Evènements</option>
+          <option>Jeux d'ambiance</option>
+          <option>Jeux de plateau / stratégie</option>
+          <option>Jeux de rôles</option>
+          <option>Jeux traditionnels</option>
+        </select>
       </div>
+      <button id="formSubmit">Envoyer</button>
     </form>
   )
 }

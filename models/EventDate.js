@@ -5,7 +5,6 @@ const EventDateSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  eventList: Array
 })
 
 export default mongoose.models['event'] || mongoose.model('event', EventDateSchema)

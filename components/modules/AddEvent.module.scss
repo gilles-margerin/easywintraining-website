@@ -1,0 +1,20 @@
+.form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+
+  & div {
+    display: flex;
+    margin: 0.5rem 0;
+    flex-direction: column;
+    
+    & * {
+      width: 100%;
+    }
+  }
+}
+
+.form textarea {
+  height: 150px;
+}

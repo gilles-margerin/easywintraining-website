@@ -5,7 +5,7 @@ import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
-import eventDate from "../models/EventDate";
+import EventObject from "../models/EventObject";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
 
@@ -14,24 +14,24 @@ function CalendarWrapper(props) {
   const dbEvents = JSON.parse(props.events)
 
   function tileContent(props) {
-    return dbEvents.map((event) => {
-      if (
-        event.eventList.length > 0 &&
-        event.date === dateConversion(props.date)
-      ) {
-        return (
-          <ul key={event.date} className={styles.ulReset}>
-            {event.eventList.map((event) => (
-              <li
-                key={event.name}
-                style={{ background: event.color }}
-                className={styles.liItem}
-              ></li>
-            ))}
-          </ul>
-        );
-      }
-    });
+    const dayEvents = dbEvents.filter(event => event.date === dateConversion(props.date));
+    
+    if (dayEvents.length < 1) return
+
+    return (
+      <ul className={styles.ulReset}>
+        {dayEvents.map(event => {
+          return (
+            <li
+              key={event.name}
+              style={{background: event.color}}
+              className={styles.liItem}
+            >
+            </li>
+          )
+        })}
+      </ul>
+    )
   }
 
   return (
@@ -54,11 +54,11 @@ function CalendarWrapper(props) {
           tileContent={tileContent}
           tileClassName={styles.reactCalendar__tile}
         />
-
-        <p>{dateConversion(value)}</p>
-
         <AddEvent/>
+      </div>
 
+      <div className={styles.eventInfoWrapper}>
+        <p>{dateConversion(value)}</p>
         <EventList 
           dbEvents={dbEvents}
           dateConversion={dateConversion}
@@ -72,7 +72,7 @@ function CalendarWrapper(props) {
 export async function getStaticProps() {
   await dbConnect()
 
-  const events = await eventDate.find({})
+  const events = await EventObject.find({})
  
   return { 
     props: {

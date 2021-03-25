@@ -1,6 +1,6 @@
-import { model, Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
-const EventDateSchema = new Schema({
+const EventDateSchema = new mongoose.Schema({
   date: {
     type: String,
     required: true
@@ -8,6 +8,4 @@ const EventDateSchema = new Schema({
   eventList: Array
 })
 
-const EventDate = model('event', EventDateSchema)
-
-export default EventDate
+export default mongoose.models['event'] || mongoose.model('event', EventDateSchema)

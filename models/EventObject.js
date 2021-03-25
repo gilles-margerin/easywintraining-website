@@ -1,6 +1,6 @@
-import { model, Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
-const EventObjectSchema = new Schema({
+const EventObjectSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -13,6 +13,4 @@ const EventObjectSchema = new Schema({
   color: String
 })
 
-const EventObject = model('EventObject', EventObjectSchema)
-
-export default EventObject
+export default mongoose.models['EventObject'] || mongoose.model('EventObject', EventObjectSchema)

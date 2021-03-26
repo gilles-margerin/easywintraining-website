@@ -6,32 +6,46 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
 import Event from "../models/Event";
+import User from "../models/User";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
 
+import { signIn, signOut, useSession } from "next-auth/client";
+
 function CalendarWrapper(props) {
+  const [session, loading] = useSession();
   const [value, setValue] = useState(new Date());
-  const dbEvents = JSON.parse(props.events)
+  const dbEvents = JSON.parse(props.events);
+  const dbUsers = JSON.parse(props.users)
+  console.log(dbUsers)
+
+ const isAdmin = () => {
+   if (dbUsers.find( ({ email }) => email === session.user.email)) return true
+   if (!dbUsers.find( ({ email }) => email === session.user.email)) return false
+   /* return dbUsers.find( ({ email }) => email === session.user.email) ?
+   true : false */
+ }
 
   function tileContent(props) {
-    const dayEvents = dbEvents.filter(event => event.date === dateConversion(props.date));
-    
-    if (dayEvents.length < 1) return
+    const dayEvents = dbEvents.filter(
+      (event) => event.date === dateConversion(props.date)
+    );
+
+    if (dayEvents.length < 1) return;
 
     return (
       <ul className={styles.ulReset}>
-        {dayEvents.map(event => {
+        {dayEvents.map((event) => {
           return (
             <li
               key={event.name}
-              style={{background: event.color}}
+              style={{ background: event.color }}
               className={styles.liItem}
-            >
-            </li>
-          )
+            ></li>
+          );
         })}
       </ul>
-    )
+    );
   }
 
   return (
@@ -54,12 +68,31 @@ function CalendarWrapper(props) {
           tileContent={tileContent}
           tileClassName={styles.reactCalendar__tile}
         />
-        <AddEvent/>
+
+        {!session && (
+          <>
+            Se connecter (membres de l'équipe et animateurs)<br />
+            <button onClick={() => signIn()}>Connection</button>
+          </>
+        )}
+        {(session && dbUsers.find( ({ email }) => email === session.user.email)) && (
+          <>
+            {session.user.name}, vous êtes membre de l'équipe <br />
+            <button onClick={() => signOut()}>Déconnection</button>
+            <AddEvent />
+          </>
+        )}
+        {(session && !dbUsers.find( ({ email }) => email === session.user.email)) && (
+          <>
+            {session.user.name}, vous n'êtes pas membre de l'équipe <br />
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        )}
       </div>
 
       <div className={styles.eventInfoWrapper}>
         <p>{dateConversion(value)}</p>
-        <EventList 
+        <EventList
           dbEvents={dbEvents}
           dateConversion={dateConversion}
           value={value}
@@ -70,16 +103,17 @@ function CalendarWrapper(props) {
 }
 
 export async function getStaticProps() {
-  await dbConnect()
+  await dbConnect();
 
-  const events = await Event.find({})
-  console.log(events)
- 
-  return { 
+  const events = await Event.find({});
+  const users = await User.find({})
+
+  return {
     props: {
       events: JSON.stringify(events),
-    }
-  }
+      users: JSON.stringify(users)
+    },
+  };
 }
 
-export default CalendarWrapper
+export default CalendarWrapper;

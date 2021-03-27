@@ -17,14 +17,6 @@ function CalendarWrapper(props) {
   const [value, setValue] = useState(new Date());
   const dbEvents = JSON.parse(props.events);
   const dbUsers = JSON.parse(props.users)
-  console.log(dbUsers)
-
- const isAdmin = () => {
-   if (dbUsers.find( ({ email }) => email === session.user.email)) return true
-   if (!dbUsers.find( ({ email }) => email === session.user.email)) return false
-   /* return dbUsers.find( ({ email }) => email === session.user.email) ?
-   true : false */
- }
 
   function tileContent(props) {
     const dayEvents = dbEvents.filter(
@@ -59,45 +51,47 @@ function CalendarWrapper(props) {
         />
       </Head>
 
-      <div className={styles.calendarWrapper}>
-        <Calendar
-          className={styles.reactCalendar__main}
-          onClickDay={setValue}
-          value={value}
-          locale="fr-FR"
-          tileContent={tileContent}
-          tileClassName={styles.reactCalendar__tile}
-        />
-
-        {!session && (
-          <>
-            Se connecter (membres de l'équipe et animateurs)<br />
-            <button onClick={() => signIn()}>Connection</button>
-          </>
-        )}
-        {(session && dbUsers.find( ({ email }) => email === session.user.email)) && (
-          <>
-            {session.user.name}, vous êtes membre de l'équipe <br />
-            <button onClick={() => signOut()}>Déconnection</button>
-            <AddEvent />
-          </>
-        )}
-        {(session && !dbUsers.find( ({ email }) => email === session.user.email)) && (
-          <>
-            {session.user.name}, vous n'êtes pas membre de l'équipe <br />
-            <button onClick={() => signOut()}>Sign out</button>
-          </>
-        )}
-      </div>
-
-      <div className={styles.eventInfoWrapper}>
-        <p>{dateConversion(value)}</p>
-        <EventList
-          dbEvents={dbEvents}
-          dateConversion={dateConversion}
-          value={value}
-        />
-      </div>
+      <main className={styles.wrapper}>
+        <div className={styles.calendarWrapper}>
+          <Calendar
+            className={styles.reactCalendar__main}
+            onClickDay={setValue}
+            value={value}
+            locale="fr-FR"
+            tileContent={tileContent}
+            tileClassName={styles.reactCalendar__tile}
+          />
+        
+          {!session && (
+            <>
+              Se connecter (membres de l'équipe et animateurs)<br />
+              <button onClick={() => signIn()}>Connection</button>
+            </>
+          )}
+          {(session && dbUsers.find( ({ email }) => email === session.user.email)) && (
+            <>
+              {session.user.name}, vous êtes membre de l'équipe <br />
+              <button onClick={() => signOut()}>Déconnection</button>
+              <AddEvent />
+            </>
+          )}
+          {(session && !dbUsers.find( ({ email }) => email === session.user.email)) && (
+            <>
+              {session.user.name}, vous n'êtes pas membre de l'équipe <br />
+              <button onClick={() => signOut()}>Sign out</button>
+            </>
+          )}
+        </div>
+        
+        <div className={styles.eventInfoWrapper}>
+          <p>{dateConversion(value)}</p>
+          <EventList
+            dbEvents={dbEvents}
+            dateConversion={dateConversion}
+            value={value}
+          />
+        </div>
+      </main>
     </>
   );
 }

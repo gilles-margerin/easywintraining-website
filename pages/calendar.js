@@ -16,7 +16,7 @@ function CalendarWrapper(props) {
   const [session, loading] = useSession();
   const [value, setValue] = useState(new Date());
   const dbEvents = JSON.parse(props.events);
-  const dbUsers = JSON.parse(props.users)
+  const dbUsers = JSON.parse(props.users);
 
   function tileContent(props) {
     const dayEvents = dbEvents.filter(
@@ -61,28 +61,36 @@ function CalendarWrapper(props) {
             tileContent={tileContent}
             tileClassName={styles.reactCalendar__tile}
           />
-        
+
           {!session && (
-            <>
-              Se connecter (membres de l'équipe et animateurs)<br />
-              <button onClick={() => signIn()}>Connection</button>
-            </>
+            <div className={styles.sessionWrapper}>
+              <div className={styles.sessionInfo}>
+                <p>Se connecter (animateurs)</p>
+                <button onClick={() => signIn()}>Connection</button>
+              </div>
+            </div>
           )}
-          {(session && dbUsers.find( ({ email }) => email === session.user.email)) && (
-            <>
-              {session.user.name}, vous êtes membre de l'équipe <br />
-              <button onClick={() => signOut()}>Déconnection</button>
-              <AddEvent />
-            </>
-          )}
-          {(session && !dbUsers.find( ({ email }) => email === session.user.email)) && (
-            <>
-              {session.user.name}, vous n'êtes pas membre de l'équipe <br />
-              <button onClick={() => signOut()}>Sign out</button>
-            </>
-          )}
+          {session &&
+            dbUsers.find(({ email }) => email === session.user.email) && (
+              <div className={styles.sessionWrapper}>
+                <AddEvent />
+                <div className={styles.sessionInfo}>
+                  <p>{session.user.name}, vous êtes membre de l'équipe</p>
+                  <button onClick={() => signOut()}>Déconnection</button>
+                </div>
+              </div>
+            )}
+          {session &&
+            !dbUsers.find(({ email }) => email === session.user.email) && (
+              <div className={styles.sessionWrapper}>
+                <div className={styles.sessionInfo}>
+                  <p>{session.user.name}, vous n'êtes pas membre de l'équipe</p>
+                  <button onClick={() => signOut()}>Sign out</button>
+                </div>
+              </div>
+            )}
         </div>
-        
+
         <div className={styles.eventInfoWrapper}>
           <p>{dateConversion(value)}</p>
           <EventList
@@ -100,12 +108,12 @@ export async function getStaticProps() {
   await dbConnect();
 
   const events = await Event.find({});
-  const users = await User.find({})
+  const users = await User.find({});
 
   return {
     props: {
       events: JSON.stringify(events),
-      users: JSON.stringify(users)
+      users: JSON.stringify(users),
     },
   };
 }

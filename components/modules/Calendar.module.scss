@@ -1,29 +1,52 @@
 @import "../../styles/variables.scss";
 
 .calendarWrapper {
+  background: rgba(255,255,255, 0.2);
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  padding-top: 100px;
   overflow: visible;
   position: relative;
 }
 
 .reactCalendar__main {
-  flex-grow: 0.5;
-  height: 470px;
+  flex-grow: 0.3;
+  height: 490px;
   border: none;
-  box-shadow: 2px 2px 10px 1px $primary-1-light;
+  box-shadow: 2px 2px 5px 1px $primary-1;
+  border-radius: 8px;
+  padding: 0.7rem;
+  background: $primary-2-dark;
+  
+  & div:nth-child(1n):not(:first-child) {
+    outline: $primary-2-dark;
+    outline-width: 1px;
+    outline-style: solid;
+  }
 
   & div:first-of-type {
     height: 50px;
   }
 
+  & button,
+  & div {
+    background: #fff;
+  }
+
   & button {
     height: 70px;
+    outline: $primary-2-dark;
+    outline-width: 1px;
+    outline-style: solid;
+
+    &:enabled:focus {
+      background: red;
+    }
   }
+
 }
 
 .reactCalendar__tile {
@@ -47,6 +70,8 @@
 }
 
 .eventInfoWrapper {
+  background: rgba(255,255,255, 0.2);
+  flex-grow: 1;
   position: relative;
   width: 100%;
   display: flex;
@@ -56,19 +81,44 @@
 }
 
 .wrapper {
-  min-height: calc(100vh - 150px);
+  background: rgb(209, 214, 218);
+  background-image: url('https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
 }
 
 .sessionWrapper {
-  box-shadow: 2px 2px 10px 1px $primary-1-light;
+  background: #fff;
+  color: #000;
+  box-shadow: 2px 2px 5px 1px $primary-1;
   display: flex;
   position: absolute;
   right: 5vw;
-  top: -5px;
+  top: 100px;
   padding: 1rem;
+  border-radius: 8px;
 
   & div {
     width: 120px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    & p {
+      margin: 0 0 20px;
+    }
+
+    & button {
+      all: unset;
+      background:$primary-2-dark;
+      color: #fff;
+      height: 46px;
+      border-radius: 6px;
+    }
   }
 }

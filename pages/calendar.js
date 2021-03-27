@@ -65,7 +65,7 @@ function CalendarWrapper(props) {
           {!session && (
             <div className={styles.sessionWrapper}>
               <div className={styles.sessionInfo}>
-                <p>Se connecter (animateurs)</p>
+                <p>S'identifier (animateurs)</p>
                 <button onClick={() => signIn()}>Connection</button>
               </div>
             </div>

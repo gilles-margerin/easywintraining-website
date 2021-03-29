@@ -13,38 +13,19 @@
 }
 
 .reactCalendar__main {
-  flex-grow: 0.3;
-  height: 490px;
+  width: 520px;
+  height: 496px;
   border: none;
   box-shadow: 2px 2px 5px 1px $primary-1;
   border-radius: 8px;
   padding: 0.7rem;
-  background: $primary-2-dark;
-  
-  & div:nth-child(1n):not(:first-child) {
-    outline: $primary-2-dark;
-    outline-width: 1px;
-    outline-style: solid;
-  }
 
   & div:first-of-type {
     height: 50px;
   }
 
-  & button,
-  & div {
-    background: #fff;
-  }
-
   & button {
     height: 70px;
-    outline: $primary-2-dark;
-    outline-width: 1px;
-    outline-style: solid;
-
-    &:enabled:focus {
-      background: red;
-    }
   }
 
 }
@@ -96,19 +77,19 @@
   box-shadow: 2px 2px 5px 1px $primary-1;
   display: flex;
   position: absolute;
-  right: 5vw;
+  left: 50%;
   top: 100px;
   padding: 1rem;
   border-radius: 8px;
+  transform: translateX(290px);
 
   & div {
-    width: 120px;
+    width: 170px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-
     & p {
       margin: 0 0 20px;
     }

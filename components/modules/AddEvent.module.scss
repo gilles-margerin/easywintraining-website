@@ -2,16 +2,21 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 320px;
 
   & div {
     display: flex;
     margin: 0.5rem 0;
     flex-direction: column;
-    
-    & * {
-      width: 100%;
-    }
+    width: 290px; 
+  }
+
+  & input[type=date] {
+    text-align: center;
+  }
+
+  & button {
+    width: 290px;
   }
 }
 

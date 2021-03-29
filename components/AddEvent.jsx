@@ -5,19 +5,19 @@ const AddEvent = () => {
     <form className={styles.form} action="/api/addevent" method="POST">
       <div>
         <label htmlFor="eventDate">Date</label>
-        <input type="date" id="eventDate" name="eventDate"/>
+        <input type="date" id="eventDate" name="eventDate" required/>
       </div>
       <div>
         <label htmlFor="eventName">Nom de l'évènement</label>
-        <input type="text" id="eventName" name="eventName"/>
+        <input type="text" id="eventName" name="eventName" required/>
       </div>
       <div>
         <label htmlFor="eventDescription">Description</label>
-        <textarea id="eventDescription" name="eventDescription"></textarea>
+        <textarea id="eventDescription" name="eventDescription" required></textarea>
       </div>
       <div>
         <label htmlFor="eventType">Type d'évènement</label>
-        <select name="eventType" id="eventType">
+        <select name="eventType" id="eventType" required>
           <option>Animations ludiques</option>
           <option>Evènements</option>
           <option>Jeux d'ambiance</option>

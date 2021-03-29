@@ -2,22 +2,25 @@ export default function setColor(str) {
   let color = "";
   switch (str) {
     case "Animations ludiques": 
-      color = "red";
+      color = "#df151c";
       break;
     case "Evènements" :
-      color = "green";
+      color = "#68635c";
       break;
     case "Jeux d'ambiance":
-      color = "blue";
+      color = "#e2d304";
       break;
     case "Jeux de plateau / stratégie":
-      color = "yellow";
+      color = "#1db13d";
       break;
     case "Jeux de rôles":
-      color = "gray";
+      color = "#309DFF";
       break;
     case "Jeux traditionnels":
-      color = "black";
+      color = "#AC1EFF";
+      break;
+    default:
+      color = "#000";
       break;
   }
   return color;

@@ -2,12 +2,12 @@
 
 .calendarWrapper {
   background: rgba(255,255,255, 0.2);
+  flex-grow: 1;
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
   overflow: visible;
   position: relative;
 }
@@ -51,14 +51,16 @@
 }
 
 .eventInfoWrapper {
-  background: rgba(255,255,255, 0.2);
-  flex-grow: 1;
+  background: $primary-3;
   position: relative;
-  width: 100%;
   display: flex;
+  flex-grow: 0.7;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 496px;
+  margin: 0 1rem;
+  overflow-y: scroll;
 }
 
 .wrapper {
@@ -72,16 +74,14 @@
 }
 
 .sessionWrapper {
-  background: #fff;
+  background: $primary-3;
   color: #000;
   box-shadow: 2px 2px 5px 1px $primary-1;
   display: flex;
-  position: absolute;
-  left: 50%;
-  top: 100px;
   padding: 1rem;
   border-radius: 8px;
-  transform: translateX(290px);
+  align-items: center;
+  justify-content: center;
 
   & div {
     width: 170px;
@@ -97,9 +97,17 @@
     & button {
       all: unset;
       background:$primary-2-dark;
-      color: #fff;
+      color: $primary-3;
       height: 46px;
       border-radius: 6px;
     }
   }
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 496px;
 }

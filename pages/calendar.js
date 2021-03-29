@@ -2,6 +2,7 @@ import Head from "next/head";
 import dbConnect from "../utils/dbConnect";
 import dateConversion from "../utils/dateConversion";
 import { useState } from "react";
+import { signIn, signOut, useSession } from "next-auth/client";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
@@ -9,8 +10,7 @@ import Event from "../models/Event";
 import User from "../models/User";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
-
-import { signIn, signOut, useSession } from "next-auth/client";
+import CalendarSideInfo from "../components/CalendarSideInfo";
 
 function CalendarWrapper(props) {
   const [session, loading] = useSession();
@@ -62,42 +62,49 @@ function CalendarWrapper(props) {
             tileClassName={styles.reactCalendar__tile}
           />
 
-          {!session && (
-            <div className={styles.sessionWrapper}>
-              <div className={styles.sessionInfo}>
-                <p>S'identifier (animateurs)</p>
-                <button onClick={() => signIn()}>Connection</button>
-              </div>
-            </div>
-          )}
-          {session &&
-            dbUsers.find(({ email }) => email === session.user.email) && (
-              <div className={styles.sessionWrapper}>
-                <AddEvent />
-                <div className={styles.sessionInfo}>
-                  <p>{session.user.name}, vous êtes membre de l'équipe</p>
-                  <button onClick={() => signOut()}>Déconnection</button>
-                </div>
-              </div>
-            )}
-          {session &&
-            !dbUsers.find(({ email }) => email === session.user.email) && (
-              <div className={styles.sessionWrapper}>
-                <div className={styles.sessionInfo}>
-                  <p>{session.user.name}, vous n'êtes pas membre de l'équipe</p>
-                  <button onClick={() => signOut()}>Sign out</button>
-                </div>
-              </div>
-            )}
-        </div>
+          <div className={styles.eventInfoWrapper}>
+            <p>{dateConversion(value)}</p>
+            <EventList
+              dbEvents={dbEvents}
+              dateConversion={dateConversion}
+              value={value}
+            />
+          </div>
 
-        <div className={styles.eventInfoWrapper}>
-          <p>{dateConversion(value)}</p>
-          <EventList
-            dbEvents={dbEvents}
-            dateConversion={dateConversion}
-            value={value}
-          />
+          <aside className={styles.aside}>
+
+            {!session && (
+              <div className={styles.sessionWrapper}>
+                <div className={styles.sessionInfo}>
+                  <p>S'identifier (animateurs)</p>
+                  <button onClick={() => signIn()}>Connection</button>
+                </div>
+              </div>
+            )}
+            {session &&
+              dbUsers.find(({ email }) => email === session.user.email) && (
+                <div className={styles.sessionWrapper}>
+                  <AddEvent />
+                  <div className={styles.sessionInfo}>
+                    <p>{session.user.name}, vous êtes membre de l'équipe</p>
+                    <button onClick={() => signOut()}>Déconnection</button>
+                  </div>
+                </div>
+              )}
+            {session &&
+              !dbUsers.find(({ email }) => email === session.user.email) && (
+                <div className={styles.sessionWrapper}>
+                  <div className={styles.sessionInfo}>
+                    <p>
+                      {session.user.name}, vous n'êtes pas membre de l'équipe
+                    </p>
+                    <button onClick={() => signOut()}>Sign out</button>
+                  </div>
+                </div>
+              )}
+              
+            <CalendarSideInfo />
+          </aside>
         </div>
       </main>
     </>

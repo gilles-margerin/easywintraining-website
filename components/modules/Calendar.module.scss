@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .calendarWrapper {
-  background: rgba(255,255,255, 0.2);
+  background: rgba(255,255,255, 0.4);
   flex-grow: 1;
   width: 100vw;
   display: flex;
@@ -51,16 +51,57 @@
 }
 
 .eventInfoWrapper {
-  background: $primary-3;
+  background: rgba(255,255,255, 0);
   position: relative;
   display: flex;
   flex-grow: 0.7;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 496px;
+  height: 87vh;
   margin: 0 1rem;
-  overflow-y: scroll;
+  max-width: 70ch;
+  transform: translateY(35px);
+
+  & p:first-child {
+    font-family: "Philosopher", sans-serif;
+    font-size: 1.3rem;
+  }
+
+  & ul {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 0;
+    padding: 0.5rem 1.2rem;
+    margin: 0;
+    
+    & li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & header, div {
+      display: flex;
+      background: $primary-3;
+    }
+
+    & h4 {
+      margin: 0;
+      padding: 1.1rem 1.2rem;
+      min-width: 14ch;
+      text-align: center;
+      background: $primary-1;
+      color: $primary-3;
+    }
+
+    & p {
+      padding: 1.1rem 0.9rem;
+      margin: 0;
+      width: 100%;
+    }
+    
+  }
 }
 
 .wrapper {

@@ -53,6 +53,7 @@ function CalendarWrapper(props) {
 
       <main className={styles.wrapper}>
         <div className={styles.calendarWrapper}>
+
           <Calendar
             className={styles.reactCalendar__main}
             onClickDay={setValue}
@@ -61,7 +62,6 @@ function CalendarWrapper(props) {
             tileContent={tileContent}
             tileClassName={styles.reactCalendar__tile}
           />
-
           <div className={styles.eventInfoWrapper}>
             <p>{dateConversion(value)}</p>
             <EventList
@@ -102,7 +102,7 @@ function CalendarWrapper(props) {
                   </div>
                 </div>
               )}
-              
+
             <CalendarSideInfo />
           </aside>
         </div>

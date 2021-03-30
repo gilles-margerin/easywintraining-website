@@ -7,9 +7,9 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
             <li
               key={event.name}
               style={{
-                boxShadow: `2px 3px 2px 2px ${event.color}`,
+                boxShadow: `1px 1px 2px 2px ${event.color}`,
                 borderRadius: "6px",
-                marginBottom: "20px",
+                marginBottom: "10px",
                 display: "flex",
                 flexDirection: "column"
               }}
@@ -20,13 +20,17 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
               </header>
               <div
                 style={{
-                  borderTop: `1px solid ${event.color}`,
-                  borderBottom: `1px solid ${event.color}`
+                  borderTop: `2px solid ${event.color}`,
+                  borderBottom: `2px solid ${event.color}`
                 }}
               >
                 <h4>Lieu:</h4>
                 <p>{event.place}</p>
-                <h4>Horaires:</h4>
+              </div>
+              <div style={{
+                borderBottom: `2px solid ${event.color}`
+              }}>
+              <h4>Horaires:</h4>
                 <p>{event.time}</p>
               </div>
               <div>

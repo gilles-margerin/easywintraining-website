@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .calendarWrapper {
-  background: rgba(255,255,255, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   flex-grow: 1;
   width: 100vw;
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .reactCalendar__main {
-  width: 520px;
+  width: 360px;
   height: 496px;
   border: none;
   box-shadow: 2px 2px 5px 1px $primary-1;
@@ -27,7 +27,6 @@
   & button {
     height: 70px;
   }
-
 }
 
 .reactCalendar__tile {
@@ -51,7 +50,7 @@
 }
 
 .eventInfoWrapper {
-  background: rgba(255,255,255, 0);
+  background: rgba(255, 255, 255, 0);
   position: relative;
   display: flex;
   flex-grow: 0.7;
@@ -61,6 +60,20 @@
   margin: 0 1rem;
   max-width: 70ch;
   transform: translateY(35px);
+
+  & h2 {
+    box-shadow: 1px 1px 3px 1px $primary-1;
+    font-family: "Philosopher", sans-serif;
+    font-size: 1.6rem;
+    color: $primary-1;
+    padding: 1rem;
+    background: $primary-3;
+    text-decoration: underline;
+    text-decoration-color: $primary-1;
+    text-underline-offset: 7px;
+    border-radius: 2px;
+    margin: 25px 0;
+  }
 
   & p:first-child {
     font-family: "Philosopher", sans-serif;
@@ -73,40 +86,44 @@
     display: flex;
     flex-direction: column;
     padding-inline-start: 0;
-    padding: 0.5rem 1.2rem;
-    margin: 0;
-    
+    margin: 0 0 2rem;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 5px 1px $primary-1;
+    padding: 0.5rem;
+    border-radius: 4px;
+    min-height: 496px;
+
     & li {
       display: flex;
       flex-direction: column;
     }
 
-    & header, div {
+    & header,
+    div {
       display: flex;
       background: $primary-3;
     }
 
     & h4 {
       margin: 0;
-      padding: 1.1rem 1.2rem;
-      min-width: 14ch;
+      padding: 0.7rem 1.2rem;
+      min-width: 13ch;
       text-align: center;
       background: $primary-1;
       color: $primary-3;
     }
 
     & p {
-      padding: 1.1rem 0.9rem;
+      padding: 0.7rem 0.9rem;
       margin: 0;
       width: 100%;
     }
-    
   }
 }
 
 .wrapper {
   background: rgb(209, 214, 218);
-  background-image: url('https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url("https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 50px);
@@ -119,10 +136,12 @@
   color: #000;
   box-shadow: 2px 2px 5px 1px $primary-1;
   display: flex;
+  flex-direction: column;
   padding: 1rem;
   border-radius: 8px;
   align-items: center;
   justify-content: center;
+  flex-grow: 0.8;
 
   & div {
     width: 170px;
@@ -130,14 +149,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     & p {
       margin: 0 0 20px;
     }
 
     & button {
       all: unset;
-      background:$primary-2-dark;
+      background: $primary-2-dark;
       color: $primary-3;
       height: 46px;
       border-radius: 6px;
@@ -151,4 +170,14 @@
   justify-content: space-between;
   align-items: stretch;
   height: 496px;
+}
+
+.sessionLogWrapper {
+  position: absolute;
+  top: 100px;
+  right: 15px;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px 1px rgb(35,29,0);
 }

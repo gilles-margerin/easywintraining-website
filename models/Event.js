@@ -9,6 +9,14 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  place: {
+    type: String,
+    required: true
+  },
+  time: {
+    type: String, 
+    required: true
+  },
   description: {
     type: String,
     required: true

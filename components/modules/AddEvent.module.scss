@@ -1,8 +1,8 @@
 .form {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 300px;
+  align-items: center;
 
   & div {
     display: flex;

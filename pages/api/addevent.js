@@ -9,6 +9,8 @@ export default async function handleForm(req, res) {
     await new Event({
       name: req.body.eventName,
       date: reqDate,
+      time: req.body.eventTime,
+      place: req.body.eventPlace,
       description: req.body.eventDescription,
       type: req.body.eventType,
       color: setColor(req.body.eventType)

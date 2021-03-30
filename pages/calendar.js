@@ -63,7 +63,7 @@ function CalendarWrapper(props) {
             tileClassName={styles.reactCalendar__tile}
           />
           <div className={styles.eventInfoWrapper}>
-            <p>{dateConversion(value)}</p>
+            <h2>{dateConversion(value)}</h2>
             <EventList
               dbEvents={dbEvents}
               dateConversion={dateConversion}
@@ -74,36 +74,48 @@ function CalendarWrapper(props) {
           <aside className={styles.aside}>
 
             {!session && (
+              <>
               <div className={styles.sessionWrapper}>
-                <div className={styles.sessionInfo}>
+                <div >
                   <p>S'identifier (animateurs)</p>
                   <button onClick={() => signIn()}>Connection</button>
                 </div>
               </div>
+              <CalendarSideInfo/>
+              </>
             )}
             {session &&
               dbUsers.find(({ email }) => email === session.user.email) && (
                 <div className={styles.sessionWrapper}>
                   <AddEvent />
-                  <div className={styles.sessionInfo}>
-                    <p>{session.user.name}, vous êtes membre de l'équipe</p>
+                  <div style={{
+                    position: "absolute",
+                    top: "100px",
+                    right: "15px",
+                    background: "#fafafa",
+                    padding: "1rem",
+                    borderRadius: "6px",
+                    boxShadow: "2px 2px 5px 1px rgb(35,29,0)"
+                  }}>
+                    <p>Bienvenue {session.user.name}</p>
                     <button onClick={() => signOut()}>Déconnection</button>
                   </div>
                 </div>
               )}
             {session &&
               !dbUsers.find(({ email }) => email === session.user.email) && (
+                <>
                 <div className={styles.sessionWrapper}>
-                  <div className={styles.sessionInfo}>
+                  <div >
                     <p>
                       {session.user.name}, vous n'êtes pas membre de l'équipe
                     </p>
                     <button onClick={() => signOut()}>Sign out</button>
                   </div>
                 </div>
+                <CalendarSideInfo/>
+                </>
               )}
-
-            <CalendarSideInfo />
           </aside>
         </div>
       </main>

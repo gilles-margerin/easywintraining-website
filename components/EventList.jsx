@@ -23,6 +23,7 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
         if (event.date === dateConversion(value)) {
           return (
             <li
+              id={event._id}
               key={event.name}
               style={{
                 border: `2px solid ${event.color}`,

@@ -97,8 +97,8 @@ function CalendarWrapper(props) {
                   <AddEvent />
                   <div style={{
                     position: "absolute",
-                    top: "0px",
-                    right: "-185px",
+                    top: "-80px",
+                    right: "-155px",
                     background: "#fafafa",
                     padding: "1rem",
                     borderRadius: "2px",

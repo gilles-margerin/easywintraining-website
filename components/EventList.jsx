@@ -1,8 +1,13 @@
-const EventList = ({ dbEvents, dateConversion, value }) => {  
+import checkAdmin from "../utils/checkAdmin"
+
+const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {  
   const checkEmpty = data => {
     return data.find( ({date}) => date === dateConversion(value))
   }
-  console.log(checkEmpty(dbEvents) !== undefined)
+
+  //checkAdmin(dbUsers, session)
+  console.log(session)
+  console.log(dbUsers)
  
 
   return (
@@ -33,6 +38,7 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
                 flexDirection: "column"
               }}
             >
+              {checkAdmin(dbUsers, session) && <button><a href={`/api/events/${event._id}`}>Effacer</a></button>}
               <header>
                 <h4>Activité:</h4>
                 <p>{event.name}</p>

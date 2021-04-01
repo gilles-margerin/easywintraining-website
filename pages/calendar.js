@@ -11,6 +11,7 @@ import User from "../models/User";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
 import CalendarSideInfo from "../components/CalendarSideInfo";
+import checkAdmin from "../utils/checkAdmin";
 
 function CalendarWrapper(props) {
   const [session, loading] = useSession();
@@ -65,9 +66,11 @@ function CalendarWrapper(props) {
           <div className={styles.eventInfoWrapper}>
             <h2>{dateConversion(value)}</h2>
             <EventList
+              dbUsers={dbUsers}
               dbEvents={dbEvents}
               dateConversion={dateConversion}
               value={value}
+              session={session}
             />
           </div>
 
@@ -85,7 +88,7 @@ function CalendarWrapper(props) {
               </>
             )}
             {session &&
-              dbUsers.find(({ email }) => email === session.user.email) && (
+              checkAdmin(dbUsers, session) && (
                 <div 
                   className={styles.sessionWrapper}
                   style={{
@@ -110,7 +113,7 @@ function CalendarWrapper(props) {
                 </div>
               )}
             {session &&
-              !dbUsers.find(({ email }) => email === session.user.email) && (
+              !checkAdmin(dbUsers, session) && (
                 <>
                 <div className={styles.sessionWrapper}>
                   <div >

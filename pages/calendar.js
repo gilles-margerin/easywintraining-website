@@ -86,16 +86,23 @@ function CalendarWrapper(props) {
             )}
             {session &&
               dbUsers.find(({ email }) => email === session.user.email) && (
-                <div className={styles.sessionWrapper}>
+                <div 
+                  className={styles.sessionWrapper}
+                  style={{
+                    boxShadow: "none",
+                    border: "1px solid rgb(195, 189, 186)",
+                    transform: "translateY(-7vh)"
+                  }}  
+                >
                   <AddEvent />
                   <div style={{
                     position: "absolute",
-                    top: "100px",
-                    right: "15px",
+                    top: "0px",
+                    right: "-185px",
                     background: "#fafafa",
                     padding: "1rem",
-                    borderRadius: "6px",
-                    boxShadow: "2px 2px 5px 1px rgb(35,29,0)"
+                    borderRadius: "2px",
+                    boxShadow: "0px 0px 2px 1px rgb(35,29,0)"
                   }}>
                     <p>Bienvenue {session.user.name}</p>
                     <button onClick={() => signOut()}>Déconnection</button>

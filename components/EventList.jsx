@@ -1,4 +1,12 @@
-const EventList = ({ dbEvents, dateConversion, value }) => {
+import { useState } from 'react'
+
+const EventList = ({ dbEvents, dateConversion, value }) => {  
+  const checkEmpty = data => {
+    console.log(data.find( ({date}) => date === value))
+  }
+  checkEmpty(dbEvents)
+ 
+
   return (
     <ul>
       {dbEvents.map((event) => {
@@ -7,8 +15,9 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
             <li
               key={event.name}
               style={{
-                boxShadow: `1px 1px 2px 2px ${event.color}`,
-                borderRadius: "6px",
+                border: `2px solid ${event.color}`,
+                //boxShadow: `0px 0px 2px 2px ${event.color}`,
+                borderRadius: "2px",
                 marginBottom: "10px",
                 display: "flex",
                 flexDirection: "column"
@@ -20,15 +29,15 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
               </header>
               <div
                 style={{
-                  borderTop: `2px solid ${event.color}`,
-                  borderBottom: `2px solid ${event.color}`
+                  borderTop: `1px solid ${event.color}`,
+                  borderBottom: `1px solid ${event.color}`
                 }}
               >
                 <h4>Lieu:</h4>
                 <p>{event.place}</p>
               </div>
               <div style={{
-                borderBottom: `2px solid ${event.color}`
+                borderBottom: `1px solid ${event.color}`
               }}>
               <h4>Horaires:</h4>
                 <p>{event.time}</p>

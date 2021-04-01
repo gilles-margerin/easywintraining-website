@@ -1,14 +1,24 @@
-import { useState } from 'react'
-
 const EventList = ({ dbEvents, dateConversion, value }) => {  
   const checkEmpty = data => {
-    console.log(data.find( ({date}) => date === value))
+    return data.find( ({date}) => date === dateConversion(value))
   }
-  checkEmpty(dbEvents)
+  console.log(checkEmpty(dbEvents) !== undefined)
  
 
   return (
     <ul>
+      {!checkEmpty(dbEvents) && 
+        <p
+          style={{
+            textAlign: "center",
+            fontFamily: "inherit",
+            margin: "30% auto",
+            fontSize: "1.6rem"
+          }}
+        >
+          Pas d'activités aujourd'hui
+        </p>
+      }
       {dbEvents.map((event) => {
         if (event.date === dateConversion(value)) {
           return (
@@ -16,7 +26,6 @@ const EventList = ({ dbEvents, dateConversion, value }) => {
               key={event.name}
               style={{
                 border: `2px solid ${event.color}`,
-                //boxShadow: `0px 0px 2px 2px ${event.color}`,
                 borderRadius: "2px",
                 marginBottom: "10px",
                 display: "flex",

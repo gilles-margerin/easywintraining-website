@@ -5,11 +5,6 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     return data.find( ({date}) => date === dateConversion(value))
   }
 
-  //checkAdmin(dbUsers, session)
-  console.log(session)
-  console.log(dbUsers)
- 
-
   return (
     <ul>
       {!checkEmpty(dbEvents) && 
@@ -35,10 +30,31 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                 borderRadius: "2px",
                 marginBottom: "10px",
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                position: "relative"
               }}
             >
-              {checkAdmin(dbUsers, session) && <button><a href={`/api/events/${event._id}`}>Effacer</a></button>}
+              {(session && checkAdmin(dbUsers, session)) && 
+                <button
+                  style={{
+                    all: "unset",
+                    textAlign: "center",
+                    fontSize: "1.5rem",
+                    position: "absolute",
+                    top: "0",
+                    right: "0"
+                  }}
+                ><a 
+                  href={`/api/events/${event._id}`}
+                  style={{
+                    background: "red",
+                    color: "#fff",
+                    width: "100%",
+                    display: "inline-block",
+                    padding: "0.5rem"
+                  }}
+                >X</a></button>
+              }
               <header>
                 <h4>Activité:</h4>
                 <p>{event.name}</p>

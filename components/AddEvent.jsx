@@ -34,7 +34,7 @@ const AddEvent = () => {
           <option>Jeux traditionnels</option>
         </select>
       </div>
-      <button id="formSubmit">Envoyer</button>
+      <button id="formSubmit">Ajouter</button>
     </form>
   )
 }

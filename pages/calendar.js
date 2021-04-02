@@ -32,7 +32,7 @@ function CalendarWrapper(props) {
           return (
             <li
               key={event.name}
-              style={{ background: event.color }}
+              style={{ background: event.color, boxShadow: `0 0 1px 1px black` }}
               className={styles.liItem}
             ></li>
           );
@@ -105,7 +105,7 @@ function CalendarWrapper(props) {
                     background: "#fafafa",
                     padding: "1rem",
                     borderRadius: "2px",
-                    boxShadow: "0px 0px 2px 1px rgb(35,29,0)"
+                    boxShadow: "0px 0px 1px 1px rgb(35,29,0)"
                   }}>
                     <p>Bienvenue {session.user.name}</p>
                     <button onClick={() => signOut()}>Déconnection</button>

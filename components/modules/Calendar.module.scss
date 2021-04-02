@@ -15,24 +15,25 @@
 
 .reactCalendar__main {
   width: 400px;
-  height: 500px;
+  height: 487px;
   border: none;
   border-radius: 2px;
   padding: 0 0.7rem;
-  border: 1px solid $primary-1-light;
   align-self: center;
+  box-shadow: 0 0 1px 1px $primary-2-dark;
   
   & div:first-of-type {
     height: 50px;
   }
 
   & button {
-    height: 70px;
+    height: 60px;
   }
 }
 
 .reactCalendar__tile {
   position: relative;
+  padding: 0;
 }
 
 .ulReset {
@@ -45,8 +46,8 @@
 }
 
 .liItem {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   margin: 0 1px;
 }
@@ -138,7 +139,7 @@
 .sessionWrapper {
   background: $primary-3;
   color: #000;
-  box-shadow: 0 0 2px 1px $primary-1;
+  box-shadow: 0 0 1px 1px $primary-1;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -160,7 +161,7 @@
 
     & button {
       all: unset;
-      background: $primary-2-dark;
+      background: $primary-2;
       color: $primary-3;
       height: 46px;
       border-radius: 6px;

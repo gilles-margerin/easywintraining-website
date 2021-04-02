@@ -100,17 +100,28 @@
 
     & h4 {
       margin: 0;
-      padding: 0.7rem 1.2rem;
-      min-width: 13ch;
+      padding: 0.7rem;
+      min-width: 80px;
+      min-height: 70px;
       text-align: center;
       background: $primary-1;
       color: $primary-3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & * {
+        background: $primary-1;
+      }
     }
 
     & p {
       padding: 0.7rem 0.9rem;
       margin: 0;
       width: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 1.01rem;
     }
   }
 }

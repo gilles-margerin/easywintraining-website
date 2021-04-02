@@ -1,3 +1,4 @@
+import Image from "next/image"
 import checkAdmin from "../utils/checkAdmin"
 
 const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {  
@@ -13,7 +14,8 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
             textAlign: "center",
             fontFamily: "inherit",
             margin: "30% auto",
-            fontSize: "1.6rem"
+            fontSize: "1.6rem",
+            display: "initial"
           }}
         >
           Pas d'activités aujourd'hui
@@ -56,7 +58,15 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                 >X</a></button>
               }
               <header>
-                <h4>Activité:</h4>
+                <h4>
+                  <Image
+                    src="/icons/header.svg"
+                    alt="header icon"
+                    width={32}
+                    height={32}
+                    layout="fixed"
+                  />
+                </h4>
                 <p>{event.name}</p>
               </header>
               <div
@@ -65,17 +75,41 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                   borderBottom: `1px solid ${event.color}`
                 }}
               >
-                <h4>Lieu:</h4>
+                <h4>
+                  <Image
+                    src="/icons/place-2.svg"
+                    alt="place icon"
+                    width={34}
+                    height={34}
+                    layout="fixed"
+                  />
+                </h4>
                 <p>{event.place}</p>
               </div>
               <div style={{
                 borderBottom: `1px solid ${event.color}`
               }}>
-              <h4>Horaires:</h4>
+              <h4>
+                <Image
+                  src="/icons/time-2.svg"
+                  alt="time icon"
+                  width={32}
+                  height={32}
+                  layout="fixed"
+                />
+              </h4>
                 <p>{event.time}</p>
               </div>
               <div>
-                <h4>Description:</h4>
+                <h4>
+                  <Image
+                    src="/icons/description-2.svg"
+                    alt="description icon"
+                    width={34}
+                    height={34}
+                    layout="fixed"
+                  />
+                </h4>
                 <p>{event.description}</p>
               </div>
             </li>

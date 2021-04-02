@@ -1,5 +1,6 @@
 import Image from "next/image"
 import checkAdmin from "../utils/checkAdmin"
+import styles from "./modules/EventList.module.scss"
 
 const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {  
   const checkEmpty = data => {
@@ -10,15 +11,16 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     <ul>
       {!checkEmpty(dbEvents) && 
         <p
+          className={styles.paragraph}
           style={{
             textAlign: "center",
             fontFamily: "inherit",
             margin: "30% auto",
             fontSize: "1.6rem",
-            display: "initial"
+            display: "initial",
           }}
         >
-          Pas d'activités aujourd'hui
+          Pas d'activités
         </p>
       }
       {dbEvents.map((event) => {
@@ -67,7 +69,9 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     layout="fixed"
                   />
                 </h4>
-                <p>{event.name}</p>
+                <p
+                  className={styles.eventParagraph}
+                >{event.name}</p>
               </header>
               <div
                 style={{
@@ -84,7 +88,9 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     layout="fixed"
                   />
                 </h4>
-                <p>{event.place}</p>
+                <p
+                  className={styles.eventParagraph}
+                >{event.place}</p>
               </div>
               <div style={{
                 borderBottom: `1px solid ${event.color}`
@@ -98,7 +104,9 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                   layout="fixed"
                 />
               </h4>
-                <p>{event.time}</p>
+                <p
+                  className={styles.eventParagraph}
+                >{event.time}</p>
               </div>
               <div>
                 <h4>
@@ -110,7 +118,9 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     layout="fixed"
                   />
                 </h4>
-                <p>{event.description}</p>
+                <p
+                  className={styles.eventParagraph}
+                >{event.description}</p>
               </div>
             </li>
           );

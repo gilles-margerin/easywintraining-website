@@ -10,6 +10,7 @@
   border-radius: 2px;
   color: #000;
   border: 1px solid $primary-1-light;
+  flex-grow: 0.45;
 
 
   & * {
@@ -44,5 +45,30 @@
 
   & p:nth-of-type(6) {
     color: $calendar-6;
+  }
+}
+
+@media (max-width: 1390px) {
+  .wrapper {
+
+    & * {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+
+    & p {
+      margin: 0.1rem 0;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .wrapper {
+    display: none;
   }
 }

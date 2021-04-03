@@ -2,7 +2,7 @@ import Event from "../../models/Event";
 import dateConversion from "../../utils/dateConversion";
 import setColor from "../../utils/setColor";
 
-export default async function handleForm(req, res) {
+module.exports = async (req, res) => {
   const reqDate = dateConversion(new Date(req.body.eventDate))
 
   try {

@@ -1,6 +1,6 @@
 import Event from "../../../models/Event"
 
-export default async function handleDelete(req, res) {
+module.exports = async (req, res) => {
   try {
     await Event.findOneAndDelete({_id: req.query.id})
     res.redirect('/calendar')

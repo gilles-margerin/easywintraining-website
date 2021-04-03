@@ -144,6 +144,7 @@ export async function getStaticProps() {
       events: JSON.stringify(events),
       users: JSON.stringify(users),
     },
+    revalidate: 1,
   };
 }
 

@@ -99,13 +99,15 @@ function CalendarWrapper(props) {
                 >
                   <AddEvent />
                   <div style={{
-                    position: "absolute",
-                    top: "-80px",
-                    right: "-155px",
+                    position: "fixed",
+                    top: "-12%",
+                    right: "17vw",
                     background: "#fafafa",
                     padding: "1rem",
                     borderRadius: "2px",
-                    boxShadow: "0px 0px 1px 1px rgb(35,29,0)"
+                    boxShadow: "0px 0px 1px 1px rgb(35,29,0)",
+                    width: "220px",
+                    height: "120px",
                   }}>
                     <p>Bienvenue {session.user.name}</p>
                     <button onClick={() => signOut()}>Déconnection</button>

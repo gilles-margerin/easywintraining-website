@@ -49,7 +49,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     right: "0"
                   }}
                 ><a 
-                  href={`/api/events/${event._id}`}
+                  href={`https://easywintraining-api.herokuapp.com/api/delevent/${event._id}`}
                   style={{
                     background: "red",
                     color: "#fff",

@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   border-radius: 2px;
   color: #000;
   border: 1px solid $primary-1-light;
@@ -24,10 +24,22 @@
   }
 
   & p:nth-of-type(1) {
-    width: 28ch;
+    width: 25ch;
     text-align: center;
     margin-bottom: 45px;
     font-weight: unset;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20ch;
+      height: 1px;
+      background: $primary-1-light;
+      bottom: -30px;
+      right: 27px;
+      
+    }
   }
 
   & p:nth-of-type(2) {

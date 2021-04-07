@@ -4,7 +4,7 @@ const CalendarSideInfo = () => {
   return (
 <div className={styles.wrapper}>
   <p>
-    Le calendrier est prévisionnel, n'hésitez pas à passer à l'association!
+    Le calendrier est prévisionnel. Des tablées de jeux se rajoutent toujours au fur et à mesure du mois et s'improvisent lors des différentes soirées.
   </p>
   <p>
     <span></span>Animations ludiques

@@ -4,7 +4,6 @@ import dateConversion from "../utils/dateConversion";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 import styles from "../components/modules/Calendar.module.scss";
 import Event from "../models/Event";
 import User from "../models/User";

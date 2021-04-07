@@ -4,6 +4,9 @@ const CalendarSideInfo = () => {
   return (
 <div className={styles.wrapper}>
   <p>
+    Le calendrier est prévisionnel, n'hésitez pas à passer à l'association!
+  </p>
+  <p>
     <span></span>Animations ludiques
   </p>
   <p>

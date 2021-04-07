@@ -60,10 +60,7 @@
 
 @media (max-width: 1200px) {
   .wrapper {
-
-    & p {
-      margin: 0.1rem 0;
-    }
+    flex-grow: 1;
   }
 }
 

@@ -3,6 +3,7 @@ import dbConnect from "../utils/dbConnect";
 import dateConversion from "../utils/dateConversion";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
+import Image from "next/image";
 import Calendar from "react-calendar";
 import styles from "../components/modules/Calendar.module.scss";
 import Event from "../models/Event";
@@ -31,7 +32,10 @@ function CalendarWrapper(props) {
           return (
             <li
               key={event.name}
-              style={{ background: event.color, boxShadow: `0 0 1px 1px black` }}
+              style={{
+                background: event.color,
+                boxShadow: `0 0 1px 1px black`,
+              }}
               className={styles.liItem}
             ></li>
           );
@@ -53,7 +57,6 @@ function CalendarWrapper(props) {
 
       <main className={styles.wrapper}>
         <div className={styles.calendarWrapper}>
-
           <Calendar
             className={styles.reactCalendar__main}
             onClickDay={setValue}
@@ -62,6 +65,7 @@ function CalendarWrapper(props) {
             tileContent={tileContent}
             tileClassName={styles.reactCalendar__tile}
           />
+
           <div className={styles.eventInfoWrapper}>
             <h2>{dateConversion(value)}</h2>
             <EventList
@@ -74,60 +78,59 @@ function CalendarWrapper(props) {
           </div>
 
           <aside className={styles.aside}>
-
-            {!session && (
-              <>
-              <div className={styles.sessionWrapper}>
-                <div >
-                  <p>S'identifier (animateurs)</p>
-                  <button onClick={() => signIn()}>Connection</button>
-                </div>
-              </div>
-              <CalendarSideInfo/>
-              </>
-            )}
-            {session &&
-              checkAdmin(dbUsers, session) && (
-                <div 
-                  className={styles.sessionWrapper}
-                  style={{
-                    boxShadow: "none",
-                    border: "1px solid rgb(195, 189, 186)",
-                    transform: "translateY(-7vh)"
-                  }}  
-                >
-                  <AddEvent />
-                  <div style={{
-                    position: "fixed",
-                    top: "-12%",
-                    right: "17vw",
-                    background: "#fafafa",
-                    padding: "1rem",
-                    borderRadius: "2px",
-                    boxShadow: "0px 0px 1px 1px rgb(35,29,0)",
-                    width: "220px",
-                    height: "120px",
-                  }}>
-                    <p>Bienvenue {session.user.name}</p>
-                    <button onClick={() => signOut()}>Déconnection</button>
-                  </div>
-                </div>
-              )}
-            {session &&
-              !checkAdmin(dbUsers, session) && (
-                <>
-                <div className={styles.sessionWrapper}>
-                  <div >
-                    <p>
-                      {session.user.name}, vous n'êtes pas membre de l'équipe
-                    </p>
-                    <button onClick={() => signOut()}>Sign out</button>
-                  </div>
-                </div>
-                <CalendarSideInfo/>
-                </>
-              )}
+            <CalendarSideInfo />
           </aside>
+
+          {!session && (
+            <button 
+              className={styles.btnLogin} 
+              onClick={() => signIn()}
+            >
+              <Image
+                src="/icons/login.svg"
+                alt="login icon"
+                width={40}
+                height={40}
+                layout="fixed"
+              />
+              Login
+            </button>
+          )}
+
+          {session && checkAdmin(dbUsers, session) && (
+            <>
+              <button 
+                className={styles.btnLogin} 
+                onClick={() => signOut()}
+              >
+                <Image
+                  src="/icons/login.svg"
+                  alt="login icon"
+                  width={40}
+                  height={40}
+                  layout="fixed"
+                />
+                Logout
+              </button>
+              <AddEvent />
+            </>
+          )}
+
+          {session && !checkAdmin(dbUsers, session) && (
+            <button 
+              className={styles.btnLogin} 
+              onClick={() => signOut()}
+            >
+              <Image
+                src="/icons/login.svg"
+                alt="login icon"
+                width={40}
+                height={40}
+                layout="fixed"
+              />
+              Logout
+            </button>
+          )}
         </div>
       </main>
     </>

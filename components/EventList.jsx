@@ -7,6 +7,20 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     return data.find( ({date}) => date === dateConversion(value))
   }
 
+  const handleDelete = async (e) => {
+    const target = e.target.closest('li').id
+    
+    const reqOptions = {
+      method: 'DELETE'
+    }
+
+    try {
+      await fetch(`https://easywintraining-api.herokuapp.com/api/delevent/${target}`, reqOptions)
+    } catch (err) {
+      console.log(err)
+    }
+  } 
+
   return (
     <ul>
       {!checkEmpty(dbEvents) && 
@@ -46,10 +60,11 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     fontSize: "1.5rem",
                     position: "absolute",
                     top: "0",
-                    right: "0"
+                    right: "0",
+                    cursor: "pointer"
                   }}
-                ><a 
-                  href={`https://easywintraining-api.herokuapp.com/api/delevent/${event._id}`}
+                  onClick={(e) => handleDelete(e)}
+                ><span
                   style={{
                     background: "red",
                     color: "#fff",
@@ -57,7 +72,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     display: "inline-block",
                     padding: "0.5rem"
                   }}
-                >X</a></button>
+                >X</span></button>
               }
               <header>
                 <h4>

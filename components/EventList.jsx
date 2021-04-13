@@ -13,7 +13,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     }
 
     try {
-      await fetch(`https://easywintraining-api.herokuapp.com/api/delevent/${target}`, reqOptions)
+      await fetch(`https://easywintraining-api.herokuapp.com/api/delevent/${eventId}`, reqOptions)
     } catch (err) {
       console.log(err)
     }

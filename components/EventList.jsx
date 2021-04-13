@@ -7,9 +7,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     return data.find( ({date}) => date === dateConversion(value))
   }
 
-  const handleDelete = async (e) => {
-    const target = e.target.closest('li').id
-    
+  const handleDelete = async (eventId) => {
     const reqOptions = {
       method: 'DELETE'
     }
@@ -63,7 +61,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
                     right: "0",
                     cursor: "pointer"
                   }}
-                  onClick={(e) => handleDelete(e)}
+                  onClick={() => handleDelete(event._id)}
                 ><span
                   style={{
                     background: "red",

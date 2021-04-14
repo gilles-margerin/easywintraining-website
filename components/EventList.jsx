@@ -1,8 +1,11 @@
+import React from 'react'
 import Image from "next/image"
 import checkAdmin from "../utils/checkAdmin"
 import styles from "./modules/EventList.module.scss"
 
-const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {  
+const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
+  const [events, setEvents] = React.useState(dbEvents);
+
   const checkEmpty = data => {
     return data.find( ({date}) => date === dateConversion(value))
   }
@@ -14,6 +17,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
 
     try {
       await fetch(`https://easywintraining-api.herokuapp.com/api/delevent/${eventId}`, reqOptions)
+      setEvents(events.filter(e => e._id !== eventId))
     } catch (err) {
       console.log(err)
     }
@@ -21,7 +25,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
 
   return (
     <ul>
-      {!checkEmpty(dbEvents) && 
+      {!checkEmpty(events) && 
         <p
           className={styles.paragraph}
           style={{
@@ -35,7 +39,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
           Pas d'activités
         </p>
       }
-      {dbEvents.map((event) => {
+      {events.map((event) => {
         if (event.date === dateConversion(value)) {
           return (
             <li

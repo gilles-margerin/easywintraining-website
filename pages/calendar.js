@@ -16,11 +16,11 @@ import checkAdmin from "../utils/checkAdmin";
 function CalendarWrapper(props) {
   const [session, loading] = useSession();
   const [value, setValue] = useState(new Date());
-  const dbEvents = JSON.parse(props.events);
   const dbUsers = JSON.parse(props.users);
+  const [events, setEvents] = useState(JSON.parse(props.events))
 
   function tileContent(props) {
-    const dayEvents = dbEvents.filter(
+    const dayEvents = events.filter(
       (event) => event.date === dateConversion(props.date)
     );
 
@@ -70,7 +70,8 @@ function CalendarWrapper(props) {
             <h2>{dateConversion(value)}</h2>
             <EventList
               dbUsers={dbUsers}
-              dbEvents={dbEvents}
+              events={events}
+              setEvents={setEvents}
               dateConversion={dateConversion}
               value={value}
               session={session}
@@ -112,7 +113,9 @@ function CalendarWrapper(props) {
                 />
                 Logout
               </button>
-              <AddEvent />
+              <AddEvent 
+                value={dateConversion(value)}
+              />
             </>
           )}
 

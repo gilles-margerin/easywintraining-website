@@ -2,7 +2,7 @@ import styles from "./modules/AddEvent.module.scss"
 
 const AddEvent = () => {
   return (
-    <form className={styles.form} action="https://easywintraining-api.herokuapp.com/api/addevent" method="POST">
+    <form className={styles.form} action="https://easywintraining-api.herokuapp.com/api/events" method="POST">
       <div className={styles.formDiv}>
         <label htmlFor="eventDate">Date</label>
         <input type="date" id="eventDate" name="eventDate" required/>

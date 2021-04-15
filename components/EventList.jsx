@@ -1,10 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
 import Image from "next/image"
 import checkAdmin from "../utils/checkAdmin"
 import styles from "./modules/EventList.module.scss"
 
 const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
-  const [events, setEvents] = React.useState(dbEvents);
+  const [events, setEvents] = useState(dbEvents);
 
   const checkEmpty = data => {
     return data.find( ({date}) => date === dateConversion(value))

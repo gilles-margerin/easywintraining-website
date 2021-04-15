@@ -137,7 +137,7 @@ function CalendarWrapper(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   await dbConnect();
 
   const events = await Event.find({});
@@ -148,7 +148,6 @@ export async function getStaticProps() {
       events: JSON.stringify(events),
       users: JSON.stringify(users),
     },
-    revalidate: 1,
   };
 }
 

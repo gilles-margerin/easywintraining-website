@@ -16,7 +16,7 @@ const EventList = ({ dbEvents, dbUsers, dateConversion, value, session }) => {
     }
 
     try {
-      await fetch(`https://easywintraining-api.herokuapp.com/api/delevent/${eventId}`, reqOptions)
+      await fetch(`https://easywintraining-api.herokuapp.com/api/events/${eventId}`, reqOptions)
       setEvents(events.filter(e => e._id !== eventId))
     } catch (err) {
       console.log(err)

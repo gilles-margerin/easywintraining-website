@@ -5,7 +5,7 @@ const AddEvent = ({ value }) => {
     <form className={styles.form} action="https://easywintraining-api.herokuapp.com/api/events" method="POST">
       <div className={styles.formDiv}>
         <label htmlFor="eventDate">Date</label>
-        <input type="text" id="eventDate" name="eventDate" value={value} required/>
+        <input type="text" id="eventDate" name="eventDate" value={value} readOnly required/>
       </div>
       <div className={styles.formDiv}>
         <label htmlFor="eventTime">Horaires</label>

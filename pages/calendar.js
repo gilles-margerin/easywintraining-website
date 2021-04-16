@@ -19,6 +19,8 @@ function CalendarWrapper(props) {
   const dbUsers = JSON.parse(props.users);
   const [events, setEvents] = useState(JSON.parse(props.events))
 
+  console.log(session)
+
   function tileContent(props) {
     const dayEvents = events.filter(
       (event) => event.date === dateConversion(props.date)

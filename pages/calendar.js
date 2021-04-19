@@ -3,7 +3,6 @@ import dbConnect from "../utils/dbConnect";
 import dateConversion from "../utils/dateConversion";
 import { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
-import Image from "next/image";
 import Calendar from "react-calendar";
 import styles from "../components/modules/Calendar.module.scss";
 import Event from "../models/Event";
@@ -11,7 +10,7 @@ import User from "../models/User";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
 import CalendarSideInfo from "../components/CalendarSideInfo";
-import checkAdmin from "../utils/checkAdmin";
+import LogButton from "../components/LogButton"
 
 function CalendarWrapper(props) {
   const [session, loading] = useSession();
@@ -85,56 +84,32 @@ function CalendarWrapper(props) {
           </aside>
 
           {!session && (
-            <button 
-              className={styles.btnLogin} 
-              onClick={() => signIn()}
-            >
-              <Image
-                src="/icons/login.svg"
-                alt="login icon"
-                width={40}
-                height={40}
-                layout="fixed"
-              />
-              Login
-            </button>
+            <LogButton
+              styles={styles}
+              signFunc={signIn}
+              text={'Login'}
+            />
           )}
 
-          {session && checkAdmin(dbUsers, session) && (
+          {session && session.user?.isAdmin === true && (
             <>
-              <button 
-                className={styles.btnLogin} 
-                onClick={() => signOut()}
-              >
-                <Image
-                  src="/icons/login.svg"
-                  alt="login icon"
-                  width={40}
-                  height={40}
-                  layout="fixed"
-                />
-                Logout
-              </button>
+              <LogButton
+                styles={styles}
+                signFunc={signOut}
+                text={'Logout'}
+              />
               <AddEvent 
                 value={dateConversion(value)}
               />
             </>
           )}
 
-          {session && !checkAdmin(dbUsers, session) && (
-            <button 
-              className={styles.btnLogin} 
-              onClick={() => signOut()}
-            >
-              <Image
-                src="/icons/login.svg"
-                alt="login icon"
-                width={40}
-                height={40}
-                layout="fixed"
-              />
-              Logout
-            </button>
+          {session && session.user?.isAdmin === false && (
+            <LogButton
+              styles={styles}
+              signFunc={signOut}
+              text={'Logout'}
+            />
           )}
         </div>
       </main>

@@ -1,16 +1,17 @@
-import NextAuth from 'next-auth';
-import Providers from 'next-auth/providers';
+import NextAuth from "next-auth";
+import Providers from "next-auth/providers";
+import User from "../../../models/User";
 
 export default NextAuth({
   providers: [
     Providers.Google({
       clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
     Providers.Facebook({
       clientId: process.env.FACEBOOK_ID,
-      clientSecret: process.env.FACEBOOK_SECRET
-    })
+      clientSecret: process.env.FACEBOOK_SECRET,
+    }),
   ],
 
   session: {
@@ -19,8 +20,39 @@ export default NextAuth({
 
   callbacks: {
     async session(session, token) {
-      session.user.id = token.sub
-      return session
-    }
-  }
-})
+      session.user.isAdmin = token.isAdmin;
+      session.user.id = token.sub;
+      console.log(token)
+      return session;
+    },
+    async jwt(token, user, account, profile, isNewUser) {
+      try {
+        const userCheck = await User.findOne({ email: profile.email });
+
+        if (!userCheck) {
+          try {
+            await new User({
+              name: profile.name,
+              email: profile.email,
+              providerId: profile.id,
+              isAdmin: false
+            }).save()
+            token.isAdmin = false
+          } catch(err) {
+            console.log('error creating user', err)
+            alert('error creating user')
+          }
+        }
+
+        token.isAdmin = userCheck.isAdmin
+      } catch(err) {
+        if (!err instanceof TypeError)
+        console.log('error getting user list', err)
+      }
+
+      console.log(token)
+      
+      return token;
+    },
+  },
+});

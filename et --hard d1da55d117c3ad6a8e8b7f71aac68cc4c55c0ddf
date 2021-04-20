@@ -1,0 +1,170 @@
+[33mcommit 90b26d6b5b53bbd22f57d451d9f3c6a4b0eaacd8[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Mon Apr 19 17:05:50 2021 +0200
+
+    change: user auth infos and check; refactored LogButton component
+
+[33mcommit d1da55d117c3ad6a8e8b7f71aac68cc4c55c0ddf[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Fri Apr 16 14:43:55 2021 +0200
+
+    user id from provider added to session
+
+[33mcommit 3ddac7c0a5d4f0fcb214a49072225c5060a866c4[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 15:16:37 2021 +0200
+
+    fix: read only attr on date input
+
+[33mcommit abd75b1a1467e38d4404ee9463957616b46a057e[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 14:49:27 2021 +0200
+
+    improv: date set by clicking on calendar
+
+[33mcommit 0f2d92fdafd23db0acb22e7c0a7af920454bd282[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 10:57:21 2021 +0200
+
+    server side rendering
+
+[33mcommit d30bab09cc40b69852eaf7b5429bcb4cacf8a489[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 09:59:22 2021 +0200
+
+    fix: api endpoint (add)
+
+[33mcommit adeaf451081a9988efdcf7150f0a066ff50f2e33[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 09:46:10 2021 +0200
+
+    fix: api endpoint
+
+[33mcommit 5268d28f1d4cbeb72fb7246a462072dce4fb00fe[m
+Merge: 28c79c7 c155397
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 15 09:41:35 2021 +0200
+
+    Merge pull request #1 from maxpou/delete-event
+    
+    feat: remove event on DOM when deleted succeed
+
+[33mcommit c155397a317dae841262c436a5d7f5f193a630d9[m
+Author: Maxence Poutord <maxence.poutord@gmail.com>
+Date:   Wed Apr 14 18:02:28 2021 +0200
+
+    feat: remove event on DOM when deleted succeed
+
+[33mcommit 28c79c7df4a2fd84ea01fb593a6d16afab1a6c96[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Tue Apr 13 12:32:54 2021 +0200
+
+    slight delete req change
+
+[33mcommit a06bc939c2cc25215ea20d7062078c06a90eb6f9[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Tue Apr 13 12:31:43 2021 +0200
+
+    slight delete req change
+
+[33mcommit de6a7acca87238d361afe9f9fd0012ebde0e6f42[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Mon Apr 12 16:19:57 2021 +0200
+
+    delete event request
+
+[33mcommit 7e420cd184b110c3bf5fc939c34ffeb1bebffaed[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Wed Apr 7 18:57:11 2021 +0200
+
+    added calendar info
+
+[33mcommit 05b74b4228ab46f0c3dad924a668fb3a47b481d1[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Wed Apr 7 17:23:20 2021 +0200
+
+    various css improvements
+
+[33mcommit fe8fafa67c56f31f7e1aee1d8afdef12b0225d03[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Wed Apr 7 16:46:23 2021 +0200
+
+    new css login and form display
+
+[33mcommit 1c514c554d9653392a6c54996b2f81520487aea0[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Wed Apr 7 10:19:07 2021 +0200
+
+    changed react calendar styles import
+
+[33mcommit 405232d28300fa0f864260bcee5ad8574ae67038[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sun Apr 4 22:14:24 2021 +0200
+
+    connection info style draw
+
+[33mcommit 9f1721f8237b80c02cc9d49376da5d1ac3207a3c[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sun Apr 4 21:26:50 2021 +0200
+
+    form div display fix
+
+[33mcommit 7e0430c9809d6c29eadbb53d9d2bc3a78b1491c3[m[33m ([m[1;31morigin/be-test[m[33m)[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sun Apr 4 12:47:50 2021 +0200
+
+    separated event be
+
+[33mcommit 42429d1b3c1ae6da36eba6872dae8bbfb035a09e[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sat Apr 3 10:37:08 2021 +0200
+
+    testing node diff
+
+[33mcommit 75596c24c7604ea285265d9aa6f7cd56c4482914[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sat Apr 3 10:10:39 2021 +0200
+
+    changed serverless function exports
+
+[33mcommit f98e142478c3362f8f1cd2cd36dad9c4105506d0[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Sat Apr 3 09:33:22 2021 +0200
+
+    nextjs isr option
+
+[33mcommit 24c51467371e633ce6d465bcee53eb9e26f492ba[m[33m ([m[1;31morigin/calendar[m[33m)[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Fri Apr 2 16:19:35 2021 +0200
+
+    calendar mobile styles
+
+[33mcommit 476c59dab5b6acac2d9abcb84632395bb7dc3480[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Fri Apr 2 11:36:21 2021 +0200
+
+    changed react calendar tile states
+
+[33mcommit bedf37d2b7fe9cbbd208fbb0430fa888ae38155e[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Fri Apr 2 10:38:55 2021 +0200
+
+    changed event cards headers for icons
+
+[33mcommit 4b73c0fcccc85e170553315a30d4d22341b8095c[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 1 17:52:58 2021 +0200
+
+    delete event button basic style
+
+[33mcommit 9e8b3de62011c766680d4d4d70af512cc348e7b7[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 1 17:06:21 2021 +0200
+
+    delete event func
+
+[33mcommit f76527c8ca8d20bd83e7bc07e1bd471cd6d22e56[m
+Author: Gilles Margerin <gillesmargerin@gmail.com>
+Date:   Thu Apr 1 15:44:39 2021 +0200
+
+    calendar info color improvements

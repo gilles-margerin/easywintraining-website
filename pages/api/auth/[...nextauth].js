@@ -22,8 +22,34 @@ export default NextAuth({
     async session(session, token) {
       session.user.isAdmin = token.isAdmin;
       session.user.id = token.sub;
-      console.log(token)
       return session;
+    },
+    async jwt(token, user, account, profile, isNewUser) {
+      try {
+        const userCheck = await User.findOne({ email: profile.email });
+
+        if (!userCheck) {
+          try {
+            /* await new User({
+              name: profile.name,
+              email: profile.email,
+              providerId: profile.id,
+              isAdmin: false
+            }).save() */
+            token.isAdmin = false
+          } catch(err) {
+            console.log('error creating user', err)
+            alert('error creating user')
+          }
+        } else {
+          token.isAdmin = userCheck.isAdmin
+        }
+      } catch(err) {
+        if (!err instanceof TypeError)
+        console.log('error getting user list', err)
+      }
+
+      return token;
     },
   },
 });

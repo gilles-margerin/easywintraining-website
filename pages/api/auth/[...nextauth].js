@@ -30,12 +30,12 @@ export default NextAuth({
 
         if (!userCheck) {
           try {
-            await new User({
+            /* await new User({
               name: profile.name,
               email: profile.email,
               providerId: profile.id,
               isAdmin: false
-            }).save()
+            }).save() */
             token.isAdmin = false
           } catch(err) {
             console.log('error creating user', err)

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import dbConnect from "../utils/dbConnect";
 import dateConversion from "../utils/dateConversion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
 import Calendar from "react-calendar";
 import styles from "../components/modules/Calendar.module.scss";
@@ -19,7 +19,26 @@ function CalendarWrapper(props) {
   const [events, setEvents] = useState(JSON.parse(props.events))
   const currentUser = dbUsers.find(( { email }) => email === session?.user?.email)
 
-  console.log(currentUser)
+  useEffect(async() => {
+    if (document.readyState === 'complete') {
+      if (session && currentUser === undefined) {
+        const data = {
+          name: session.user.name,
+          email: session.user.email,
+          providerId: session.user.id,
+          isAdmin: false
+        }
+        const reqOptions = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }
+        await fetch(`https://easywintraining-api.herokuapp.com/api/users`, reqOptions)
+      }
+    }
+  })
 
   function tileContent(props) {
     const dayEvents = events.filter(

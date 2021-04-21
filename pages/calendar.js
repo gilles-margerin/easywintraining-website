@@ -38,7 +38,7 @@ function CalendarWrapper(props) {
         await fetch(`https://easywintraining-api.herokuapp.com/api/users`, reqOptions)
       }
     }
-  })
+  }, [session])
 
   function tileContent(props) {
     const dayEvents = events.filter(

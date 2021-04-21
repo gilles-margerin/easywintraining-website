@@ -19,7 +19,7 @@ function CalendarWrapper(props) {
   const [events, setEvents] = useState(JSON.parse(props.events))
   const currentUser = dbUsers.find(( { email }) => email === session?.user?.email)
 
-  console.log(session)
+  console.log(currentUser)
 
   function tileContent(props) {
     const dayEvents = events.filter(
@@ -71,7 +71,7 @@ function CalendarWrapper(props) {
           <div className={styles.eventInfoWrapper}>
             <h2>{dateConversion(value)}</h2>
             <EventList
-              dbUsers={dbUsers}
+              currentUser={currentUser}
               events={events}
               setEvents={setEvents}
               dateConversion={dateConversion}
@@ -92,7 +92,7 @@ function CalendarWrapper(props) {
             />
           )}
 
-          {session && currentUser.isAdmin === true && (
+          {session && currentUser?.isAdmin === true && (
             <>
               <LogButton
                 styles={styles}
@@ -101,11 +101,12 @@ function CalendarWrapper(props) {
               />
               <AddEvent 
                 value={dateConversion(value)}
+                currentUser={currentUser}
               />
             </>
           )}
 
-          {session && currentUser.isAdmin === false && (
+          {session && (
             <LogButton
               styles={styles}
               signFunc={signOut}

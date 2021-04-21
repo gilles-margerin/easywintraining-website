@@ -1,11 +1,7 @@
-import { useState } from 'react'
 import Image from "next/image"
-import checkAdmin from "../utils/checkAdmin"
 import styles from "./modules/EventList.module.scss"
 
-const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
-  const [list, setList] = useState(events);
-
+const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const checkEmpty = data => {
     return data.find( ({date}) => date === dateConversion(value))
   }
@@ -25,7 +21,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
 
   return (
     <ul>
-      {!checkEmpty(list) && 
+      {!checkEmpty(events) && 
         <p
           className={styles.paragraph}
           style={{
@@ -39,7 +35,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
           Pas d'activités
         </p>
       }
-      {list.map((event) => {
+      {events.map((event) => {
         if (event.date === dateConversion(value)) {
           return (
             <li
@@ -54,7 +50,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                 position: "relative"
               }}
             >
-              {(session && checkAdmin(dbUsers, session)) && 
+              {(session && currentUser?.isAdmin) && 
                 <button
                   style={{
                     all: "unset",
@@ -77,7 +73,8 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                 >X</span></button>
               }
               <header>
-                <h4>
+                <span 
+                  className={styles.iconWrapper}>
                   <Image
                     src="/icons/header.svg"
                     alt="header icon"
@@ -85,7 +82,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                     height={32}
                     layout="fixed"
                   />
-                </h4>
+                </span>
                 <p
                   className={styles.eventParagraph}
                 >{event.name}</p>
@@ -96,7 +93,8 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                   borderBottom: `1px solid ${event.color}`
                 }}
               >
-                <h4>
+                <span 
+                  className={styles.iconWrapper}>
                   <Image
                     src="/icons/place-2.svg"
                     alt="place icon"
@@ -104,7 +102,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                     height={34}
                     layout="fixed"
                   />
-                </h4>
+                </span>
                 <p
                   className={styles.eventParagraph}
                 >{event.place}</p>
@@ -112,7 +110,8 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
               <div style={{
                 borderBottom: `1px solid ${event.color}`
               }}>
-              <h4>
+              <span
+                className={styles.iconWrapper}>
                 <Image
                   src="/icons/time-2.svg"
                   alt="time icon"
@@ -120,13 +119,14 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                   height={32}
                   layout="fixed"
                 />
-              </h4>
+              </span>
                 <p
                   className={styles.eventParagraph}
                 >{event.time}</p>
               </div>
               <div>
-                <h4>
+                <span
+                  className={styles.iconWrapper}>
                   <Image
                     src="/icons/description-2.svg"
                     alt="description icon"
@@ -134,7 +134,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
                     height={34}
                     layout="fixed"
                   />
-                </h4>
+                </span>
                 <p
                   className={styles.eventParagraph}
                 >{event.description}</p>

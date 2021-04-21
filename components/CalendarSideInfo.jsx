@@ -7,22 +7,22 @@ const CalendarSideInfo = () => {
     Le calendrier est prévisionnel. Des tablées de jeux se rajoutent toujours au fur et à mesure du mois et s'improvisent lors des différentes soirées.
   </p>
   <p>
-    <span></span>Animations ludiques
+    Animations ludiques
   </p>
   <p>
-    <span></span>Evènements
+    Evènements
   </p>
   <p>
-    <span></span>Jeux d'ambiance
+    Jeux d'ambiance
   </p>
   <p>
-    <span></span>Jeux de plateau / stratégie
+    Jeux de plateau / stratégie
   </p>
   <p>
-    <span></span>Jeux de rôles
+    Jeux de rôles
   </p>
   <p>
-    <span></span>Jeux traditionnels
+    Jeux traditionnels
   </p>
 </div>
   )

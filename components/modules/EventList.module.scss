@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .paragraph {
   text-align: center;
   font-family: inherit;
@@ -13,6 +15,23 @@
   display: flex;
   align-items: center;
   font-size: 1.01rem;
+}
+
+.iconWrapper {
+  margin: 0;
+  padding: 0.7rem;
+  min-width: 80px;
+  min-height: 70px;
+  text-align: center;
+  background: $primary-1;
+  color: $primary-3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & * {
+    background: $primary-1;
+  }
 }
 
 @media (max-width: 1070px) {

@@ -17,6 +17,7 @@ function CalendarWrapper(props) {
   const [value, setValue] = useState(new Date());
   const dbUsers = JSON.parse(props.users);
   const [events, setEvents] = useState(JSON.parse(props.events))
+  const currentUser = dbUsers.find(( { email }) => email === session?.user?.email)
 
   console.log(session)
 
@@ -91,7 +92,7 @@ function CalendarWrapper(props) {
             />
           )}
 
-          {session && session.user?.isAdmin === true && (
+          {session && currentUser.isAdmin === true && (
             <>
               <LogButton
                 styles={styles}
@@ -104,7 +105,7 @@ function CalendarWrapper(props) {
             </>
           )}
 
-          {session && session.user?.isAdmin === false && (
+          {session && currentUser.isAdmin === false && (
             <LogButton
               styles={styles}
               signFunc={signOut}

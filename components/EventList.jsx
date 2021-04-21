@@ -17,7 +17,7 @@ const EventList = ({ events, dbUsers, dateConversion, value, session }) => {
 
     try {
       await fetch(`https://easywintraining-api.herokuapp.com/api/events/${eventId}`, reqOptions)
-      setList(events.filter(e => e._id !== eventId))
+      window.location.reload()
     } catch (err) {
       console.log(err)
     }

@@ -7,8 +7,15 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   }
 
   const handleDelete = async (eventId) => {
+    const data = {
+      userId: currentUser._id
+    }
     const reqOptions = {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
     }
 
     try {

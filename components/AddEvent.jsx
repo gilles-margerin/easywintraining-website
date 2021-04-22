@@ -1,6 +1,6 @@
 import styles from "./modules/AddEvent.module.scss"
 
-const AddEvent = ({ value }) => {
+const AddEvent = ({ value, currentUser }) => {
   const handleSubmit = () => {
     setTimeout(() => window.location.reload(), 1500)
   } 
@@ -38,6 +38,7 @@ const AddEvent = ({ value }) => {
           <option>Jeux traditionnels</option>
         </select>
       </div>
+      <input type="hidden" name="userId" readOnly value={currentUser._id}/>
       <button id="formSubmit" onClick={() => handleSubmit()}>Ajouter</button>
     </form>
   )

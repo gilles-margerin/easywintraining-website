@@ -37,7 +37,8 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
             margin: "30% auto",
             fontSize: "1.6rem",
             display: "initial",
-            color: "#fafafa"
+            color: "#fafafa",
+            textShadow: "1px 1px 2px black"
           }}
         >
           Pas d'activités
@@ -50,8 +51,8 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
               id={event._id}
               key={event.name}
               style={{
-                border: `2px solid ${event.color}`,
-                borderRadius: "2px",
+                border: `1px solid ${event.color}`,
+                borderRadius: "3px",
                 marginBottom: "10px",
                 display: "flex",
                 flexDirection: "column",
@@ -93,14 +94,14 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                 </span>
                 <p
                   className={styles.eventParagraph}
+                  style={{
+                    color: `${event.color}`,
+                    fontWeight: "700",
+                    fontSize: "1.08rem"
+                  }}
                 >{event.name}</p>
               </header>
-              <div
-                style={{
-                  borderTop: `1px solid ${event.color}`,
-                  borderBottom: `1px solid ${event.color}`
-                }}
-              >
+              <div>
                 <span 
                   className={styles.iconWrapper}>
                   <Image
@@ -115,9 +116,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                   className={styles.eventParagraph}
                 >{event.place}</p>
               </div>
-              <div style={{
-                borderBottom: `1px solid ${event.color}`
-              }}>
+              <div>
               <span
                 className={styles.iconWrapper}>
                 <Image
@@ -145,6 +144,9 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                 </span>
                 <p
                   className={styles.eventParagraph}
+                  style={{
+                    border: "none"
+                  }}
                 >{event.description}</p>
               </div>
             </li>

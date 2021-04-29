@@ -10,9 +10,9 @@
   overflow: visible;
   position: relative;
   padding-top: 70px;
-  background: url('https://images.pexels.com/photos/280252/pexels-photo-280252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background: url('https://wallpapercave.com/wp/wp1933738.jpg');
   background-attachment: fixed;
-  background-position: center;
+  background-position: center / center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -67,14 +67,14 @@
   max-width: 70ch;
 
   & h2 {
+    background: #fafafa;
     font-family: "Philosopher", sans-serif;
     font-size: 1.6rem;
-    color: $primary-3;
-    text-shadow: 0 0 5px black;
-    padding: 0 1rem 1rem 1rem;
-    border-radius: 2px;
+    color: $primary-1;
+    padding: 1rem;
+    border-radius: 1px;
+    border: 1px solid $primary-1-light;
     margin: 0;
-    width: 100%;
   }
 
   & p:first-child {

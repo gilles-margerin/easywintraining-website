@@ -9,7 +9,7 @@ const gamesData = [
   {
     title: "Evènements",
     text: "Tout au long de l’année, nous organisons des soirées jeux à thèmes, des tournois ludiques conviviaux, des playtests de nouveaux jeux de société. Nos animateurs bénévoles proposent régulièrement des nouveautés pour un plaisir ludique toujours renouvelé.",
-    src:"/pictures/assa.jpg",
+    src:"/pictures/pirates.png",
     key: "__event"
   },
   {
@@ -36,7 +36,7 @@ const gamesData = [
     title: "Jeux traditionnels",
     text:
       "Retrouvez ou découvrez des jeux conviviaux et amusants, faciles à apprendre. Pour des heures de jeux et des sourires, sans modération.",
-    src: "/pictures/tradi-1.jpg",
+    src: "/pictures/tradi-2.jpg",
     key: "__traditional",
   }
 ];

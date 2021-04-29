@@ -37,6 +37,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
             margin: "30% auto",
             fontSize: "1.6rem",
             display: "initial",
+            color: "#fafafa"
           }}
         >
           Pas d'activités

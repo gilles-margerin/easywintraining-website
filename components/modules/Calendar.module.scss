@@ -10,11 +10,8 @@
   overflow: visible;
   position: relative;
   padding-top: 70px;
-  background: url('https://wallpapercave.com/wp/wp1933738.jpg');
-  background-attachment: fixed;
-  background-position: center / center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #f2f2f2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ff7b00' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .reactCalendar__main {
@@ -25,7 +22,7 @@
   padding: 0 0.7rem;
   align-self: center;
   box-shadow: 0 0 1px 1px $primary-2-dark;
-  
+
   & div:first-of-type {
     height: 50px;
   }
@@ -67,13 +64,14 @@
   max-width: 70ch;
 
   & h2 {
-    background: #fafafa;
+    text-decoration: underline;
+    text-decoration-color: $primary-1;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
     font-family: "Philosopher", sans-serif;
     font-size: 1.6rem;
     color: $primary-1;
     padding: 1rem;
-    border-radius: 1px;
-    border: 1px solid $primary-1-light;
     margin: 0;
   }
 

@@ -37,8 +37,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
             margin: "30% auto",
             fontSize: "1.6rem",
             display: "initial",
-            color: "#fafafa",
-            textShadow: "1px 1px 2px black"
+            color: "#231d00"
           }}
         >
           Pas d'activités
@@ -51,7 +50,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
               id={event._id}
               key={event.name}
               style={{
-                border: `1px solid ${event.color}`,
+                border: `1px outset ${event.color}`,
                 borderRadius: "3px",
                 marginBottom: "10px",
                 display: "flex",

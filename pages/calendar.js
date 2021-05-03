@@ -42,6 +42,7 @@ function CalendarWrapper(props) {
           `https://easywintraining-api.herokuapp.com/api/users`,
           reqOptions
         );
+        window.location.reload()
       }
     }
   }, [session]);

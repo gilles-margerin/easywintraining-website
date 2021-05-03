@@ -9,36 +9,42 @@ import Event from "../models/Event";
 import User from "../models/User";
 import AddEvent from "../components/AddEvent";
 import EventList from "../components/EventList";
+import LiItem from "../components/LiItem";
 import CalendarSideInfo from "../components/CalendarSideInfo";
-import LogButton from "../components/LogButton"
+import LogButton from "../components/LogButton";
 
 function CalendarWrapper(props) {
   const [session, loading] = useSession();
   const [value, setValue] = useState(new Date());
   const dbUsers = JSON.parse(props.users);
-  const [events, setEvents] = useState(JSON.parse(props.events))
-  const currentUser = dbUsers.find(( { email }) => email === session?.user?.email)
+  const [events, setEvents] = useState(JSON.parse(props.events));
+  const currentUser = dbUsers.find(
+    ({ email }) => email === session?.user?.email
+  );
 
-  useEffect(async() => {
-    if (document.readyState === 'complete') {
+  useEffect(async () => {
+    if (document.readyState === "complete") {
       if (session && currentUser === undefined) {
         const data = {
           name: session.user.name,
           email: session.user.email,
           providerId: session.user.id,
-          isAdmin: false
-        }
+          isAdmin: false,
+        };
         const reqOptions = {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
-        }
-        await fetch(`https://easywintraining-api.herokuapp.com/api/users`, reqOptions)
+          body: JSON.stringify(data),
+        };
+        await fetch(
+          `https://easywintraining-api.herokuapp.com/api/users`,
+          reqOptions
+        );
       }
     }
-  }, [session])
+  }, [session]);
 
   function tileContent(props) {
     const dayEvents = events.filter(
@@ -50,16 +56,9 @@ function CalendarWrapper(props) {
     return (
       <ul className={styles.ulReset}>
         {dayEvents.map((event) => {
-          return (
-            <li
-              key={event.name}
-              style={{
-                background: event.color,
-                boxShadow: `0 0 1px 1px black`,
-              }}
-              className={styles.liItem}
-            ></li>
-          );
+          return <LiItem 
+            key={event.name} 
+            background={event.color} />;
         })}
       </ul>
     );
@@ -104,21 +103,13 @@ function CalendarWrapper(props) {
           </aside>
 
           {!session && (
-            <LogButton
-              styles={styles}
-              signFunc={signIn}
-              text={'Login'}
-            />
+            <LogButton styles={styles} signFunc={signIn} text={"Login"} />
           )}
 
           {session && currentUser?.isAdmin === true && (
             <>
-              <LogButton
-                styles={styles}
-                signFunc={signOut}
-                text={'Logout'}
-              />
-              <AddEvent 
+              <LogButton styles={styles} signFunc={signOut} text={"Logout"} />
+              <AddEvent
                 value={dateConversion(value)}
                 currentUser={currentUser}
               />
@@ -126,11 +117,7 @@ function CalendarWrapper(props) {
           )}
 
           {session && (
-            <LogButton
-              styles={styles}
-              signFunc={signOut}
-              text={'Logout'}
-            />
+            <LogButton styles={styles} signFunc={signOut} text={"Logout"} />
           )}
         </div>
       </main>

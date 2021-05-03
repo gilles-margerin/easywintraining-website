@@ -194,6 +194,10 @@
     min-width: 80vw;
   }
 
+  .eventInfoWrapper ul {
+    transform: scale(0.92);
+  }
+
   .reactCalendar__main {
     order: 2;
     height: 499px;
@@ -208,5 +212,15 @@
 @media (max-width: 680px) {
   .calendarWrapper {
     padding: 70px 0 0 0;
+  }
+
+  .reactCalendar__main {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .eventInfoWrapper {
+    margin: 1rem 0;
   }
 }

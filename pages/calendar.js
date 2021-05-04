@@ -42,7 +42,7 @@ function CalendarWrapper(props) {
           `https://easywintraining-api.herokuapp.com/api/users`,
           reqOptions
         );
-        window.location.reload()
+        window.location.reload();
       }
     }
   }, [session]);
@@ -57,9 +57,7 @@ function CalendarWrapper(props) {
     return (
       <ul className={styles.ulReset}>
         {dayEvents.map((event) => {
-          return <LiItem 
-            key={event.name} 
-            background={event.color} />;
+          return <LiItem key={event.name} background={event.color} />;
         })}
       </ul>
     );
@@ -117,8 +115,13 @@ function CalendarWrapper(props) {
             </>
           )}
 
-          {session && (
-            <LogButton styles={styles} signFunc={signOut} text={"Logout"} />
+          {session && currentUser?.isAdmin === false && (
+            <>
+              <span className={styles.spanInfo}>
+                Vous n'êtes pas membre de l'équipe
+              </span>
+              <LogButton styles={styles} signFunc={signOut} text={"Logout"} />
+            </>
           )}
         </div>
       </main>

@@ -159,6 +159,19 @@
   z-index: 199;
 }
 
+.spanInfo {
+  position: absolute;
+  font-size: 0.95rem;
+  top: 80px;
+  right: 78px;
+  background: #fafafa;
+  border: unset;
+  box-shadow: 0 0 3px 0px $primary-1;
+  width: 180px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 @media (max-width: 1550px) {
   .calendarWrapper {
     padding: 70px 1rem 1rem;

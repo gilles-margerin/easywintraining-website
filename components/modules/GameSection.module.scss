@@ -22,6 +22,12 @@
   & * {
   transition: all 0.7s cubic-bezier(.19,.43,.78,1.04);
   }
+
+  &:hover:not(.active) h3{
+    transition: font-size 0.1s;
+    color: $primary-2;
+    font-size: 1.22rem;
+  }
 }
 
 .card header  {
@@ -74,7 +80,7 @@
 }
 
 .active .cardText h3 {
-  background: $primary-3;
+  background: inherit;
   color: $primary-2;
   max-width: 16ch;
   margin-top: 7px;

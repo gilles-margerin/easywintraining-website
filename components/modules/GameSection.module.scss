@@ -24,9 +24,7 @@
   }
 
   &:hover:not(.active) h3{
-    transition: font-size 0.1s;
     color: $primary-2;
-    font-size: 1.22rem;
   }
 }
 

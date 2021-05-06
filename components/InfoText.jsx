@@ -40,7 +40,7 @@ const InfoText = () => {
         </h2>
         
         <p>
-        L'association a vu le jour le 2 janvier 2017. Son activité principale se situe au 25 rue de la Lanterne, 66000 Perpignan (Grande salle de 100 m2 au 1er étage et salle attenante de 30m2 environs au rez-de-chaussée)
+        L'association a vu le jour le 2 janvier 2017. Son activité principale se situe au 25 rue de la Lanterne, 66000 Perpignan (Grande salle de 100 m2 au 1er étage et salle attenante de 25m2 environs au rez-de-chaussée)
         </p>
         <p>
         Notre ambition s'articule autour de 5 grands axes :

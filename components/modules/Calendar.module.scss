@@ -48,13 +48,12 @@
 
 .eventInfoWrapper {
   background: rgba(255,255,255,0.5);
-  border: 1px solid $primary-1-light;
   position: relative;
   display: flex;
   flex-grow: 0.7;
   flex-direction: column;
   align-items: center;
-  height: 620px;
+  height: calc(100vh - 120px);
   margin: 0 3rem;
   max-width: 70ch;
   padding: 1rem;
@@ -178,7 +177,7 @@
   }
 
   .eventInfoWrapper {
-    margin: 1rem;
+    margin: 0 1rem;
     max-width: 60ch;
   }
 }

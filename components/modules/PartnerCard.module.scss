@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+.container {
+  display: flex;
+  padding: 0.7rem;
+  box-shadow: 0 0 5px 1px $primary-1-light;
+  margin: 0.7rem 0;
+  max-width: 975px;
+
+  & a, div {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  & a h3 {
+    text-align: center;
+  }
+}
+
+.liItem {
+  list-style: inside;
+}
+
+.paragraph {
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+
+    & a {
+      align-items: center;
+    }
+  }
+}

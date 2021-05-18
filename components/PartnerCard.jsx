@@ -21,7 +21,9 @@ const PartnerCard = ({ name, description, list, other, src, width, height, webpa
             ))}
           </ul>
         )}
-        {other && <p className={styles.paragraph}>{other}</p>}
+        {other && name === '2AM System' ?
+        <p style={{ marginTop: "1rem" }}className={styles.paragraph}>{other}</p> :
+        <p className={styles.paragraph}>{other}</p>}
         <span className={styles.iconWrapper}>
           <Image
             src="/icons/place-2.svg"

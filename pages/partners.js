@@ -27,6 +27,7 @@ export default function Partners() {
               width={partner.width}
               height={partner.height}
               webpage={partner.contact.webpage}
+              address={partner.contact.location}
             />
           )}
         </main>

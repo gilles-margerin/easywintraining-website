@@ -16,7 +16,7 @@ const partnersData = [
     other: "N'hésitez pas à venir nous rendre visite ! A bientôt !",
     contact: {
       admin: "Jérôme Galindo",
-      location: "49 Rue Maréchal Foch - 66000 Perpignan",
+      location: "49 Rue Maréchal Foch 66000 Perpignan",
       phone: "06-02-32-48-19",
       email: "",
       webpage: "http://www.asduroi.fr"

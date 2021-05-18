@@ -2,20 +2,40 @@
 
 .container {
   display: flex;
-  padding: 0.7rem;
   box-shadow: 0 0 5px 1px $primary-1-light;
-  margin: 0.7rem 0;
   max-width: 975px;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  position: relative;
 
   & a, div {
     display: inherit;
     flex-direction: column;
-    justify-content: center;
-    padding: 1rem;
   }
 
   & a h3 {
     text-align: center;
+  }
+
+  & a {
+    background: $primary-3-dark;
+    padding: 1.2rem 1.4rem 1.2rem;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      background: $primary-3;
+      outline: 4px double $primary-3-dark;
+      border-radius: 2px;
+      transform: scale(1.01);
+    }
+  }
+
+  & > div {
+    padding: 0 3rem;
+    justify-content: center;
   }
 }
 
@@ -25,6 +45,48 @@
 
 .paragraph {
   margin: 0;
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  margin: 0;
+  background: $primary-1;
+  color: $primary-3;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  
+  & * {
+    background: $primary-1;
+    
+  }
+
+  & address {
+    width: 0;
+    height: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    overflow: visible;
+
+    & address {
+      position: absolute;
+      text-align: center;
+      transform: translateX(-35%);
+      width: 19ch;
+      height: 52px;
+      padding-top: 0.15rem;
+      border-radius: 3px;
+    }
+  }
 }
 
 @media (max-width: 650px) {

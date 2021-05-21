@@ -36,7 +36,20 @@
 }
 
 .liItem {
-  list-style: inside;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: black;
+    position: absolute;
+    border-radius: 50%;
+    top: 9px;
+    left: -12px;
+  }
 }
 
 .paragraph {

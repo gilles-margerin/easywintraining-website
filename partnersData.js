@@ -17,6 +17,7 @@ const partnersData = [
     contact: {
       admin: "Jérôme Galindo",
       location: "49 Rue Maréchal Foch 66000 Perpignan",
+      maps: "https://www.google.com/maps/place/As+du+Roi+-+Magasin+de+jeux+de+cartes%2Fjeux+de+soci%C3%A9t%C3%A9%2Fjeux+d'%C3%A9checs%2Fjeux+en+bois/@42.6959573,2.8885862,17z/data=!3m1!4b1!4m5!3m4!1s0x12b06e4ece175ad1:0x6ca8f5b50daa557f!8m2!3d42.695957!4d2.8907753",
       phone: "06-02-32-48-19",
       email: "",
       webpage: "http://www.asduroi.fr"
@@ -50,6 +51,7 @@ const partnersData = [
     contact: {
       admin,
       location,
+      maps,
       phone,
       email,
       webpage

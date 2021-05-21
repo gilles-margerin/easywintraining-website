@@ -3,7 +3,7 @@
 .container {
   display: flex;
   box-shadow: 0 0 5px 1px $primary-1-light;
-  width: 975px;
+  max-width: 975px;
   margin: 0.5rem 0;
   border-radius: 2px;
   position: relative;
@@ -11,15 +11,12 @@
   & a, div {
     display: inherit;
     flex-direction: column;
-  }
-
-  & a h3 {
-    text-align: center;
+    justify-content: center;
+    padding: 1rem 1.2rem;
   }
 
   & a {
     background: $primary-3-dark;
-    padding: 1.2rem 1.4rem 1.2rem;
     -webkit-transition: all ease-in-out 0.2s;
     -moz-transition: all ease-in-out 0.2s;
     -o-transition: all ease-in-out 0.2s;
@@ -33,9 +30,8 @@
     }
   }
 
-  & > div {
-    padding: 0 3rem;
-    justify-content: center;
+  & div {
+    width: 100%;
   }
 }
 
@@ -45,6 +41,7 @@
 
 .paragraph {
   margin: 0;
+  width: 95%
 }
 
 .iconWrapper {

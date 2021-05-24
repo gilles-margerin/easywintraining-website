@@ -66,7 +66,8 @@ function CalendarWrapper(props) {
   return (
     <>
       <Head>
-        <title>Easywintraining games</title>
+        <title>Easywintraining Games - Calendrier</title>
+        <meta name="description" content="Calendrier des activités et évènements de l'association, pour prévoir vos moments ludiques!"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap"

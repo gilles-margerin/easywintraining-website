@@ -33,7 +33,8 @@ export default function Home({ apiKey }) {
   return (
     <>
       <Head>
-        <title>Easywintraining Games</title>
+        <title>Easywintraining Games - Accueil</title>
+        <meta name="description" content="Easywintraining Games est une association de jeux et d'animations ludiques à Perpignan.  Venez vous amuser avec nous et notre vaste choix d'activités!"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap"

@@ -52,6 +52,7 @@ export default function Home({ apiKey }) {
               src={game.src}
               key={game.key}
               id={game.key}
+              alt={game.alt}
               active={active}
               toggleActive={toggleActive}
             />

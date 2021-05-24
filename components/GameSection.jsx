@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./modules/GameSection.module.scss";
 
-const GameSection = ({ id, src, title, text, active, toggleActive }) => {
+const GameSection = ({ id, src, title, text, alt, active, toggleActive }) => {
 
   return (
     <section 
@@ -16,6 +16,7 @@ const GameSection = ({ id, src, title, text, active, toggleActive }) => {
           src={src} 
           width={365} height={340} 
           objectFit="cover"
+          alt={alt}
         />
       </header>
       <div className={styles.cardText}>

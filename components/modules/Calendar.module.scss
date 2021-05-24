@@ -173,11 +173,11 @@
 
 @media (max-width: 1550px) {
   .calendarWrapper {
-    padding: 70px 1rem 1rem;
+    padding: 70px 1rem 0;
   }
 
   .eventInfoWrapper {
-    margin: 0 1rem;
+    //margin: 0;
     max-width: 60ch;
   }
 }
@@ -185,6 +185,7 @@
 @media (max-width: 1390px) {
   .calendarWrapper {
     flex-wrap: wrap;
+    margin: 0;
   }
 
   .eventInfoWrapper {
@@ -192,6 +193,7 @@
     flex-grow: 1;
     height: max-content;
     min-width: 80vw;
+    padding: 0;
   }
 
   .eventInfoWrapper ul {
@@ -217,10 +219,8 @@
   .reactCalendar__main {
     margin-right: 0;
   }
-}
 
-@media (max-width: 440px) {
   .eventInfoWrapper {
-    margin: 1rem 0;
+    margin: 0;
   }
 }

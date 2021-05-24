@@ -7,7 +7,7 @@ const gamesData = [
     key: "__animation",
   },
   {
-    title: "Evènements",
+    title: "Évènements",
     text: "Tout au long de l’année, nous organisons des soirées jeux à thèmes, des tournois ludiques conviviaux, des playtests de nouveaux jeux de société. Nos animateurs bénévoles proposent régulièrement des nouveautés pour un plaisir ludique toujours renouvelé.",
     src:"/pictures/pirates.png",
     key: "__event"
@@ -19,16 +19,16 @@ const gamesData = [
     key: "__ambiant"
   },
   {
-    title: "Jeux de plateaux et de stratégie",
+    title: "Jeux de plateau et de stratégie",
     text:
       "Vous trouverez dans nos locaux plus d’une centaine de jeux de plateaux, de figurines et d'aventures multigénérationnels, aux multiples univers. Des heures de jeux et de convivialité. Vous profiterez d’un espace de jeu agréable. Accessible à toutes et à tous.",
     src: "/pictures/board-2.jpg",
     key: "__strategy",
   },
   {
-    title: "Jeux de rôles",
+    title: "Jeux de rôle",
     text:
-      "Vous aimeriez interpréter et faire évoluer un(e) personnage de film(s) ou de conte(s), créer votre propre héros ou héroïne, en solo ou avec des ami(e)s ? Relevez les défis de nos Maîtres de Jeu ! Entrez dans des aventures palpitantes, héroïques. Enquêtez sur des mystères, à travers des scénarios originaux et ludiques.",
+      "Vous aimeriez interpréter et faire évoluer un personnage de film ou de conte, créer votre propre héros ou héroïne, en solo ou avec des ami(e)s ? Relevez les défis de nos Maîtres de Jeu ! Entrez dans des aventures palpitantes, héroïques. Enquêtez sur des mystères, à travers des scénarios originaux et ludiques.",
     src: "/pictures/rpg-2.jpg",
     key: "__rpg",
   },

@@ -29,7 +29,6 @@ function CalendarWrapper(props) {
           name: session.user.name,
           email: session.user.email,
           providerId: session.user.id,
-          isAdmin: false,
         };
         const reqOptions = {
           method: "POST",

@@ -2,6 +2,24 @@
 
 const partnersData = [
   {
+    name: "Mairie de Perpignan",
+    description: "Mairie de Perpignan - Hôtel de Ville",
+    list: [],
+    other: "",
+    contact: {
+      admin: "",
+      location: "Pl. de la loge B.P. 20931 66931 Perpignan cedex",
+      maps: "https://goo.gl/maps/R9p8twGUnT7f8dUz7",
+      phone: "",
+      email: "",
+      webpage: "https://www.mairie-perpignan.fr/"
+    },
+    picture: "pictures/partners/LOGO-Mairie-de-Perpignan-1.png",
+    alt:"logo de la mairie de Perpignan",
+    width: 210,
+    height: 260
+  },
+  {
     name: "L'As du Roi",
     description: "L'As du Roi est une boutique spécialisée dans laquelle vous pourrez trouver :" ,
     list: [
@@ -23,6 +41,7 @@ const partnersData = [
       webpage: "http://www.asduroi.fr"
     },
     picture: "/pictures/partners/asduroi.jpg",
+    alt: "logo du magasin l'As du roi",
     width: 260,
     height: 260
   },
@@ -34,11 +53,13 @@ const partnersData = [
     contact: {
       admin: "Marc Jalmain",
       location: "5 Place Louis Torcatis 66240 Saint-Estève",
+      map: "https://g.page/2AMSYSTEM?share",
       phone: "09-73-10-33-24",
       email: "",
       webpage: "https://www.2amsystem66.fr"
     },
     picture: "/pictures/partners/2amsystem.png",
+    alt: "logo de la société 2AM System",
     width: 260,
     height: 260
   }

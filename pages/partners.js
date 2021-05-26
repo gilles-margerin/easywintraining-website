@@ -20,6 +20,7 @@ export default function Partners() {
         <main className={styles.partnersContainer}>
           {partnersData.map((partner) => 
             <PartnerCard
+              key={partner.name}
               name={partner.name}
               description={partner.description}
               list={partner.list}
@@ -29,6 +30,7 @@ export default function Partners() {
               height={partner.height}
               webpage={partner.contact.webpage}
               address={partner.contact.location}
+              alt={partner.alt}
             />
           )}
         </main>

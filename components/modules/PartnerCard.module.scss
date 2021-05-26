@@ -7,8 +7,11 @@
   margin: 0.5rem 0;
   border-radius: 2px;
   position: relative;
+  flex-grow: 1;
+  margin-bottom: 20px;
 
-  & a, div {
+  & a,
+  div {
     display: inherit;
     flex-direction: column;
     justify-content: center;
@@ -21,6 +24,11 @@
     -moz-transition: all ease-in-out 0.2s;
     -o-transition: all ease-in-out 0.2s;
     transition: all ease-in-out 0.2s;
+    min-width: 298px;
+
+    & img {
+      margin: 0 auto;
+    }
 
     &:hover {
       background: $primary-3;
@@ -41,7 +49,7 @@
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     width: 5px;
     height: 5px;
     background: black;
@@ -54,7 +62,7 @@
 
 .paragraph {
   margin: 0;
-  width: 95%
+  width: 95%;
 }
 
 .iconWrapper {
@@ -72,10 +80,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 3px;
-  
+
   & * {
     background: $primary-1;
-    
   }
 
   & address {
@@ -99,12 +106,27 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1390px) {
+  .container {
+    width: 687px;
+  }
+}
+
+@media (max-width: 680px) {
   .container {
     flex-direction: column;
+    width: 90%;
 
     & a {
       align-items: center;
+    }
+  }
+}
+
+@media (max-width: 335px) {
+  .container {
+    & a {
+      min-width: 278px;
     }
   }
 }

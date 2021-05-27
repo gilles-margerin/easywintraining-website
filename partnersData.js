@@ -20,6 +20,24 @@ const partnersData = [
     height: 260
   },
   {
+    name: "Aviva Assurances",
+    description: "Aviva Assurances",
+    list: [],
+    other: "Morad Oubaya - Agent Général",
+    contact: {
+      admin: "Morad Oubaya",
+      location: "9 rue du docteur Pous 66000 Perpignan",
+      map: "",
+      phone: "04-68-51-25-25",
+      email: "perpignanroussillon@aviva-assurances.com",
+      webpage: "https://agences.aviva.fr/perpignan-roussillon/"
+    },
+    picture: "/pictures/partners/aviva.png",
+    alt: "logo des assurances Aviva",
+    width: 260,
+    height: 260
+  },
+  {
     name: "L'As du Roi",
     description: "L'As du Roi est une boutique spécialisée dans laquelle vous pourrez trouver :" ,
     list: [
@@ -72,12 +90,15 @@ const partnersData = [
     contact: {
       admin,
       location,
-      maps,
+      map,
       phone,
       email,
       webpage
     },
     picture,
+    alt,
+    width,
+    height
   } */
 ]
 

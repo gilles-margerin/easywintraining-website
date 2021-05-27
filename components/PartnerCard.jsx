@@ -19,7 +19,7 @@ const PartnerCard = ({
         <img src={src} width={width} height={height} alt={alt} />
       </a>
       <div>
-        {name === "Mairie de Perpignan" ? (
+        {name === "Mairie de Perpignan" || name === "Aviva Assurances" ? (
           <p style={{ textAlign: "center" }} className={styles.paragraph}>
             {description}
           </p>
@@ -39,9 +39,10 @@ const PartnerCard = ({
           <p style={{ marginTop: "1rem" }} className={styles.paragraph}>
             {other}
           </p>
-        ) : (
-          <p className={styles.paragraph}>{other}</p>
-        )}
+        ) : other && name === "Aviva Assurances" ? (
+          <p style={{ textAlign: "center" }} className={styles.paragraph}>{other}</p>
+        ): <p className={styles.paragraph}>{other}</p>}
+        
         <span className={styles.iconWrapper}>
           <Image
             src="/icons/place-2.svg"

@@ -8,7 +8,7 @@ const partnersData = [
     other: "",
     contact: {
       admin: "",
-      location: "Pl. de la loge B.P. 20931 66931 Perpignan cedex",
+      location: "Place de la loge 66000 Perpignan Cedex",
       maps: "https://goo.gl/maps/R9p8twGUnT7f8dUz7",
       phone: "",
       email: "",
@@ -26,7 +26,7 @@ const partnersData = [
     other: "Morad Oubaya - Agent Général",
     contact: {
       admin: "Morad Oubaya",
-      location: "9 rue du docteur Pous 66000 Perpignan",
+      location: "9 Rue du docteur Pous 66000 Perpignan",
       map: "",
       phone: "04-68-51-25-25",
       email: "perpignanroussillon@aviva-assurances.com",
@@ -78,6 +78,53 @@ const partnersData = [
     },
     picture: "/pictures/partners/2amsystem.png",
     alt: "logo de la société 2AM System",
+    width: 260,
+    height: 260
+  },
+  {
+    name: "REC BAND Production",
+    description: "",
+    list: [
+      "YouTubeur",
+      "Cadreur",
+      "Photographe",
+      "Motion designer",
+      "Animateur",
+      "Étalonneur",
+      "Chorégraphe de combat",
+      "Créateur d'univers de jeu",
+      "Réalisateur",
+      "Metteur en scène"
+    ],
+    other: "",
+    contact: {
+      admin: "Josselyn Baudiquey",
+      location: "",
+      map: "",
+      phone:"",
+      email: "rec.band.prod@gmail.com",
+      webpage: "https://www.facebook.com/RECBANDPRODUCTION/"
+    },
+    picture: "/pictures/partners/recband.png",
+    alt: "logo de rec banc production",
+    width: 260,
+    height: 260
+  },
+  {
+    name: "Sortilèges Gourmands",
+    description: "Sortilèges Gourmands",
+    list: [],
+    other: "Christophe Pimont - Pâtissier Chocolatier",
+    contact: {
+      admin: "Christophe Pimont",
+      location: "83 Bld Aristide Briand 66000 Perpignan",
+      map: "",
+      phone: "",
+      email : "",
+      webpage: "https://www.sortilegesgourmands.fr/"
+    },
+    picture: "/pictures/partners/sortileges-gourmands.jpg",
+    alt: "logo de l'entreprise Sortilèges Gourmands",
     width: 260,
     height: 260
   }

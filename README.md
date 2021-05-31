@@ -23,7 +23,7 @@ __Purpose__
 
 
 ## Todo
-[ ] Add an edit mode for events through a PUT request
-[ ] Add event management for regular members
-[ ] Add CSS transitions and animations on various elements
-[ ] Add a blog page
+- [ ] Add an edit mode for events through a PUT request
+- [ ] Add event management for regular members
+- [ ] Add CSS transitions and animations on various elements
+- [ ] Add a blog page

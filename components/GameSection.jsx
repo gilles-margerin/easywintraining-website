@@ -17,6 +17,7 @@ const GameSection = ({ id, src, title, text, alt, active, toggleActive }) => {
           width={365} height={340} 
           objectFit="cover"
           alt={alt}
+          priority={true}
         />
       </header>
       <div className={styles.cardText}>

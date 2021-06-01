@@ -35,14 +35,14 @@ const InfoText = () => {
       : styles.container
     }>
       <header>
-        <h2>
+        <h2 className={styles.headerText}>
           Nos engagements
         </h2>
         
-        <p>
+        <p className={styles.headerText}>
         L'association a vu le jour le 2 janvier 2017. Son activité principale se situe au 25 rue de la Lanterne, 66000 Perpignan (Grande salle de 100 m2 au 1er étage et salle attenante de 25m2 environs au rez-de-chaussée)
         </p>
-        <p>
+        <p className={styles.headerText}>
         Notre ambition s'articule autour de 5 grands axes :
         </p>
       </header>
@@ -50,22 +50,23 @@ const InfoText = () => {
       {mainTextData.map((item, i) => {
         return(
           <section key={i}>
-          <h3>
-            {item.title}
-          </h3>
-          <p>
-            {item.content}
-          </p>
-          {i === 0 ? <br/> : null}
+          <div className={styles.textWrapper}>
+            <h3>
+              {item.title}
+            </h3>
+            <p>
+              {item.content}
+            </p>
+          </div>
           <div className={i & 1 ? styles.imgWrapperLeft: styles.imgWrapperRight}>
             <Image
-              width={item.width / 2}
-              height={item.height / 1.2}
+              width={400}
+              height={280}
               objectFit={item.objectFit}
               src={item.src}
               alt={item.alt}
               quality={100}
-              
+              priority={true}
             />
           </div>
         </section>

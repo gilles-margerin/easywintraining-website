@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://sitemap.org/schemas/sitemap/0.9">
+
+<urlset xmlns="http://sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://easywintraining-games.fr</loc>
     <lastmod>2021-05-24</lastmod>
   </url>
+
   <url>
     <loc>https://easywintraining-games.fr/calendar</loc>
     <lastmod>2021-05-25</lastmod>
     <changefreq>weekly</changefreq>
   </url>
+
   <url>
     <loc>https://easywintraining-games.fr/partners</loc>
     <lastmod>2021-05-26</lastmod>
   </url>
+  
 </urlset>

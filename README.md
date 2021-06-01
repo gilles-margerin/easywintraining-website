@@ -11,7 +11,6 @@ __[Easywintraining games](https://easywintraining-games.fr)__
 __Technologies used__
 - React
 - Next
-- Fastify (see backend: [Easywintraining API](https://github.com/gilles-margerin/easywintraining-api.git))
 - Sass
 - MongoDB
 - OAuth with next-auth
@@ -20,6 +19,9 @@ __Purpose__
 - First professional project, in order to put my training as a web developer into practice
 - Improve online visibility for the association, as well as to its local partners
 - Provide a gaming events management solution for team members
+
+__Other__
+- GitHub repository for backend: [Easywintraining API](https://github.com/gilles-margerin/easywintraining-api.git))
 
 
 ## Todo

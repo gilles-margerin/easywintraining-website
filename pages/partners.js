@@ -30,6 +30,8 @@ export default function Partners() {
               height={partner.height}
               webpage={partner.contact.webpage}
               address={partner.contact.location}
+              city={partner.contact.city}
+              map={partner.contact.map}
               alt={partner.alt}
               style={partner.style ? partner.style : ""}
             />

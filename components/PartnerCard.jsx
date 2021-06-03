@@ -11,17 +11,21 @@ const PartnerCard = ({
   height,
   webpage,
   address,
-  alt, 
-  style
+  city,
+  map,
+  alt,
+  style,
 }) => {
   return (
     <div id={name} className={styles.container}>
-      <a href={webpage}>
+      <a className={(styles.wrapper, styles.partnerLink)} href={webpage}>
         <img src={src} width={width} height={height} alt={alt} />
       </a>
-      <div>
-        <p style={style.name} className={styles.paragraph}>{description}</p>
-        
+      <div className={styles.wrapper}>
+        <p style={style.name} className={styles.paragraph}>
+          {description}
+        </p>
+
         {list.length > 0 && (
           <ul className={styles.listContainer}>
             {list.map((item, i) => (
@@ -32,18 +36,33 @@ const PartnerCard = ({
           </ul>
         )}
 
-        <p style={style.other} className={styles.paragraph}>{other}</p>
-        {address && <span className={styles.iconWrapper}>
-          <Image
-            src="/icons/place-2.svg"
-            alt="place icon"
-            width={34}
-            height={40}
-            layout="fixed"
-          />
+        <p style={style.other} className={styles.paragraph}>
+          {other}
+        </p>
+        {address && (
+          <span className={styles.iconWrapper}>
+            <Image
+              src="/icons/place-2.svg"
+              alt="place icon"
+              width={34}
+              height={40}
+              layout="fixed"
+            />
 
-          <address>{address}</address>
-        </span>}
+            <address>
+              <a
+                className={styles.mapLink}
+                href={map}
+                target="_blank"
+                rel="noopener 
+                noreferrer"
+              >
+                <span>{address}</span>
+                <span>{city}</span>
+              </a>
+            </address>
+          </span>
+        )}
       </div>
     </div>
   );

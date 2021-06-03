@@ -1,32 +1,33 @@
 import styles from "./modules/AddEvent.module.scss"
+import Input from "./Input"
 
 const AddEvent = ({ value, currentUser }) => {
+  const inputsData = [
+    { name: "eventDate", text: "Date" },
+    { name: "eventTime", text: "Horaires" },
+    { name: "eventName", text: "Nom de l'activité" },
+    { name: "eventPlace", text: "Lieu de l'activité" },
+    { name: "eventDescription", text: "Description" }
+  ]
+  
   const handleSubmit = () => {
     setTimeout(() => window.location.reload(), 1500)
   } 
 
   return (
     <form className={styles.form} method="POST" action='https://easywintraining-api.herokuapp.com/api/events' id="addForm">
-      <div className={styles.formDiv}>
-        <label htmlFor="eventDate">Date</label>
-        <input className="formInput" type="text" id="eventDate" name="eventDate" value={value} readOnly required/>
-      </div>
-      <div className={styles.formDiv}>
-        <label htmlFor="eventTime">Horaires</label>
-        <input className="formInput" type="text" name="eventTime" id="eventTime" required/>
-      </div>
-      <div className={styles.formDiv}>
-        <label htmlFor="eventName">Nom de l'activité</label>
-        <input className="formInput" type="text" id="eventName" name="eventName" required/>
-      </div>
-      <div className={styles.formDiv}>
-        <label htmlFor="eventPlace">Lieu de l'activité</label>
-        <input className="formInput" type="text" id="eventPlace" name="eventPlace" required/>
-      </div>
-      <div className={styles.formDiv}>
-        <label htmlFor="eventDescription">Description</label>
-        <textarea className="formInput" id="eventDescription" name="eventDescription" required></textarea>
-      </div>
+
+      {inputsData.map(input => {
+        return(
+          <Input
+            name={input.name}
+            text={input.text}
+            type={input.name !== "eventDescription" ? "text" : null}
+            value={input.name === "eventDate" ? value : undefined}
+          />
+        )
+      })}
+
       <div className={styles.formDiv}>
         <label htmlFor="eventType">Type d'activité</label>
         <select className="formInput" name="eventType" id="eventType" required>

@@ -11,7 +11,8 @@ const PartnerCard = ({
   height,
   webpage,
   address,
-  alt,
+  alt, 
+  style
 }) => {
   return (
     <div id={name} className={styles.container}>
@@ -19,13 +20,8 @@ const PartnerCard = ({
         <img src={src} width={width} height={height} alt={alt} />
       </a>
       <div>
-        {name === "Mairie de Perpignan" || name === "Aviva Assurances" || name === "Sortilèges Gourmands" ? (
-          <p style={{ textAlign: "center" }} className={styles.paragraph}>
-            {description}
-          </p>
-        ) : (
-          <p className={styles.paragraph}>{description}</p>
-        )}
+        <p style={style.name} className={styles.paragraph}>{description}</p>
+        
         {list.length > 0 && (
           <ul className={styles.listContainer}>
             {list.map((item, i) => (
@@ -35,14 +31,8 @@ const PartnerCard = ({
             ))}
           </ul>
         )}
-        {other && name === "2AM System" ? (
-          <p style={{ marginTop: "1rem" }} className={styles.paragraph}>
-            {other}
-          </p>
-        ) : other && name === "Aviva Assurances" || name === "Sortilèges Gourmands" ? (
-          <p style={{ textAlign: "center" }} className={styles.paragraph}>{other}</p>
-        ): <p className={styles.paragraph}>{other}</p>}
-        
+
+        <p style={style.other} className={styles.paragraph}>{other}</p>
         {address && <span className={styles.iconWrapper}>
           <Image
             src="/icons/place-2.svg"

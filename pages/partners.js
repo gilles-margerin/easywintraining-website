@@ -31,6 +31,7 @@ export default function Partners() {
               webpage={partner.contact.webpage}
               address={partner.contact.location}
               alt={partner.alt}
+              style={partner.style ? partner.style : ""}
             />
           )}
         </main>

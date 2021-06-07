@@ -45,6 +45,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                 border: `1px outset ${event.color}`,
               }}
             >
+              <span className={styles.eventType}>{event.type}</span>
               {session && currentUser?.isAdmin && (
                 <button
                   className={styles.btn}
@@ -57,13 +58,13 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                   </span>
                 </button>
               )}
-              <header>
+              <header className={styles.header}>
                 <span className={styles.iconWrapper}>
                   <Image
                     src="/icons/header.svg"
                     alt="header icon"
-                    width={32}
-                    height={32}
+                    width={28}
+                    height={28}
                     layout="fixed"
                   />
                 </span>
@@ -83,8 +84,8 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                   <Image
                     src="/icons/place-2.svg"
                     alt="place icon"
-                    width={34}
-                    height={34}
+                    width={32}
+                    height={32}
                     layout="fixed"
                   />
                 </span>
@@ -95,8 +96,8 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                   <Image
                     src="/icons/time-2.svg"
                     alt="time icon"
-                    width={32}
-                    height={32}
+                    width={28}
+                    height={28}
                     layout="fixed"
                   />
                 </span>
@@ -107,8 +108,8 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
                   <Image
                     src="/icons/description-2.svg"
                     alt="description icon"
-                    width={34}
-                    height={34}
+                    width={27}
+                    height={27}
                     layout="fixed"
                   />
                 </span>

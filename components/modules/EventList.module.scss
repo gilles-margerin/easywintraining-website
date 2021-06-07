@@ -6,10 +6,15 @@
   margin: 30% auto;
   font-size: 1.6rem;
   display: initial;
-  color: "#231d00"
+  color: "#231d00";
+}
+
+.header {
+  z-index: 20;
 }
 
 .eventParagraph {
+  position: relative;
   padding: 0.7rem 0.9rem;
   margin: 0;
   width: 100%;
@@ -21,10 +26,19 @@
 
 .liItem {
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: opacity 0.5s ease-in-out;
+
+  &:first-of-type {
+    margin-top: 13px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .btn {
@@ -48,8 +62,8 @@
 .iconWrapper {
   margin: 0;
   padding: 0.7rem;
-  min-width: 80px;
-  min-height: 70px;
+  min-width: 60px;
+  min-height: 60px;
   text-align: center;
   background: $primary-1;
   color: $primary-3;
@@ -62,3 +76,15 @@
   }
 }
 
+.eventType {
+  position: absolute;
+  top: -21px;
+  right: 8px;
+  background: $primary-1;
+  color: $primary-3;
+  height: 25px;
+  padding: 0 7px;
+  font-weight: bolder;
+  border-radius: 5px;
+  z-index: 10;
+}

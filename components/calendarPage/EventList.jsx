@@ -1,5 +1,8 @@
-import Image from "next/image";
+import iconsData from "../../data/iconsData";
 import styles from "./EventList.module.scss";
+import DeleteBtn from "./DeleteBtn";
+import EventHeader from "./EventHeader";
+import EventIcon from "./EventIcon"
 
 const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const checkEmpty = (data) => {
@@ -47,81 +50,32 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
             >
               <span className={styles.eventType}>{event.type}</span>
               {session && currentUser?.isAdmin && (
-                <button
-                  className={styles.btn}
-                  onClick={() => handleDelete(event._id)}
-                >
-                  <span
-                   className={styles.span}
-                  >
-                    X
-                  </span>
-                </button>
+                <DeleteBtn
+                  styles={styles}
+                  event={event}
+                  handleDelete={handleDelete}
+                />
               )}
-              <header className={styles.header}>
-                <span className={styles.iconWrapper}>
-                  <Image
-                    src="/icons/header.svg"
-                    alt="header icon"
-                    width={28}
-                    height={28}
-                    layout="fixed"
+              <EventHeader styles={styles} event={event} />
+              {iconsData.map((icon, i) => {
+                const eventType = icon.alt.slice(0, -5)
+                const eventFilter = Object.fromEntries(
+                  Object.entries(event).filter(key => key[0] === eventType)
+                )
+
+                return (
+                  <EventIcon
+                    key={i}
+                    index={i}
+                    src={icon.src}
+                    alt={icon.alt}
+                    width={icon.width}
+                    height={icon.height}
+                    content={eventFilter[eventType]}
+                    styles={styles}
                   />
-                </span>
-                <p
-                  className={styles.eventParagraph}
-                  style={{
-                    color: `${event.color}`,
-                    fontWeight: "700",
-                    fontSize: "1.08rem",
-                  }}
-                >
-                  {event.name}
-                </p>
-              </header>
-              <div>
-                <span className={styles.iconWrapper}>
-                  <Image
-                    src="/icons/place-2.svg"
-                    alt="place icon"
-                    width={32}
-                    height={32}
-                    layout="fixed"
-                  />
-                </span>
-                <p className={styles.eventParagraph}>{event.place}</p>
-              </div>
-              <div>
-                <span className={styles.iconWrapper}>
-                  <Image
-                    src="/icons/time-2.svg"
-                    alt="time icon"
-                    width={28}
-                    height={28}
-                    layout="fixed"
-                  />
-                </span>
-                <p className={styles.eventParagraph}>{event.time}</p>
-              </div>
-              <div>
-                <span className={styles.iconWrapper}>
-                  <Image
-                    src="/icons/description-2.svg"
-                    alt="description icon"
-                    width={27}
-                    height={27}
-                    layout="fixed"
-                  />
-                </span>
-                <p
-                  className={styles.eventParagraph}
-                  style={{
-                    border: "none",
-                  }}
-                >
-                  {event.description}
-                </p>
-              </div>
+                );
+              })}
             </li>
           );
         }

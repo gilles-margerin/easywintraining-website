@@ -17,9 +17,10 @@ const AddEvent = ({ value, currentUser }) => {
   return (
     <form className={styles.form} method="POST" action='https://easywintraining-api.herokuapp.com/api/events' id="addForm">
 
-      {inputsData.map(input => {
+      {inputsData.map((input, i) => {
         return(
           <Input
+            key={i}
             name={input.name}
             text={input.text}
             type={input.name !== "eventDescription" ? "text" : null}

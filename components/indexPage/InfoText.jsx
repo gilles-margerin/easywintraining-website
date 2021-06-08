@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import styles from './modules/InfoText.module.scss'
+import styles from './InfoText.module.scss'
 import Image from 'next/image'
-import mainTextData from '../mainTextData'
+import mainTextData from '../../data/mainTextData'
 
 const InfoText = () => {
   const [display, setDisplay] = useState(false)

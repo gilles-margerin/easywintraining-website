@@ -1,4 +1,4 @@
-import styles from './modules/LiItem.module.scss'
+import styles from './LiItem.module.scss'
 
 const LiItem = ({key, background}) => {
   return (

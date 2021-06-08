@@ -1,4 +1,4 @@
-import styles from "./modules/AddEvent.module.scss"
+import styles from "./AddEvent.module.scss"
 import Input from "./Input"
 
 const AddEvent = ({ value, currentUser }) => {

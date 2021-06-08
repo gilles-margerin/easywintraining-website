@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./modules/PartnerCard.module.scss";
+import styles from "./PartnerCard.module.scss";
 
 const PartnerCard = ({
   name,

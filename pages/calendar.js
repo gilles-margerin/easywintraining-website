@@ -4,14 +4,14 @@ import dateConversion from "../utils/dateConversion";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession } from "next-auth/client";
 import Calendar from "react-calendar";
-import styles from "../components/modules/Calendar.module.scss";
+import styles from "../components/calendarPage/Calendar.module.scss";
 import Event from "../models/Event";
 import User from "../models/User";
-import AddEvent from "../components/AddEvent";
-import EventList from "../components/EventList";
-import LiItem from "../components/LiItem";
-import CalendarSideInfo from "../components/CalendarSideInfo";
-import LogButton from "../components/LogButton";
+import AddEvent from "../components/calendarPage/AddEvent";
+import EventList from "../components/calendarPage/EventList";
+import LiItem from "../components/calendarPage/LiItem";
+import CalendarSideInfo from "../components/calendarPage/CalendarSideInfo";
+import LogButton from "../components/calendarPage/LogButton";
 
 function CalendarWrapper(props) {
   const [session, loading] = useSession();

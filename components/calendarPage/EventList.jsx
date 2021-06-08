@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./modules/EventList.module.scss";
+import styles from "./EventList.module.scss";
 
 const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const checkEmpty = (data) => {

@@ -1,4 +1,4 @@
-import styles from "./modules/CalendarSideInfo.module.scss"
+import styles from "./CalendarSideInfo.module.scss"
 
 const CalendarSideInfo = () => {
   return (

@@ -1,4 +1,4 @@
-import styles from "./modules/Main.module.scss";
+import styles from "./Main.module.scss";
 
 const Main = ({ children }) => {
   return (

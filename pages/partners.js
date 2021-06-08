@@ -1,7 +1,7 @@
 import Head from "next/head";
-import partnersData from "../partnersData";
-import styles from "../components/modules/Partners.module.scss";
-import PartnerCard from "../components/PartnerCard"
+import partnersData from "../data/partnersData";
+import styles from "../components/partnersPage/Partners.module.scss";
+import PartnerCard from "../components/partnersPage/PartnerCard";
 
 export default function Partners() {
   return (

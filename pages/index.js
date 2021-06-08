@@ -1,9 +1,9 @@
 import Head from "next/head";
-import GameSection from "../components/GameSection";
-import Aside from "../components/Aside";
-import InfoText from "../components/InfoText"
-import Main from "../components/Main";
-import gamesData from "../gamesData";
+import GameSection from "../components/indexPage/GameSection";
+import Aside from "../components/indexPage/Aside";
+import InfoText from "../components/indexPage/InfoText"
+import Main from "../components/indexPage/Main";
+import gamesData from "../data/gamesData";
 import { useState, useRef, useEffect } from "react";
 
 export async function getStaticProps() {

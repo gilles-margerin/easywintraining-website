@@ -21,11 +21,5 @@ __Purpose__
 - Provide a gaming events management solution for team members
 
 __Other__
-- GitHub repository for backend: [Easywintraining API](https://github.com/gilles-margerin/easywintraining-api.git))
+- GitHub repository for backend: [Easywintraining API](https://github.com/gilles-margerin/easywintraining-api.git)
 
-
-## Todo
-- [ ] Add an edit mode for events through a PUT request
-- [ ] Add event management for regular members
-- [ ] Add CSS transitions and animations on various elements
-- [ ] Add a blog page

@@ -1,9 +1,8 @@
 import styles from './LiItem.module.scss'
 
-const LiItem = ({key, background}) => {
+const LiItem = ({ background }) => {
   return (
     <li
-      key={key}
       style={{
         background: background
       }}

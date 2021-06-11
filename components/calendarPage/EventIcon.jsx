@@ -1,8 +1,6 @@
 import Image from "next/image"
 
 const EventIcon = ({ src, alt, width, height, content, styles }) => {
-
-  console.log(content)
   return (
     <div>
       <span className={styles.iconWrapper}>

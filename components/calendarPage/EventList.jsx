@@ -9,7 +9,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const [editMode, setEditMode] = useState({ isEdit: false, eventId: 0, e: null });
 
   useEffect(() => {
-    const validateBtn = document.querySelector(`#validateBtn${editMode.eventId}`)
+    const validateBtn = document.querySelector(`#validateBtn${editMode.eventId}`) 
     const editableElements = editMode?.e ? Array.from(editMode.e.target.closest("li").children).filter(element => element.lastChild.tagName === "P") : [];
     
     if (!editMode.isEdit) {

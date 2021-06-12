@@ -30,10 +30,10 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const handleValidate = async (eventId, __, elements = editableElements) => {
     const data = {
       user: currentUser._id,
-      name: editableElements[0].content,
-      place: editableElements[1].content,
-      time: editableElements[2].content,
-      description: editableElements[3].content
+      name: editableElements[0].textContent,
+      place: editableElements[1].textContent,
+      time: editableElements[2].textContent,
+      description: editableElements[3].textContent
     }
 
     const reqOptions = {

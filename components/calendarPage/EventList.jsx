@@ -7,10 +7,10 @@ import AdminBtn from "./AdminBtn";
 
 const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   const [editMode, setEditMode] = useState({ isEdit: false, eventId: 0, e: null });
+  const editableElements = editMode?.e ? Array.from(editMode.e.target.closest("li").children).filter(element => element.lastChild.tagName === "P") : [];
 
   useEffect(() => {
     const validateBtn = document.querySelector(`#validateBtn${editMode.eventId}`) 
-    const editableElements = editMode?.e ? Array.from(editMode.e.target.closest("li").children).filter(element => element.lastChild.tagName === "P") : [];
     
     if (!editMode.isEdit) {
       if (validateBtn) validateBtn.style.display = 'none'
@@ -27,7 +27,30 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
     return data.find(({ date }) => date === dateConversion(value));
   };
 
-  const handleValidate = () => {}
+  const handleValidate = async (eventId, __, elements = editableElements) => {
+    const data = [
+      { user: currentUser._id },
+      { update: elements.map(elem => elem.textContent) }
+    ]
+
+    const reqOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }
+    
+    try {
+      await fetch(
+        `https://easywintraining-api.herokuapp.com/api/events/${eventId}`,
+        reqOptions
+      );
+      window.location.reload()
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   const handleEdit = (eventId, e) => {
     setEditMode({ isEdit: !editMode.isEdit, eventId: eventId, e: e }); 

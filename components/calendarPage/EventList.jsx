@@ -57,9 +57,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   };
 
   const handleDelete = async (eventId) => {
-    console.log("delete event: " + eventId);
-    //DO NOT DELETE
-    /* const data = {
+    const data = {
       userId: currentUser._id,
     };
     const reqOptions = {
@@ -78,8 +76,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
       window.location.reload();
     } catch (err) {
       console.log(err);
-    } */
-    //DO NOT DELETE
+    }
   };
 
   return (

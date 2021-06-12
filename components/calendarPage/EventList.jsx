@@ -46,7 +46,7 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
         `https://easywintraining-api.herokuapp.com/api/events/${eventId}`,
         reqOptions
       );
-      window.location.reload()
+      //window.location.reload()
     } catch (err) {
       console.log(err)
     }

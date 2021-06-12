@@ -28,10 +28,13 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
   };
 
   const handleValidate = async (eventId, __, elements = editableElements) => {
-    const data = [
-      { user: currentUser._id },
-      { update: elements.map(elem => elem.textContent) }
-    ]
+    const data = {
+      user: currentUser._id,
+      name: editableElements[0].content,
+      place: editableElements[1].content,
+      time: editableElements[2].content,
+      description: editableElements[3].content
+    }
 
     const reqOptions = {
       method: "PUT",

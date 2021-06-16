@@ -177,7 +177,6 @@
   }
 
   .eventInfoWrapper {
-    //margin: 0;
     max-width: 60ch;
   }
 }
@@ -222,5 +221,13 @@
 
   .eventInfoWrapper {
     margin: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .btnLogin {
+    transform: scale(0.8);
+    top: 63px;
+    right: -15px;
   }
 }

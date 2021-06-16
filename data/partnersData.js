@@ -154,7 +154,7 @@ const partnersData = [
       "Ludiconcept propose une gamme grand public et des créations sur mesure pour les professionnels.",
     contact: {
       admin: "Mathieu Baiget",
-      location: "6 place de la République",
+      location: "6 Place de la République",
       city: "66270 Le Soler",
       map: "https://g.page/ludiconcept?share",
       phone: "",
@@ -174,7 +174,7 @@ const partnersData = [
     other: "",
     contact: {
       admin: "",
-      location: "45 rue du Maréchal Foch",
+      location: "45 Rue du Maréchal Foch",
       city: "66000 Perpignan",
       map: "https://goo.gl/maps/PLcfxeTfbYS2t7Fp6",
       phone: "",
@@ -187,6 +187,66 @@ const partnersData = [
     height: 260,
     style: { name: { textAlign: "center" } },
   },
+  {
+    name: "Eccoclim",
+    description: "Climatisation - Électricité",
+    list: [],
+    other: "",
+    contact: {
+      admin: "",
+      location: "14 Rue de la Passejade",
+      city: "66380 Pia",
+      map: "https://goo.gl/maps/AoFFBkPrALQWqknp6",
+      phone: "",
+      email: "",
+      webpage: "https://www.ece66.fr/"
+    },
+    picture: "/pictures/partners/eccoclim.jpg",
+    alt: "logo entreprise Eccoclim",
+    width: 260,
+    height: 260,
+    style: { name: { textAlign: "center" } }
+  },
+  {
+    name: "Code Évasion - Ecape Game",
+    description: "1 ÉQUIPE - 1 HEURE - 1 MISSION",
+    list: [],
+    other: "Imaginez… une pièce. Vous y entrez par hasard, comme ça, juste pour voir. Et soudain, la porte se referme derrière vous: elle est verrouillée. Avec votre équipe, vous avez 60 minutes pour vous échapper – pas une de plus. Parviendrez-vous à vous échapper ?",
+    contact: {
+      admin: "",
+      location: "1905 Av. Julien Panchot",
+      city: " 66000 Perpignan",
+      map: "https://g.page/CodeEvasion?share",
+      phone: "",
+      email: "",
+      webpage: "http://www.code-evasion.fr/"
+    },
+    picture: "/pictures/partners/Logo2048-CODE-EVASION-1.png",
+    alt: "logo escape game Code évasion",
+    width: 260,
+    height: 260,
+    style: { name: { textAlign: "center" }, other: { marginTop: "1rem" }  }
+  },
+  {
+    name: "Sortilèges Perpignan",
+    description: "Sortilèges Perpignan",
+    list: [],
+    other: "Découvrez-y un large choix de jeux et un espace jeux animé pour les tester.",
+    contact: {
+      admin: "",
+      location: "19 Rue de l'Ange",
+      city: "66000 Perpignan",
+      map: "https://g.page/SortilegesPerpignan?share",
+      phone: "",
+      email: "",
+      webpage: "https://shop.sortileges.fr/perpignan/"
+    },
+    picture: "/pictures/partners/sortileges.png",
+    alt: "logo du magasin Sortilèges Perpignan",
+    width: 260,
+    height: 260,
+    style: { name: { textAlign: "center" }, other:  { marginTop: "1rem", textAlign: "center" } }
+  }
   /* 
   {
     name: "",
@@ -196,6 +256,7 @@ const partnersData = [
     contact: {
       admin: "",
       location: "",
+      city: "",
       map: "",
       phone: "",
       email: "",

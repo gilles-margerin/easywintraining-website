@@ -30,6 +30,22 @@ const EventList = ({ events, currentUser, dateConversion, value, session }) => {
     }
   }, [editMode]);
 
+  useEffect(() => {
+    const liElements = document ? document.querySelectorAll(`.${styles.liItem}`) : []
+    liElements.forEach((elem,i )=> {
+      const timer = 100 + ((i + 1) * 200)
+
+      elem.style.transition = `all ease-in-out ${timer}ms`
+      elem.style.opacity = '1'
+      elem.style.transform = 'translateY(0)'
+    })
+
+    return () => liElements.forEach(elem => {
+      elem.style.opacity = '0'
+      elem.style.transform = 'translateY(20px)'
+    })
+  })
+
   const checkEmpty = (data) => {
     return data.find(({ date }) => date === dateConversion(value));
   };

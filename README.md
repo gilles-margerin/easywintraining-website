@@ -1,7 +1,7 @@
 # Easywintraining Website
 Landing page for a board game association located in Perpignan, south of France.
 
-![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=easywintraining-website&style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/gilles-margerin/easywintraining-website?style=plastic) 
+![Vercel](https://vercelbadge.vercel.app/api/gilles-margerin/easywintraining-website?style=plastic) ![GitHub last commit](https://img.shields.io/github/last-commit/gilles-margerin/easywintraining-website?style=plastic) 
 
 __[Easywintraining games](https://easywintraining-games.fr)__
 [![Screenshot-20210531-120051.png](https://i.postimg.cc/P56vGhW5/Screenshot-20210531-120051.png)](https://postimg.cc/68vpRkbk)

@@ -55,9 +55,12 @@ function CalendarWrapper(props) {
 
     return (
       <ul className={styles.ulReset}>
-        {dayEvents.map((event) => {
-          return <LiItem key={event.name} background={event.color} />;
-        })}
+        {dayEvents.reduce((arr, event, i) => {
+          if (i < 8) {
+          arr.push(<LiItem key={event.name} background={event.color} />);
+          }
+          return arr;
+        }, [])}
       </ul>
     );
   }

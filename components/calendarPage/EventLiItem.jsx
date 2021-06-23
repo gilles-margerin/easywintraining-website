@@ -10,7 +10,7 @@ const EventLiItem = ({
   currentUser,
   handleDelete,
   handleEdit,
-  handleValidate,
+  editMode,
 }) => {
   return (
     <li
@@ -24,20 +24,23 @@ const EventLiItem = ({
       <span className={styles.eventType}>{event.type}</span>
       {session && currentUser?.isAdmin && (
         <div id="adminWrapper" className={styles.adminWrapper}>
-          <AdminBtn
-            id={`validateBtn${event._id}`}
-            styles={styles}
-            event={event}
-            handleClick={handleValidate}
-            text="Valider"
-          />
-          <AdminBtn
-            id={`editBtn${event._id}`}
-            styles={styles}
-            event={event}
-            handleClick={handleEdit}
-            text="Editer"
-          />
+          {editMode.isEdit && event._id === editMode.event._id ? (
+            <AdminBtn
+              id={`editBtn${event._id}`}
+              styles={styles}
+              event={event}
+              handleClick={handleEdit}
+              text="Edition"
+            />
+          ) : editMode.isEdit && event._id !== editMode.event._id ? null : (
+            <AdminBtn
+              id={`editBtn${event._id}`}
+              styles={styles}
+              event={event}
+              handleClick={handleEdit}
+              text="Editer"
+            />
+          )}
           <AdminBtn
             id={`deleteBtn${event._id}`}
             styles={styles}

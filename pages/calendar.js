@@ -7,7 +7,7 @@ import Calendar from "react-calendar";
 import styles from "../components/calendarPage/Calendar.module.scss";
 import Event from "../models/Event";
 import User from "../models/User";
-import AddEvent from "../components/calendarPage/AddEvent";
+import ManageEvent from "../components/calendarPage/ManageEvent";
 import EventList from "../components/calendarPage/EventList";
 import LiItem from "../components/calendarPage/LiItem";
 import CalendarSideInfo from "../components/calendarPage/CalendarSideInfo";
@@ -21,6 +21,41 @@ function CalendarWrapper(props) {
   const currentUser = dbUsers.find(
     ({ email }) => email === session?.user?.email
   );
+
+  const [editMode, setEditMode] = useState({
+    isEdit: false,
+    event: {},
+  });
+
+  const handleEdit = event => {
+    setEditMode({
+      isEdit: !editMode.isEdit,
+      event: event
+    })
+  };
+
+  const handleDelete = async event => {
+    const data = {
+      user: currentUser._id,
+    };
+    const reqOptions = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    try {
+      const response = await fetch(
+        `https://easywintraining-api.herokuapp.com/api/events/${event._id}`,
+        reqOptions
+      );
+      if (response.ok) window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(async () => {
     if (document.readyState === "complete") {
@@ -55,9 +90,12 @@ function CalendarWrapper(props) {
 
     return (
       <ul className={styles.ulReset}>
-        {dayEvents.map((event) => {
-          return <LiItem key={event.name} background={event.color} />;
-        })}
+        {dayEvents.reduce((arr, event, i) => {
+          if (i < 8) {
+          arr.push(<LiItem key={event.name} background={event.color} />);
+          }
+          return arr;
+        }, [])}
       </ul>
     );
   }
@@ -72,6 +110,7 @@ function CalendarWrapper(props) {
           href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/icons/ewt-ico.jpg"/>
       </Head>
 
       <main className={styles.wrapper}>
@@ -94,6 +133,10 @@ function CalendarWrapper(props) {
               dateConversion={dateConversion}
               value={value}
               session={session}
+              editMode={editMode}
+              setEditMode={setEditMode}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
             />
           </div>
 
@@ -108,9 +151,11 @@ function CalendarWrapper(props) {
           {session && currentUser?.isAdmin === true && (
             <>
               <LogButton styles={styles} signFunc={signOut} text={"Logout"} />
-              <AddEvent
+              <ManageEvent
                 value={dateConversion(value)}
                 currentUser={currentUser}
+                isEdit={editMode.isEdit}
+                event={editMode.event}
               />
             </>
           )}

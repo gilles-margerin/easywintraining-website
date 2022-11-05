@@ -45,6 +45,7 @@ export default function Home({ apiKey }) {
           href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/icons/ewt-ico.jpg"/>
       </Head>
 
       <div className="container">

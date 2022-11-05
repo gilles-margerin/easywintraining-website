@@ -31,7 +31,10 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 500ms ease-in-out;
+  max-width: 610px;
 
   &:first-of-type {
     margin-top: 13px;
@@ -74,9 +77,14 @@
   border: 2px solid red;
 }
 
-.Editer{
+.Editer {
   color: lightslategrey;
   border: 2px solid lightslategrey;
+}
+
+.Edition {
+  color: lightseagreen;
+  border: 2px solid lightseagreen;
 }
 
 .Valider {

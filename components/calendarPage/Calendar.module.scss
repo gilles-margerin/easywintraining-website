@@ -41,9 +41,11 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 2px;
+  left: 2px;
   display: flex;
+  flex-wrap: wrap;
+  height: 24px;
 }
 
 .eventInfoWrapper {
@@ -177,7 +179,6 @@
   }
 
   .eventInfoWrapper {
-    //margin: 0;
     max-width: 60ch;
   }
 }
@@ -222,5 +223,13 @@
 
   .eventInfoWrapper {
     margin: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .btnLogin {
+    transform: scale(0.8);
+    top: 63px;
+    right: -15px;
   }
 }

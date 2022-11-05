@@ -35,7 +35,7 @@ const Aside = ({ apiKey }) => {
         </time>
 
         <p>
-          Adhésion annuelle à partir de 20€ seulement, à régler sur place. Café/thé offert lors de votre première visite.
+          Adhésion annuelle à partir de 30€ seulement, à régler sur place. Café/thé offert lors de votre première visite.
         </p>
         
       </div>

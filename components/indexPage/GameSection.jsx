@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./GameSection.module.scss";
 
 const GameSection = ({ id, src, title, text, alt, active, toggleActive }) => {

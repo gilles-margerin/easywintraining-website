@@ -1,6 +1,6 @@
 import Layout from "../components/layout/Layout";
 import "../styles/globals.scss";
-import { Provider } from "next-auth/client"
+import { SessionProvider } from "next-auth/react"
 import { useEffect } from "react"
 
 function MyApp({ Component, pageProps }) {
@@ -11,11 +11,11 @@ function MyApp({ Component, pageProps }) {
   })
 
   return (
-   <Provider session={pageProps.session}>
+   <SessionProvider session={pageProps.session}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-   </Provider>
+   </SessionProvider>
   );
 }
 

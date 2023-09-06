@@ -1,8 +1,9 @@
+import dayjs from "dayjs";
 import Head from "next/head";
 import dbConnect from "../utils/dbConnect";
 import dateConversion from "../utils/dateConversion";
 import { useState, useEffect } from "react";
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signOut, useSession, getSession } from "next-auth/react";
 import Calendar from "react-calendar";
 import styles from "../components/calendarPage/Calendar.module.scss";
 import Event from "../models/Event";
@@ -14,12 +15,37 @@ import CalendarSideInfo from "../components/calendarPage/CalendarSideInfo";
 import LogButton from "../components/calendarPage/LogButton";
 
 function CalendarWrapper(props) {
-  const [session, loading] = useSession();
+  const session = useSession()
+  
+  async function fetchSession() {
+    const result = await getSession();
+    if (!session && !result?.id) {
+      const data = {
+        name: result?.user?.name,
+        email: result?.user?.email,
+        providerId: result?.id,
+      };
+      const reqOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      fetch(`https://easywintraining-api.herokuapp.com/api/users`, reqOptions);
+    }
+    return result;
+  }
+
+  useEffect(() => {
+    fetchSession();
+  }, [session]);
+
   const [value, setValue] = useState(new Date());
   const dbUsers = JSON.parse(props.users);
   const [events, setEvents] = useState(JSON.parse(props.events));
   const currentUser = dbUsers.find(
-    ({ email }) => email === session?.user?.email
+    ({ email }) => email === session?.data?.user?.email
   );
 
   const [editMode, setEditMode] = useState({
@@ -27,14 +53,14 @@ function CalendarWrapper(props) {
     event: {},
   });
 
-  const handleEdit = event => {
+  const handleEdit = (event) => {
     setEditMode({
       isEdit: !editMode.isEdit,
-      event: event
-    })
+      event: event,
+    });
   };
 
-  const handleDelete = async event => {
+  const handleDelete = async (event) => {
     const data = {
       user: currentUser._id,
     };
@@ -57,30 +83,6 @@ function CalendarWrapper(props) {
     }
   };
 
-  useEffect(async () => {
-    if (document.readyState === "complete") {
-      if (session && currentUser === undefined) {
-        const data = {
-          name: session.user.name,
-          email: session.user.email,
-          providerId: session.user.id,
-        };
-        const reqOptions = {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        };
-        await fetch(
-          `https://easywintraining-api.herokuapp.com/api/users`,
-          reqOptions
-        );
-        window.location.reload();
-      }
-    }
-  }, [session]);
-
   function tileContent(props) {
     const dayEvents = events.filter(
       (event) => event.date === dateConversion(props.date)
@@ -92,7 +94,7 @@ function CalendarWrapper(props) {
       <ul className={styles.ulReset}>
         {dayEvents.reduce((arr, event, i) => {
           if (i < 8) {
-          arr.push(<LiItem key={event.name} background={event.color} />);
+            arr.push(<LiItem key={event.name} background={event.color} />);
           }
           return arr;
         }, [])}
@@ -104,13 +106,16 @@ function CalendarWrapper(props) {
     <>
       <Head>
         <title>Easywintraining Games - Calendrier</title>
-        <meta name="description" content="Calendrier des activités et évènements de l'association, pour prévoir vos moments ludiques!"/>
+        <meta
+          name="description"
+          content="Calendrier des activités et évènements de l'association, pour prévoir vos moments ludiques!"
+        />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Mulish&family=Philosopher:wght@700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/icons/ewt-ico.jpg"/>
+        <link rel="icon" href="/icons/ewt-ico.jpg" />
       </Head>
 
       <main className={styles.wrapper}>
@@ -144,7 +149,7 @@ function CalendarWrapper(props) {
             <CalendarSideInfo />
           </aside>
 
-          {!session && (
+          {!currentUser && (
             <LogButton styles={styles} signFunc={signIn} text={"Login"} />
           )}
 
@@ -177,7 +182,8 @@ function CalendarWrapper(props) {
 export async function getServerSideProps(context) {
   await dbConnect();
 
-  const events = await Event.find({});
+  const currentYear = new RegExp(`${dayjs().year()}`)
+  const events = await Event.find({ date: currentYear }).exec();
   const users = await User.find({});
 
   return {

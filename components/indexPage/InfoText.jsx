@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './InfoText.module.scss'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import mainTextData from '../../data/mainTextData'
 
 const InfoText = () => {

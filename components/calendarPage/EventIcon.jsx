@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const EventIcon = ({ src, alt, width, height, content, styles }) => {
   return (

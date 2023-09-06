@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <a id="homelink">
           <Image
             src="/icons/ewt-logo.jpg"
@@ -36,7 +36,7 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <Link href="/calendar">
+          <Link href="/calendar" legacyBehavior>
             <a>
               <Image
                 src="/icons/calendar.svg"
@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-        <Link href="/partners">
+        <Link href="/partners" legacyBehavior>
             <a>
               <Image
                 src="/icons/partner-4.svg"
